@@ -38,21 +38,29 @@ function ExerciseComponent() {
   return (
     <div className='page'>
       <h1>Exercise:</h1>
+        <div className='body'>
+          {musclesList.map((muscle, index) => (
+          <h3 key = {index}> จากการทำแบบสอบถาม สามารถวินิจฉัยได้ว่าคุณมีโอกาสเป็น Office Syndrome นี่คือท่าออกกำลังกายสำหรับกล้ามเนื้อ{muscle.muscle}
+            
+          </h3>
+          ))}
+          <p>This is {diagnose}</p>
 
-      {musclesList.map((muscle, index) => (
-      <h3 key = {index}> จากการทำแบบสอบถาม สามารถวินิจฉัยได้ว่าคุณมีโอกาสเป็น Office Syndrome นี่คือท่าออกกำลังกายสำหรับกล้ามเนื้อ{muscle.muscle}
-        
-      </h3>
-      ))}
-      <p>This is {diagnose}</p>
-
-      {exerciseList.map((exercise, index) => (
-        <p key={index}>{exercise.name} : {exercise.duration}</p>
-      ))}
+          {exerciseList.map((exercise, index) => (
+            <p key={index}>{exercise.name} : {exercise.duration}</p>
+          ))}
+        </div>
 
       <div>
         <Link to="/DoExercise">
-          <button>Next</button>
+          {/* <button>Next</button> */}
+          <button class="button-pushable" id="next">
+              <span class="button-shadow"></span>
+              <span class="button-edge"></span>
+              <span class="button-front text">
+              Next
+              </span>
+          </button>
         </Link>
       </div>
     </div>

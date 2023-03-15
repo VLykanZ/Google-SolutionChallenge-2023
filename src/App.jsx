@@ -23,13 +23,13 @@ function App() {
       <div>
         <ul className="horizontal-menu">
           <li className='home-menu'>
-            <Link to = "/Home">Home</Link>
+            <Link to = "/Home">HOME</Link>
           </li>
           <li>
-            <Link to = "/Knowledge">Knowledge</Link>
+            <Link to = "/Knowledge">KNOWLEDGE</Link>
           </li>
           <li>
-            <Link to = "/Stack">Stack</Link>
+            <Link to = "/Stack">TECH STACK</Link>
           </li>
         </ul>
         <Routes>

@@ -25,7 +25,13 @@ function DoExerciseComponent() {
                 
                 <div>
                 <Link to="/Recommend">
-                    <button>Next</button>
+                <button class="button-pushable" id="next">
+                    <span class="button-shadow"></span>
+                    <span class="button-edge"></span>
+                    <span class="button-front text">
+                    Next
+                    </span>
+                </button>
                 </Link>
                 </div>
             </div>
