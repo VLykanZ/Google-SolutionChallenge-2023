@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import '../page.css'
 
 import kong from '../assets/images/kong.gif';
 import vn from '../assets/images/vn.gif';
 
 function DoExerciseComponent() {
     return (
-            <div>
+            <div className="page">
                 <h1>Do Exercise</h1>
                 <div>
                 กำลังออกกำลังกาย

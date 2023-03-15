@@ -22,7 +22,7 @@ function App() {
       <Router>
       <div>
         <ul className="horizontal-menu">
-          <li>
+          <li className='home-menu'>
             <Link to = "/Home">Home</Link>
           </li>
           <li>

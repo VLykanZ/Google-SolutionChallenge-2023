@@ -1,9 +1,11 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import '../page.css'
 
 function ExerciseComponent() {
   const bodyPart = useSelector(state => state.bodyPart);
+  const diagnose = useSelector((state) => state.diagnose);
 
   const exercises = {
     neck: [
@@ -34,7 +36,7 @@ function ExerciseComponent() {
   const musclesList = muscles[bodyPart];
 
   return (
-    <div>
+    <div className='page'>
       <h1>Exercise:</h1>
 
       {musclesList.map((muscle, index) => (
@@ -42,6 +44,7 @@ function ExerciseComponent() {
         
       </h3>
       ))}
+      <p>This is {diagnose}</p>
 
       {exerciseList.map((exercise, index) => (
         <p key={index}>{exercise.name} : {exercise.duration}</p>
