@@ -2,7 +2,7 @@ import './style/App.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, NavLink } from 'react-router-dom';
 
 import Home from './pages/main/Home';
 import Knowledge from './pages/main/Knowledge';
@@ -21,15 +21,16 @@ function App() {
     <Provider store={store}>
       <Router>
       <div>
-        <ul className="horizontal-menu">
+        <ul className="navbar">
           <li className='home-menu'>
-            <Link to = "/Home">HOME</Link>
+            <NavLink className='nav-bar-link' to = "/Home"
+              >HOME</NavLink>
           </li>
           <li>
-            <Link to = "/Knowledge">KNOWLEDGE</Link>
+            <NavLink className='nav-bar-link' to = "/Knowledge">KNOWLEDGE</NavLink>
           </li>
           <li>
-            <Link to = "/Stack">TECH STACK</Link>
+            <NavLink className='nav-bar-link' to = "/Stack">TECH STACK</NavLink>
           </li>
         </ul>
         <Routes>

@@ -19,10 +19,15 @@ button{
 div.page{
     text-align: center;
     background-color: rgb(252, 247, 237);
+    height: 1000px;
 }
 div.question{
     margin: 60px;
     
+}
+div#student-id{
+    margin-bottom: 30px;
+    font-size: 25px;
 }
 button{
     font-weight: bolder;
@@ -36,6 +41,9 @@ label.question{
     display: inline-block;
     font-weight: bold;
 }
+label#student-id{
+    padding: 10px;
+}
 input{
     width: 1px;
 }
@@ -45,7 +53,8 @@ input[type=radio] {
     border: 0px;
 }
 input.student-id{
-    width: 150px;
+    width: 200px;
+    font-size: 25px;
 }
 select{
     width: 100px;

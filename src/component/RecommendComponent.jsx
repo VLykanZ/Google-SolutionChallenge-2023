@@ -23,9 +23,9 @@ function RecommendComponent() {
                             </p>
                         </div>
                         </div>
-                <div >
-                    <label>xxx</label>
-                    <input className="student-id" placeholder = "กรุณากรอก"/>
+                <div id="student-id">
+                    <label id="student-id">กรุณากรอกรหัสนักศึกษา</label>
+                    <input className="student-id" placeholder = "ex 6123456789"/>
                 </div>
 
                 <div>
