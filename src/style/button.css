@@ -51,7 +51,7 @@
     border-radius: 12px;
     font-size: 1.1rem;
     color: rgb(0, 0, 0);
-    background: orange;
+    background: #18eac0;
     will-change: transform;
     transform: translateY(-4px);
     transition:

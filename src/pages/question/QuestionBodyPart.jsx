@@ -33,7 +33,7 @@ function QuestionBodypart() {
 
         <div className='link-page-button'>
             <div>
-                <Link to="/Home">
+                <Link to="/">
                 {/* <button className='back'>Back</button> */}
                 <button class="button-pushable" id="back">
                     <span class="button-shadow"></span>

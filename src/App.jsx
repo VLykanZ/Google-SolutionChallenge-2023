@@ -1,12 +1,15 @@
 import './style/App.css';
+import './style/navbar.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router, Route, Routes, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
+import Navbar from './Navbar';
 import Home from './pages/main/Home';
 import Knowledge from './pages/main/Knowledge';
 import Stack from './pages/main/Stack';
+import About from './pages/main/About';
 import QuestionBodyPart from './pages/question/QuestionBodyPart';
 import QuestionDiagnose from './pages/question/QuestionDiagnose';
 import ExerciseComponent from './component/ExerciseComponent';
@@ -20,23 +23,15 @@ function App() {
   ReactDOM.render(
     <Provider store={store}>
       <Router>
+        <div>
+          <Navbar/>
+        </div>
       <div>
-        <ul className="navbar">
-          <li className='home-menu'>
-            <NavLink className='nav-bar-link' to = "/Home"
-              >HOME</NavLink>
-          </li>
-          <li>
-            <NavLink className='nav-bar-link' to = "/Knowledge">KNOWLEDGE</NavLink>
-          </li>
-          <li>
-            <NavLink className='nav-bar-link' to = "/Stack">TECH STACK</NavLink>
-          </li>
-        </ul>
         <Routes>
-            <Route path='/Home' element={<Home/>}></Route>
+            <Route path='/' element={<Home/>}></Route>
             <Route path='/Knowledge' element={<Knowledge/>}></Route>
             <Route path='/Stack' element={<Stack/>}></Route>
+            <Route path='/About' element={<About/>} />
             <Route path='/QuestionBodypart' element={<QuestionBodyPart/>} />
             <Route path='/QuestionDiagnose' element={<QuestionDiagnose/>} />
             <Route path='/Exercise' element={<ExerciseComponent/>} />

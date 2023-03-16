@@ -4,26 +4,28 @@ import { Link } from 'react-router-dom';
 import '../style/page.css'
 import '../style/button.css'
 
+import neck1 from '../assets/images/neck1.jpg';
+import neck2 from '../assets/images/neck2.jpg';
+import back1 from '../assets/images/back1.jpg';
+import back2 from '../assets/images/back2.jpg';
+import body1 from '../assets/images/body1.jpg';
+import body2 from '../assets/images/body2.jpg';
+
 function ExerciseComponent() {
   const bodyPart = useSelector(state => state.bodyPart);
-  const diagnose = useSelector((state) => state.diagnose);
 
   const exercises = {
     neck: [
-      { name: 'ท่ายอดกล้ามเนื้อคอด้านหลัง', duration: '15-30 วินาที' },
-      { name: 'ท่ายอดกล้ามเนื้อคอด้านซ้าย', duration: '15-30 วินาที' },
-      { name: 'ท่ายอดกล้ามเนื้อคอด้านขวา', duration: '15-30 วินาที' },
+      { name: 'ท่ายอดกล้ามเนื้อคอด้านหลัง', duration: '15-30 วินาที' ,img: neck1},
+      { name: 'ท่ายอดกล้ามเนื้อคอ', duration: '15-30 วินาที' ,img: neck2},
     ],
     back: [
-      { name: 'ท่ายืดกล้ามเนื้อสะบักด้านในข้างซ้าย', duration: '15-30 วินาที' },
-      { name: 'ท่ายืดกล้ามเนื้อสะบักด้านในข้างขวา', duration: '15-30 วินาที' },
-      { name: 'ท่ายืดกล้ามเนื้อสะบักด้านหลังข้างซ้าย', duration: '15-30 วินาที' },
-      { name: 'ท่ายืดกล้ามเนื้อสะบักด้านหลังข้างขวา', duration: '15-30 วินาที' },
+      { name: 'ท่ายืดกล้ามเนื้อสะบักด้านใน', duration: '15-30 วินาที' ,img: back1},
+      { name: 'ท่ายืดกล้ามเนื้อสะบักด้านหลัง', duration: '15-30 วินาที' ,img: back2},
     ],
     body: [
-      { name: 'ท่ายืดกล้ามเนื้อแขนด้านล่างข้างซ้าย', duration: '15-30 วินาที' },
-      { name: 'ท่ายืดกล้ามเนื้อแขนด้านล่างข้างขวา', duration: '15-30 วินาที' },
-      { name: 'ท่ายืดกล้ามเนื้อหน้าท้องละร่างกายส่วนบน', duration: '15-30 วินาที' },
+      { name: 'ท่ายืดกล้ามเนื้อแขนด้านล่าง', duration: '15-30 วินาที' ,img: body1},
+      { name: 'ท่ายืดกล้ามเนื้อหน้าท้องละร่างกายส่วนบน', duration: '15-30 วินาที' ,img: body2},
     ],
   };
 
@@ -41,19 +43,31 @@ function ExerciseComponent() {
       <h1>Exercise:</h1>
         <div className='body'>
           {musclesList.map((muscle, index) => (
-          <h3 key = {index}> จากการทำแบบสอบถาม สามารถวินิจฉัยได้ว่าคุณมีโอกาสเป็น Office Syndrome นี่คือท่าออกกำลังกายสำหรับกล้ามเนื้อ{muscle.muscle}
-            
+          <h3 key = {index}> นี่คือท่าออกกำลังกายสำหรับกล้ามเนื้อ{muscle.muscle}
           </h3>
           ))}
-          <p>This is {diagnose}</p>
-
+          {/* <p><img src={neck1} alt="" style={{ height: "200px" }} /> </p> */}
           {exerciseList.map((exercise, index) => (
-            <p key={index}>{exercise.name} : {exercise.duration}</p>
+            <p key={index}>
+              <img src={exercise.img}  alt="" style={{ height: "200px" }}/> <br />
+              {exercise.name} : {exercise.duration}
+              
+            </p>
           ))}
         </div>
 
       <div>
-        <Link to="/DoExercise">
+        <Link to="/QuestionDiagnose">
+                  {/* <button className='back'>Back</button> */}
+                  <button class="button-pushable" id="back">
+                      <span class="button-shadow"></span>
+                      <span class="button-edge"></span>
+                      <span class="button-front text">
+                      Back
+                      </span>
+                  </button>
+                  </Link>
+          <Link to="/DoExercise">
           {/* <button>Next</button> */}
           <button class="button-pushable" id="next">
               <span class="button-shadow"></span>

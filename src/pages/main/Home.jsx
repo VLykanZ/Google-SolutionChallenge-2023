@@ -5,7 +5,7 @@ import '../../style/button.css'
 
 function Home() {
     return (
-      <div className="page">
+      <div className="page" id="home-page">
         <h1>Home Page</h1>
         <Link to="/QuestionBodypart">
             {/* <button className="start">Start!</button> */}

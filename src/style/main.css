@@ -19,6 +19,13 @@ p{
     margin-left: 10%;
     margin-right: 10%;
 }
+div.page{
+ height: 100%;
+}
 div#knowledge{
     margin-bottom: 150px;
+}
+div#home-page{
+    padding: 100px;
+    height: 200px;
 }

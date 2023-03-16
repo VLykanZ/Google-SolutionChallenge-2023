@@ -18,8 +18,8 @@ button{
 }
 div.page{
     text-align: center;
-    background-color: rgb(252, 247, 237);
-    height: 1000px;
+    background-color: #e5fcf7;
+    height: 100%;
 }
 div.question{
     margin: 60px;

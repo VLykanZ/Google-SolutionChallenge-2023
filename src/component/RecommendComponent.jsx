@@ -29,7 +29,7 @@ function RecommendComponent() {
                 </div>
 
                 <div>
-                <Link to="/Home">
+                <Link to="/">
                 <button class="button-pushable" id="next">
                     <span class="button-shadow"></span>
                     <span class="button-edge"></span>
