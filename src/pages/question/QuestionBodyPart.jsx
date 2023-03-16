@@ -3,7 +3,8 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setBodyPart } from '../../store';
-import '../../page.css';
+import '../../style/main.css'
+import '../../style/button.css'
 
 function QuestionBodypart() {
 

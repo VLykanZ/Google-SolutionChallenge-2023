@@ -1,3 +1,6 @@
+import '../../style/main.css'
+import '../../style/button.css'
+
 const Stack = () => {
     return (
             <div>

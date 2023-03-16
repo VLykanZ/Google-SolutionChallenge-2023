@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import '../page.css'
+import '../style/page.css'
+import '../style/button.css'
 
 function RecommendComponent() {
     return (
@@ -33,7 +34,7 @@ function RecommendComponent() {
                     <span class="button-shadow"></span>
                     <span class="button-edge"></span>
                     <span class="button-front text">
-                    Next
+                    Finish!
                     </span>
                 </button>
                 </Link>

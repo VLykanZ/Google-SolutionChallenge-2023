@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { setDiagnose } from "../../store2";
 import { useDispatch } from "react-redux";
-import '../../page.css'
+import '../../style/main.css'
+import '../../style/button.css'
 
 function QuestionDiagnose() {
   const [answers, setAnswers] = useState({});

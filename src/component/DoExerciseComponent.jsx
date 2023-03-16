@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import '../page.css'
+import '../style/page.css'
+import '../style/button.css'
 
 import kong from '../assets/images/kong.gif';
 import vn from '../assets/images/vn.gif';

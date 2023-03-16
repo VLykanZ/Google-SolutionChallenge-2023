@@ -1,7 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import '../page.css'
+import '../style/page.css'
+import '../style/button.css'
 
 function ExerciseComponent() {
   const bodyPart = useSelector(state => state.bodyPart);
