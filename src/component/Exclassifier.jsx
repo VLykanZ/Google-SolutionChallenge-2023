@@ -1,5 +1,5 @@
 import React, { useRef , useState, useEffect} from "react";
-import {Posecam, Classifier} from './MovenetComponent';
+import {MovenetComponent, Classifier} from './MovenetComponent';
 
 // Database
 const PoseList ={
