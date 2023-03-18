@@ -16,6 +16,7 @@ import ExerciseComponent from './component/ExerciseComponent';
 import DoExerciseComponent from './component/DoExerciseComponent';
 import RecommendComponent from './component/RecommendComponent';
 
+
 import store from './store';
 
 function App() {

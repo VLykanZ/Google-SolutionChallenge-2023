@@ -29,3 +29,10 @@ div#home-page{
     padding: 100px;
     height: 200px;
 }
+div.bet-ads#height1{
+    left: 50px;
+    position: fixed;
+}
+.knowledge{
+    position: relative;
+}
