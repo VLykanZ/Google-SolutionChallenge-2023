@@ -1,6 +1,6 @@
 import React, { useRef , useState, useEffect} from "react";
-import {MovenetComponent, Classifier} from './MovenetComponent';
-
+import {Classifier, MovenetComponent, model, prediction} from './MovenetComponent';
+import * as tf from "@tensorflow/tfjs";
 // Database
 const PoseList ={
   0 : 'YOGA',
@@ -30,8 +30,8 @@ var idx = 0;
 var pose_step = 0;
 var step_pose_lenght = pose_list[idx].length; 
 var tricker =0;
+
 function Steppose() {
-  var status_pose = null;
   const pose_value = Classifier();
   console.log(pose_value);
   status = 'Processing';
@@ -40,6 +40,7 @@ function Steppose() {
     status = 'OK ! Next';
     //linkPic = require('./asset/2.jpeg');
     tricker = tricker +1;
+    posename = PoseStep[pose_list[idx][1][pose_step]];
   }
   if (step_pose_lenght+1  == pose_step){
     pose_step = 0;
@@ -53,6 +54,7 @@ function Steppose() {
   if (pose_list.length == idx){
     processing = false;
     status = 'Finished ! ';
+    posename = 'Finished !'
   }
   return Math.random()*0.5;
 }

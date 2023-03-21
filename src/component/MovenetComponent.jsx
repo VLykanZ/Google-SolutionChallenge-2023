@@ -4,9 +4,21 @@ import * as posenet from "@tensorflow-models/posenet";
 import Webcam from "react-webcam";
 import { Link } from 'react-router-dom';
 
+var outputArray;
+export function prediction(inputArray) {
+  const runmodel = async () => {
+    const model = await tf.loadLayersModel('https://models.s3.jp-tok.cloud-object-storage.appdomain.cloud/model.json');
+    classify(model, inputArray);
+  };
+  const classify = async (model, inputArray) => {
+    const outputData = await model.predict(inputArray);
+    outputArray = Array.from(outputData.dataSync());
+  };
+  runmodel();
+  return outputArray;
+}
 
-export function Classifier() {
-
+export  function Classifier() {
   var point_pose = pose['keypoints'];
   var input_model = [
     point_pose['0']['position']['x'], point_pose['0']['position']['y'], point_pose['0']['score'],
@@ -142,25 +154,25 @@ function MovenetComponent() {
   runPosenet();
 
   return (
-    <body className="movenet">
+    <>
         <Webcam
           ref={webcamRef}
-          // style={{
-          //   position: "absolute",
-          //   zindex:9,
-          //   marginLeft: "auto",
-          //   marginRight: "auto",
-          // }}
+          style={{
+            position: "absolute",
+            zindex:9,
+            marginLeft: "auto",
+            marginRight: "auto",
+          }}
         />
         <canvas
           ref={canvasRef}
-          // style={{
-          //   marginLeft: "auto",
-          //   marginRight: "auto",
-          //   position: "absolute",
-          // }}
+          style={{
+            marginLeft: "auto",
+            marginRight: "auto",
+            position: "absolute",
+          }}
         />
-    </body>
+    </>
   );
 }
 
