@@ -3,9 +3,23 @@ import * as tf from "@tensorflow/tfjs";
 import * as posenet from "@tensorflow-models/posenet";
 import Webcam from "react-webcam";
 import { Link } from 'react-router-dom';
+import '@tensorflow/tfjs-backend-webgl'; 
 
-export function Classifier() {
+var outputArray;
+export function prediction(inputArray) {
+  const runmodel = async () => {
+    const model = await tf.loadLayersModel('https://models.s3.jp-tok.cloud-object-storage.appdomain.cloud/model.json');
+    classify(model, inputArray);
+  };
+  const classify = async (model, inputArray) => {
+    const outputData = await model.predict(inputArray);
+    outputArray = Array.from(outputData.dataSync());
+  };
+  runmodel();
+  return outputArray;
+}
 
+export  function Classifier() {
   var point_pose = pose['keypoints'];
   var input_model = [
     point_pose['0']['position']['x'], point_pose['0']['position']['y'], point_pose['0']['score'],
@@ -26,12 +40,9 @@ export function Classifier() {
     point_pose['15']['position']['x'], point_pose['15']['position']['y'], point_pose['15']['score'],
     point_pose['16']['position']['x'], point_pose['16']['position']['y'], point_pose['16']['score'],
   ];
-  console.log(input_model);
-
-  //var status_pose = pose['score'];
-  //const prediction = model.predict(example);
-
-  return [Math.random(),Math.random()*0.5];
+  const inputArray = tf.tensor2d([[Math.random(),Math.random()*0.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]], [1, 34]);
+  const predictresult = prediction(inputArray);
+  return [predictresult];
 }
 
 var pose;

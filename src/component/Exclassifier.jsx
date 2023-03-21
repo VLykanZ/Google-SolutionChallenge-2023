@@ -1,6 +1,6 @@
 import React, { useRef , useState, useEffect} from "react";
-import {Classifier, MovenetComponent} from './MovenetComponent';
-
+import {Classifier, MovenetComponent, model, prediction} from './MovenetComponent';
+import * as tf from "@tensorflow/tfjs";
 // Database
 const PoseList ={
   0 : 'YOGA',
@@ -27,29 +27,34 @@ var status = 'Try again';
 var processing = 'Running';
 
 
+var posename = PoseStep[pose_list[0][1][0]];
 var idx = 0;
 var pose_step = 0;
 var step_pose_lenght = pose_list[idx].length; 
 var tricker =0;
+
+
 function Steppose() {
-  var status_pose = null;
   const pose_value = Classifier();
-  // Confident --> pose_value[pose_list[idx][pose_step]]
-  if (pose_value[1] < 0.2){
+  console.log(pose_value);
+  if (pose_value[0][pose_step] < 0.5){
     pose_step = pose_step + 1;
     status = 'Try again';
     //linkPic = require('./asset/2.jpeg');
     tricker = tricker +1;
+    posename = PoseStep[pose_list[idx][1][pose_step]];
   }
   if (step_pose_lenght+1  == pose_step){
     pose_step = 0;
     idx = idx + 1;
+    posename = PoseStep[pose_list[idx][1][pose_step]]
   }
   if (pose_list.length == idx){
     processing = false;
     status = 'Finished ! ';
+    posename = 'Finished !'
   }
-  return pose_value[1];
+  return pose_value[0][pose_step];
 }
 
 function Exclassifier(props) {
@@ -70,13 +75,14 @@ function Exclassifier(props) {
     <div>
       <img src= {1} width={640} height={480}/>
       <p>Confident {point}</p>
-      <p>Pose {PoseList[idx]}</p>
+      <p>Pose {posename}</p>
 
       <p>Status {status}</p>
       <p>Processing {processing}</p>
-      <p>{idx} {pose_step} {step_pose_lenght} {tricker} </p>
+      <p>{idx} {pose_step} {step_pose_lenght} {tricker} {posename}</p>
     </div>
   );
 }
 
 export default Exclassifier;
+
