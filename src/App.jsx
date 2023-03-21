@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-import Navbar from './Navbar';
+import Navbar from './component/Navbar';
 import Home from './pages/main/Home';
 import Knowledge from './pages/main/Knowledge';
 import Stack from './pages/main/Stack';

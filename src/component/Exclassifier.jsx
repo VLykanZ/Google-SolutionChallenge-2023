@@ -1,5 +1,5 @@
 import React, { useRef , useState, useEffect} from "react";
-import {Classifier, MovenetComponent} from './MovenetComponent';
+import {MovenetComponent, Classifier} from './MovenetComponent';
 
 // Database
 const PoseList ={
@@ -67,15 +67,15 @@ function Exclassifier(props) {
   }, []);
 
   return (
-    <div>
-      <img src= {1} width={640} height={480}/>
+    <body>
+      {/* <img src= {linkPic} width={640} height={480}/> */}
       <p>Confident {point}</p>
       <p>Pose {PoseList[idx]}</p>
 
       <p>Status {status}</p>
       <p>Processing {processing}</p>
       <p>{idx} {pose_step} {step_pose_lenght} {tricker} </p>
-    </div>
+    </body>
   );
 }
 

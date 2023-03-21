@@ -78,13 +78,18 @@ nav a:hover{
 nav a:active {
     color: #640200;
 }
-div.navbar{
+body.navbar{
     margin: 0;
     color: white;
     background-color: #253545;
+    padding: 1px;
+    /* position: fixed; */
 }
 h1.navbar{
     border-bottom: none;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
 }
 /* :active, .navbar:hover{
     background-color: #1abc9c;

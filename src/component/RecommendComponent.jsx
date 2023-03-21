@@ -1,13 +1,20 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import ProgressTab from './ProgressTab';
+
 import '../style/page.css'
 import '../style/button.css'
 
 function RecommendComponent() {
     return (
-            <div className="page">
+            <body>
+                <ProgressTab/>
+                <section className="function">
                 <h1>Recommendation</h1>
-                    <div className="body" id="recommendation">
+                    <section id="recommendation">
+                        <div>
+                            <p>จากากรทำแบบทดสอบ พบว่า</p>
+                        </div>
                         <div>
                             <p>
                                 1. การปรับพฤติกรรมและสภาพแวดล้อมในการทำงาน ไม่ว่าจะเป็นการกำหนดเวลาพักเป็นระยะ (ข้อแนะนำคือ ทุก ๆ 2 ชั่วโมงหรือเร็วกว่านั้น) การลุกขึ้นมาเคลื่อนไหวหรือบริหารผ่อนคลายกล้ามเนื้อ หมั่นปรับเปลี่ยนท่าทาง ไม่ค้างอยู่ท่าใดท่าหนึ่งนานเกินไป
@@ -22,11 +29,11 @@ function RecommendComponent() {
                                 ออกกำลังกายแบบยืดเหยียด มีประโยชน์ในการยืดและบริหารกล้ามเนื้อส่วนต่าง ๆ ทำให้ข้อต่อเคลื่อนไหวได้เป็นปกติ และลดอาการตึงและเมื่อยล้าของกล้ามเนื้อ
                             </p>
                         </div>
-                        </div>
-                <div id="student-id">
+                        </section>
+                <section id="student-id">
                     <label id="student-id">กรุณากรอกรหัสนักศึกษา</label>
                     <input className="student-id" placeholder = "ex 6123456789"/>
-                </div>
+                </section>
 
                 <div>
                 <Link to="/">
@@ -39,8 +46,8 @@ function RecommendComponent() {
                 </button>
                 </Link>
                 </div>
-
-            </div>
+                </section>
+            </body>
     )
     }
 export default RecommendComponent

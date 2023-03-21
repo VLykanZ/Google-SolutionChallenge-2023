@@ -2,7 +2,7 @@ import React, { useRef , useState, useEffect} from "react";
 import * as tf from "@tensorflow/tfjs";
 import * as posenet from "@tensorflow-models/posenet";
 import Webcam from "react-webcam";
-import { Link } from 'react-router-dom';
+
 
 export function Classifier() {
 
@@ -143,25 +143,25 @@ function MovenetComponent() {
   runPosenet();
 
   return (
-    <>
+    <body className="movenet">
         <Webcam
           ref={webcamRef}
-          style={{
-            position: "absolute",
-            zindex:9,
-            marginLeft: "auto",
-            marginRight: "auto",
-          }}
+          // style={{
+          //   position: "absolute",
+          //   zindex:9,
+          //   marginLeft: "auto",
+          //   marginRight: "auto",
+          // }}
         />
         <canvas
           ref={canvasRef}
-          style={{
-            marginLeft: "auto",
-            marginRight: "auto",
-            position: "absolute",
-          }}
+          // style={{
+          //   marginLeft: "auto",
+          //   marginRight: "auto",
+          //   position: "absolute",
+          // }}
         />
-    </>
+    </body>
   );
 }
 
