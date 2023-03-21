@@ -16,30 +16,28 @@ const PoseStep = {
 }
 // Data from survey backend 
 const pose_list = [
-  [1 , [0,2,3]],
-  [2, [4,5,1]]
+  [1 , [0,1,2]],
+  [2, [3,4,5]]
 ];
 
 //Initialization
 var namePic = 'YOGA';
 //var linkPic = require('./asset/1.jpeg')
-var status = 'Try again';
-var processing = 'Running';
-
-
+var status = 'Processing';
+var processing = true;
 var posename = PoseStep[pose_list[0][1][0]];
 var idx = 0;
 var pose_step = 0;
 var step_pose_lenght = pose_list[idx].length; 
 var tricker =0;
 
-
 function Steppose() {
   const pose_value = Classifier();
   console.log(pose_value);
-  if (pose_value[0][pose_step] < 0.5){
+  status = 'Processing';
+  if (Math.random()*0.5 < 0.2){
     pose_step = pose_step + 1;
-    status = 'Try again';
+    status = 'OK ! Next';
     //linkPic = require('./asset/2.jpeg');
     tricker = tricker +1;
     posename = PoseStep[pose_list[idx][1][pose_step]];
@@ -47,19 +45,22 @@ function Steppose() {
   if (step_pose_lenght+1  == pose_step){
     pose_step = 0;
     idx = idx + 1;
-    posename = PoseStep[pose_list[idx][1][pose_step]]
+    if (pose_list.length < idx){
+      posename = PoseStep[pose_list[idx-1][1][-1]]
+    }else{
+      posename = PoseStep[pose_list[idx][1][pose_step]]
+    }
   }
   if (pose_list.length == idx){
     processing = false;
     status = 'Finished ! ';
     posename = 'Finished !'
   }
-  return pose_value[0][pose_step];
+  return Math.random()*0.5;
 }
 
 function Exclassifier(props) {
-  const [ point, setPoint] = useState("Start");
-
+  const [ confident, setPoint] = useState("Start");
   const changeFrame = () => {
     if (processing){
       setPoint(Steppose());
@@ -67,18 +68,16 @@ function Exclassifier(props) {
   }
 
   useEffect(() => {
-    const interval = setInterval(changeFrame, 1000);
+    const interval = setInterval(changeFrame, 2000);
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div>
       <img src= {1} width={640} height={480}/>
-      <p>Confident {point}</p>
+      <p>Confident {Math.random()*0.5}</p>
       <p>Pose {posename}</p>
-
       <p>Status {status}</p>
-      <p>Processing {processing}</p>
       <p>{idx} {pose_step} {step_pose_lenght} {tricker} {posename}</p>
     </div>
   );

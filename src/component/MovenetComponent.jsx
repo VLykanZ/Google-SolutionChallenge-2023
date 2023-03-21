@@ -3,7 +3,6 @@ import * as tf from "@tensorflow/tfjs";
 import * as posenet from "@tensorflow-models/posenet";
 import Webcam from "react-webcam";
 import { Link } from 'react-router-dom';
-import '@tensorflow/tfjs-backend-webgl'; 
 
 var outputArray;
 export function prediction(inputArray) {
@@ -40,9 +39,10 @@ export  function Classifier() {
     point_pose['15']['position']['x'], point_pose['15']['position']['y'], point_pose['15']['score'],
     point_pose['16']['position']['x'], point_pose['16']['position']['y'], point_pose['16']['score'],
   ];
+  // const inputArray = tf.tensor2d([input_model]);
   const inputArray = tf.tensor2d([[Math.random(),Math.random()*0.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]], [1, 34]);
   const predictresult = prediction(inputArray);
-  return [predictresult];
+  return predictresult;
 }
 
 var pose;
