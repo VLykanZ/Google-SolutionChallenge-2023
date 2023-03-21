@@ -1,6 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import ProgressTab from './ProgressTab';
+
 import '../style/page.css'
 import '../style/button.css'
 
@@ -39,22 +41,24 @@ function ExerciseComponent() {
   const musclesList = muscles[bodyPart];
 
   return (
-    <div className='page'>
+    <body>
+      <ProgressTab/>
+      <section className="function">
       <h1>Exercise:</h1>
-        <div className='body'>
+        <section className='exercise'>
           {musclesList.map((muscle, index) => (
           <h3 key = {index}> นี่คือท่าออกกำลังกายสำหรับกล้ามเนื้อ{muscle.muscle}
           </h3>
           ))}
           {/* <p><img src={neck1} alt="" style={{ height: "200px" }} /> </p> */}
           {exerciseList.map((exercise, index) => (
-            <p key={index}>
+            <p className="exercise" key={index}>
               <img src={exercise.img}  alt="" style={{ height: "200px" }}/> <br />
               {exercise.name} : {exercise.duration}
               
             </p>
           ))}
-        </div>
+        </section>
 
       <div>
         <Link to="/QuestionDiagnose">
@@ -78,7 +82,8 @@ function ExerciseComponent() {
           </button>
         </Link>
       </div>
-    </div>
+      </section>
+    </body>
   );
 }
 

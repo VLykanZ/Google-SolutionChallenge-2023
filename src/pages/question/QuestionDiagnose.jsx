@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { setDiagnose } from "../../store2";
 import { useDispatch } from "react-redux";
-import '../../style/main.css'
+import ProgressTab from '../../component/ProgressTab';
+
+import '../../style/page.css'
 import '../../style/button.css'
 
 function QuestionDiagnose() {
@@ -67,9 +69,11 @@ function QuestionDiagnose() {
   };
 
   return (
-    <div className="page">
-      <h1>Diagnose</h1>
-        <div className="body" id="diagnose">
+    <body>
+      <ProgressTab/>
+      <section className="function">
+      <h1 className="header">Diagnose</h1>
+        <section class="question">
           <form action="">
             <div className="question" id="diagnose">
               <label for="q1" className="question">1. คุณมีแนวโน้มต้องทำกิจกรรมหรือทำงานลักษณะเดิม ๆ อย่างต่อเนื่อง เป็นระยะเวลาเท่าใด</label> <br />
@@ -142,7 +146,7 @@ function QuestionDiagnose() {
             </div>
 
           </form>
-        </div>
+        </section>
         <div>
               <Link to="/QuestionBodypart">
               <button class="button-pushable" id="back">
@@ -164,7 +168,8 @@ function QuestionDiagnose() {
                 </button>
               </Link>
             </div>
-    </div>
+            </section>
+    </body>
   );
 }
 

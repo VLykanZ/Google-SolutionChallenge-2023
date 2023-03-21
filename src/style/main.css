@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300&family=Prompt:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&display=swap');
 *{
     font-family: 'Noto Sans Thai', sans-serif;
 }
@@ -6,7 +6,7 @@ h1{
     font-weight: bold;
 }
 h2{
-    font-size: 40px;
+    font-size: 30px;
 }
 h4{
     font-size: 25px;
@@ -14,25 +14,33 @@ h4{
     margin-left: 5%;
 }
 p{
-    text-align: justify;
-    font-size: 20px;
-    margin-left: 10%;
+    text-align: left;
+    /* left: 40%; */
+    font-size: 17.5px;
+    margin-left: 5%;
     margin-right: 10%;
+    margin-bottom: 70px;
 }
-div.page{
+body{
  height: 100%;
+ text-align: center;
 }
-div#knowledge{
-    margin-bottom: 150px;
+p#start{
+    margin-bottom: 10px !important; 
 }
-div#home-page{
-    padding: 100px;
-    height: 200px;
+body#home-page{
+    padding: 1px;
+    height: 700px;
 }
-div.bet-ads#height1{
-    left: 50px;
-    position: fixed;
-}
+
 .knowledge{
     position: relative;
+}
+button#start{
+    margin-top: 200px;
+}
+section.knowledge{
+    left: 30%;
+    margin-right: 30%;
+    border-left: 1px solid rgb(203, 202, 202);
 }
