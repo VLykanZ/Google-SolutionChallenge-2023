@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import '../style/page.css'
 import '../style/button.css'
+import MovenetComponent from './MovenetComponent';
+import Exclassifier from './Exclassifier';
 
 import kong from '../assets/images/kong.gif';
 import vn from '../assets/images/vn.gif';
@@ -12,6 +14,8 @@ function DoExerciseComponent() {
                 <h1>Do Exercise</h1>
                 <div>
                 กำลังออกกำลังกาย
+                    <MovenetComponent/>
+                    <Exclassifier/>
                 </div>
 
                 <div style={{ display: "flex", justifyContent: "left", alignItems: "left" }}>

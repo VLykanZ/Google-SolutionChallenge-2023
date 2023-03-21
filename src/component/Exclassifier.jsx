@@ -1,5 +1,5 @@
 import React, { useRef , useState, useEffect} from "react";
-import {MovenetComponent, Classifier} from './MovenetComponent';
+import {Classifier, MovenetComponent} from './MovenetComponent';
 
 // Database
 const PoseList ={
@@ -52,7 +52,7 @@ function Steppose() {
   return pose_value[1];
 }
 
-function Point(props) {
+function Exclassifier(props) {
   const [ point, setPoint] = useState("Start");
 
   const changeFrame = () => {
@@ -68,7 +68,7 @@ function Point(props) {
 
   return (
     <div>
-      <img src= {linkPic} width={640} height={480}/>
+      <img src= {1} width={640} height={480}/>
       <p>Confident {point}</p>
       <p>Pose {PoseList[idx]}</p>
 
@@ -79,8 +79,4 @@ function Point(props) {
   );
 }
 
-export default function Exclassifier() {
-  return (
-    <Point/>
-  );
-};
+export default Exclassifier;

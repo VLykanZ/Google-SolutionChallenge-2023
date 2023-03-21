@@ -2,7 +2,7 @@ import React, { useRef , useState, useEffect} from "react";
 import * as tf from "@tensorflow/tfjs";
 import * as posenet from "@tensorflow-models/posenet";
 import Webcam from "react-webcam";
-
+import { Link } from 'react-router-dom';
 
 export function Classifier() {
 
@@ -105,7 +105,7 @@ const drawCanvas = (pose, video, videoWidth, videoHeight, canvas) => {
   drawSkeleton(pose["keypoints"], confident, ctx);
 };
 
-export default function MovenetComponent() {
+function MovenetComponent() {
   const webcamRef = useRef(null);
   const canvasRef = useRef(null);
 
@@ -164,3 +164,5 @@ export default function MovenetComponent() {
     </>
   );
 }
+
+export default MovenetComponent
