@@ -31,11 +31,11 @@ function QuestionBodypart() {
                 <h1 className="header">Select Bodypart</h1>
                 <section className='question'>
                     <div className='question'>
-                        <label className="question" for="bodypart">คุณมีอาการเจ็บปวดบริเวณใด </label> <br />
+                        <label className="question" for="bodypart">Which part of your pain are you experiencing? </label> <br />
                     </div>
-                        <input type="radio" onClick={handleBodyPartClick} value="neck" name="bodypart"/> คอ บ่า
-                        <input type="radio" onClick={handleBodyPartClick} value="back" name="bodypart"/> หลัง
-                        <input type="radio" onClick={handleBodyPartClick} value="body" name="bodypart"/> แขน ช่วงตัว
+                        <input type="radio" onClick={handleBodyPartClick} value="neck" name="bodypart"/> Neck & Shoulder
+                        <input type="radio" onClick={handleBodyPartClick} value="back" name="bodypart"/> Back
+                        <input type="radio" onClick={handleBodyPartClick} value="body" name="bodypart"/> Body & Arm
                 </section>
 
                 <div className='link-page-button'>

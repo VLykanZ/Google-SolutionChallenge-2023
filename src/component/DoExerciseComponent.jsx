@@ -17,7 +17,7 @@ function DoExerciseComponent() {
                 <section className="function">
                 <h1>Do Exercise</h1>
                 <div>
-                กำลังออกกำลังกาย
+                <p>Doing an Exercise</p>
                 </div>
 
                 <div style={{ display: "flex", justifyContent: "left", alignItems: "left" }}>
@@ -26,6 +26,7 @@ function DoExerciseComponent() {
                     </div>
                     <div className="camera">
                         <MovenetComponent/>
+                        <Exclassifier/>
                     </div>
                 </div>
 

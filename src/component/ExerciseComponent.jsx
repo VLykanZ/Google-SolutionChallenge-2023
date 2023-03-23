@@ -18,23 +18,23 @@ function ExerciseComponent() {
 
   const exercises = {
     neck: [
-      { name: 'ท่ายอดกล้ามเนื้อคอด้านหลัง', duration: '15-30 วินาที' ,img: neck1},
-      { name: 'ท่ายอดกล้ามเนื้อคอ', duration: '15-30 วินาที' ,img: neck2},
+      { name: 'Back Neck Stretch', duration: '15-30 Seconds' ,img: neck1},
+      { name: 'Side Neck Stretch', duration: '15-30 Seconds' ,img: neck2},
     ],
     back: [
-      { name: 'ท่ายืดกล้ามเนื้อสะบักด้านใน', duration: '15-30 วินาที' ,img: back1},
-      { name: 'ท่ายืดกล้ามเนื้อสะบักด้านหลัง', duration: '15-30 วินาที' ,img: back2},
+      { name: 'Subscapularis Stretch', duration: '15-30 Seconds' ,img: back1},
+      { name: 'Shoulder Adductor Stretch', duration: '15-30 Seconds' ,img: back2},
     ],
     body: [
-      { name: 'ท่ายืดกล้ามเนื้อแขนด้านล่าง', duration: '15-30 วินาที' ,img: body1},
-      { name: 'ท่ายืดกล้ามเนื้อหน้าท้องละร่างกายส่วนบน', duration: '15-30 วินาที' ,img: body2},
+      { name: 'Forearm Stretch', duration: '15-30 Seconds' ,img: body1},
+      { name: 'Abdominal & Upper Body Strech', duration: '15-30 Seconds' ,img: body2},
     ],
   };
 
   const muscles = {
-    neck: [{muscle: 'คอ'}],
-    back: [{muscle: 'หลัง'}],
-    body: [{muscle: 'แขนและช่วงตัว'}]
+    neck: [{muscle: 'Neck & Shoulder'}],
+    back: [{muscle: 'Back'}],
+    body: [{muscle: 'Body & Arm'}]
   }
 
   const exerciseList = exercises[bodyPart];
@@ -47,7 +47,7 @@ function ExerciseComponent() {
       <h1>Exercise:</h1>
         <section className='exercise'>
           {musclesList.map((muscle, index) => (
-          <h3 key = {index}> นี่คือท่าออกกำลังกายสำหรับกล้ามเนื้อ{muscle.muscle}
+          <h3 key = {index}> These are Exercises for {muscle.muscle}
           </h3>
           ))}
           {/* <p><img src={neck1} alt="" style={{ height: "200px" }} /> </p> */}
@@ -57,6 +57,7 @@ function ExerciseComponent() {
               {exercise.name} : {exercise.duration}
               
             </p>
+            
           ))}
         </section>
 

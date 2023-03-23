@@ -13,25 +13,24 @@ function RecommendComponent() {
                 <h1>Recommendation</h1>
                     <section id="recommendation">
                         <div>
-                            <p>จากากรทำแบบทดสอบ พบว่า</p>
+                            <p>From your exercise ...</p>
                         </div>
                         <div>
                             <p>
-                                1. การปรับพฤติกรรมและสภาพแวดล้อมในการทำงาน ไม่ว่าจะเป็นการกำหนดเวลาพักเป็นระยะ (ข้อแนะนำคือ ทุก ๆ 2 ชั่วโมงหรือเร็วกว่านั้น) การลุกขึ้นมาเคลื่อนไหวหรือบริหารผ่อนคลายกล้ามเนื้อ หมั่นปรับเปลี่ยนท่าทาง ไม่ค้างอยู่ท่าใดท่าหนึ่งนานเกินไป
-                                ที่สำคัญควรเลือกใช้โต๊ะและเก้าอี้ที่ความเหมาะสมกับสรีระ ควรปรับระดับของการนั่งที่ถูกต้อง และปรับท่านั่งให้ถูกต้อง คือ นั่งหลังตรง จอคอมพิวเตอร์จะต้องอยู่ในระดับสายตา ไม่ก้มหรือเงย และหัวไหล่ไม่ยกขณะทำงาน
+                                1. Office workers are advised to relieve muscle tension every 30 minutes, without interrupting the train of thought by setting an interval-timer and placing it across the room.  Then they must get up and can stretch while they walk to turn off the buzzer and reset the timer.
                             </p>
-                        </div>
-                        <div>
                             <p>
-                                2. การออกกำลังกายเป็นประจำ ด้วยวิธีการที่หลากหลาย ได้แก่
-                                ออกกำลังกายแบบคาร์ดิโอ เช่น การวิ่ง ว่ายน้ำ ปั่นจักรยาน ซึ่งช่วยทำให้การหมุนเวียนโลหิตมีประสิทธิภาพ กล้ามเนื้อที่เกี่ยวข้องกับการเคลื่อนไหวจะมีความแข็งแรงขึ้น ป้องกันเอ็นและข้อยึด เกิดความยืดหยุ่น
-                                ออกกำลังกายแบบเสริมสร้างกล้ามเนื้อ โดยการเสริมสร้างเพิ่มความแข็งแรงของกล้ามเนื้อที่เกี่ยวข้องกับการเคลื่อนไหวของเรา เช่น การหมุน การก้ม-เงย และการเสริมสร้างกล้ามเนื้อส่วนแกนกลางลำตัว เช่น การออกกำลังกายแบบพิลาทิส จะทำให้ลดโอกาสบาดเจ็บของ กระดูกสันหลัง ซึ่งมักได้รับผลกระทบโดยตรงจากท่านั่งของเรา
-                                ออกกำลังกายแบบยืดเหยียด มีประโยชน์ในการยืดและบริหารกล้ามเนื้อส่วนต่าง ๆ ทำให้ข้อต่อเคลื่อนไหวได้เป็นปกติ และลดอาการตึงและเมื่อยล้าของกล้ามเนื้อ
+                                2. Exercise is the most important therapy.  Multiple modalities of exercise should be considered, including:
+                                <ul>
+                                    <li> Strength exercises:  Strengthening muscles can reduce the likelihood of them developing trigger points in the future.  Strengthening exercises includes high load, and low repetition of different groups of muscles.</li>
+                                    <li> Endurance exercise: includes aerobic training such as running, swimming or biking, which strengthens both the cardiovascular system and multiple muscle groups.  A regular exercise program minimizes the chance of reactivating trigger points.</li>
+                                    <li> Relaxation exercises: such as contract-relax and yoga can help decrease mental stress and relax the body.</li>
+                                </ul>
                             </p>
                         </div>
                         </section>
                 <section id="student-id">
-                    <label id="student-id">กรุณากรอกรหัสนักศึกษา</label>
+                    <label id="student-id">Please Fill the Student ID</label>
                     <input className="student-id" placeholder = "ex 6123456789"/>
                 </section>
 
