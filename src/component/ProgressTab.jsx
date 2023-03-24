@@ -3,7 +3,7 @@ import '../style/progresstab.css'
 function ProgressTab() {
     return (
     <aside className='progresstab'>
-        <h3 className='progresstab'>Progess</h3>
+        <h3 className='progresstab'>Progress</h3>
         <ul className='progresstab'>
             <li><a className='progresstab' href="/">Select Bodypart</a></li>
             <li><a className='progresstab' href="/">Diagnose</a></li>

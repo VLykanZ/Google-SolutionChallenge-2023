@@ -19,6 +19,10 @@ section.function{
 section.question{
     font-size: 20px;
 }
+section.question#diagnose{
+    font-size: 17.5px;
+    text-align: left;
+}
 section{
     margin-bottom: 30px;
 }
@@ -78,7 +82,12 @@ select{
     width: 100px;
     height: 30px;
     font-size: 20px;
+    position: relative;
+    left: 5%;
 }
 p.exercise{
     text-decoration: inline;
+}
+ul{
+    list-style-type: none;
 }
