@@ -1,86 +1,78 @@
 import React, { useRef , useState, useEffect} from "react";
+import { useSelector } from 'react-redux';
 import {Classifier, MovenetComponent, model, prediction} from './MovenetComponent';
 import * as tf from "@tensorflow/tfjs";
 // Database
 const PoseList ={
-  0 : 'YOGA',
-  1 : 'YOGA_2'
+  'back' : [0,1],
+  'body' : [2,3],
+  'neck' : [4,5],
 }
 const PoseStep = {
-  0 : 'Shoulder_0', 
-  1 : 'Shoulder_1', 
-  2 : 'Shoulder_2', 
-  3 : 'Shoulder_3', 
-  4 : 'Shoulder_4', 
-  5 : 'Shoulder_5', 
+  0 : 'BACK 1', 
+  1 : 'BACK 2', 
+  2 : 'BODY 1 ', 
+  3 : 'BODY 2', 
+  4 : 'NECK 1', 
+  5 : 'NECK 2', 
 }
-// Data from survey backend 
-const pose_list = [
-  [1 , [0,1,2]],
-  [2, [3,4,5]]
-];
 
+
+const pose_list = PoseList['neck'];
 //Initialization
-var namePic = 'YOGA';
-//var linkPic = require('./asset/1.jpeg')
 var status = 'Processing';
 var processing = true;
-var posename = PoseStep[pose_list[0][1][0]];
-var idx = 0;
 var pose_step = 0;
-var step_pose_lenght = pose_list[idx].length; 
-var tricker =0;
+var posename;
+var step_pose_lenght; 
+var posename = PoseStep[pose_list[0]];
+var step_pose_lenght = pose_list.length; 
 
-function Steppose() {
+function Steppose(pose_list) {
+  posename = PoseStep[pose_list[pose_step]];
+  step_pose_lenght = pose_list.length; 
   const pose_value = Classifier();
   console.log(pose_value);
   status = 'Processing';
-  if (Math.random()*0.5 < 0.2){
-    pose_step = pose_step + 1;
-    status = 'OK ! Next';
-    //linkPic = require('./asset/2.jpeg');
-    tricker = tricker +1;
-    posename = PoseStep[pose_list[idx][1][pose_step]];
-  }
-  if (step_pose_lenght+1  == pose_step){
-    pose_step = 0;
-    idx = idx + 1;
-    if (pose_list.length < idx){
-      posename = PoseStep[pose_list[idx-1][1][-1]]
-    }else{
-      posename = PoseStep[pose_list[idx][1][pose_step]]
-    }
-  }
-  if (pose_list.length == idx){
+  const test = Math.random()*0.5
+  if (step_pose_lenght  == pose_step){
     processing = false;
     status = 'Finished ! ';
     posename = 'Finished !'
+  }else{ 
+    if (test < 0.2){
+      pose_step = pose_step + 1;
+      status = 'OK ! Next'; 
+    }
   }
-  return Math.random()*0.5;
+  return test;
 }
 
 function Exclassifier(props) {
+  const bodyPart = useSelector(state => state.bodyPart);
+   
   const [ confident, setPoint] = useState("Start");
+  const [imagePath, setImagePath] = useState(`../assets/images/model/${pose_list[pose_step]}.jpg`);
+
+
   const changeFrame = () => {
     if (processing){
-      setPoint(Steppose());
+      setPoint(Steppose(pose_list));
+      setImagePath(`../assets/images/model/${pose_list[pose_step]}.jpg`);
     }
   }
 
   useEffect(() => {
-    const interval = setInterval(changeFrame, 2000);
+    const interval = setInterval(changeFrame, 1000);
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div>
-      <img src= {1} width={640} height={480}/>
-      <p>Confident {Math.random()*0.5}</p>
-      <p>Pose {posename}</p>
-      <p>Status {status}</p>
-      <p>{idx} {pose_step} {step_pose_lenght} {tricker} {posename}</p>
+      <img src= {imagePath} width={640} height={480}/>
+      <p>Pose name  {posename}  | Status {status}</p>
     </div>
   );
 }
-
 export default Exclassifier;
+

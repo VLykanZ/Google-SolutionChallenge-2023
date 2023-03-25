@@ -22,11 +22,10 @@ function DoExerciseComponent() {
 
                 <div style={{ display: "flex", justifyContent: "left", alignItems: "left" }}>
                     <div style={{ paddingRight: "10px" }}>
-                    <img src={kong} alt="pic1" style={{ width: "350px" }} />
+                    <Exclassifier/>
                     </div>
                     <div className="camera">
                         <MovenetComponent/>
-                        <Exclassifier/>
                     </div>
                 </div>
 
