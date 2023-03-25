@@ -65,6 +65,7 @@ function QuestionDiagnose() {
       diagnose = 'E';
     }
     dispatch(setDiagnose(diagnose));
+    console.log(dispatch(diagnose))
     // navigate to the next page
   };
 
@@ -167,6 +168,7 @@ function QuestionDiagnose() {
               <li><input type="radio" onClick={() => handleAnswer(5, "4")} 
               disabled={!canAnswerFive} value="4"/> More Than 3 Hours</li>
               </ul>
+              
             </div>
 
           </form>
@@ -191,6 +193,13 @@ function QuestionDiagnose() {
                     </span>
                 </button>
               </Link>
+              <button class="button-pushable" id="ok" disabled={!allAnswered()} onClick={handleNextClick}>
+                    <span class="button-shadow"></span>
+                    <span class="button-edge"></span>
+                    <span class="button-front text">
+                    ok
+                    </span>
+                </button>
             </div>
             </section>
     </body>

@@ -15,6 +15,7 @@ import QuestionDiagnose from './pages/question/QuestionDiagnose';
 import ExerciseComponent from './component/ExerciseComponent';
 import DoExerciseComponent from './component/DoExerciseComponent';
 import RecommendComponent from './component/RecommendComponent';
+// import StepProgressBar from './component/ProgressBar';
 
 
 import store from './store';
@@ -27,6 +28,9 @@ function App() {
         <div>
           <Navbar/>
         </div>
+        {/* <div>
+          <StepProgressBar/>
+        </div> */}
       <div>
         <Routes>
             <Route path='/' element={<Home/>}></Route>

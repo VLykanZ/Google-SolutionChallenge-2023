@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setBodyPart } from '../../store';
-import StepProgressbar from '../../component/progressbar1';
 import ProgressTab from '../../component/ProgressTab';
 import '../../style/page.css'
 import '../../style/button.css'
@@ -25,9 +24,6 @@ function QuestionBodypart() {
         <body>
             <ProgressTab/>
             <section className='function'>
-                <section className='progress-bar'>
-                    <StepProgressbar/>
-                </section>
                 <h1 className="header">Select Bodypart</h1>
                 <section className='question'>
                     <div className='question'>
