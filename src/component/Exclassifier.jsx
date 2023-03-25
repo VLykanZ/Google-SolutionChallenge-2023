@@ -18,15 +18,13 @@ const PoseStep = {
 }
 
 
-const pose_list = PoseList['neck'];
 //Initialization
 var status = 'Processing';
 var processing = true;
 var pose_step = 0;
 var posename;
 var step_pose_lenght; 
-var posename = PoseStep[pose_list[0]];
-var step_pose_lenght = pose_list.length; 
+
 
 function Steppose(pose_list) {
   posename = PoseStep[pose_list[pose_step]];
@@ -50,7 +48,7 @@ function Steppose(pose_list) {
 
 function Exclassifier(props) {
   const bodyPart = useSelector(state => state.bodyPart);
-   
+  const pose_list = PoseList[bodyPart];
   const [ confident, setPoint] = useState("Start");
   const [imagePath, setImagePath] = useState(`../assets/images/model/${pose_list[pose_step]}.jpg`);
 
@@ -70,7 +68,7 @@ function Exclassifier(props) {
   return (
     <div>
       <img src= {imagePath} width={640} height={480}/>
-      <p>Pose name  {posename}  | Status {status}</p>
+      <p>Pose name  {posename} {bodyPart} | Status {status}</p>
     </div>
   );
 }
