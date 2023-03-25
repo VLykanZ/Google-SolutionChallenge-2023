@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 var outputArray;
 export function prediction(inputArray) {
   const runmodel = async () => {
-    const model = await tf.loadLayersModel('https://models.s3.jp-tok.cloud-object-storage.appdomain.cloud/model.json');
+    const model = await tf.loadLayersModel('http://localhost:3000/models/model.json');
     classify(model, inputArray);
   };
   const classify = async (model, inputArray) => {
