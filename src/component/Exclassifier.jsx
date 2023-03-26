@@ -12,17 +12,25 @@ import body2 from '../assets/images/body2.jpg';
 
 // Database
 const PoseList ={
-  'back' : [0,1],
-  'body' : [2,3],
-  'neck' : [4,5],
+  'neck' : [0,1],
+  'back' : [2,3],
+  'body' : [4,5],
 }
 const PoseStep = {
-  0 : 'BACK 1', 
-  1 : 'BACK 2', 
-  2 : 'BODY 1 ', 
-  3 : 'BODY 2', 
-  4 : 'NECK 1', 
-  5 : 'NECK 2', 
+  0 : 'NECK 1', 
+  1 : 'NECK 2', 
+  2 : 'BACK 1', 
+  3 : 'BACK 2', 
+  4 : 'BODY 1', 
+  5 : 'BODY 2', 
+}
+const PoseImg = {
+  0 : neck1,
+  1 : neck2,
+  2 : back1,
+  3 : back2,
+  4 : body1,
+  5 : body2,
 }
 
 
@@ -58,7 +66,7 @@ function Exclassifier(props) {
   const bodyPart = useSelector(state => state.bodyPart);
   const pose_list = PoseList[bodyPart];
   const [ confident, setPoint] = useState("Start");
-  const [imagePath, setImagePath] = useState(`../assets/images/model/${pose_list[pose_step]}.jpg`);
+  const [imagePath, setImagePath] = useState(PoseImg[pose_step]);
 
   const exercises = {
     neck: [
@@ -87,7 +95,7 @@ function Exclassifier(props) {
   const changeFrame = () => {
     if (processing){
       setPoint(Steppose(pose_list));
-      setImagePath(`../assets/images/model/${pose_list[pose_step]}.jpg`);
+      setImagePath(PoseImg[pose_step]);
     }
   }
 
@@ -100,15 +108,16 @@ function Exclassifier(props) {
     <div>
       {/* <img src= {imagePath} width={640} height={480}/> */}
       {/* <p><img src={neck1} alt="" style={{ height: "200px" }} /> </p> */}
-      {exerciseList.map((exercise, index) => (
+      {/* {exerciseList.map((exercise, index) => (
             <p className="exercise" key={index}>
               <img src={exercise.img}  alt="" style={{ height: "200px" }}/> <br />
               {exercise.name} : {exercise.duration}          
             </p>         
-          ))}
+          ))} */}
 
       {musclesList.map((muscle, index) => (
-        <p>Pose name  {posename} {muscle.muscle} | Status {status}</p>
+        <p> {imagePath}
+          Pose name  {posename} {muscle.muscle} | Status {status}</p>
           ))}
       
     </div>
