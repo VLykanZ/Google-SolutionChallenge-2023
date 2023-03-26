@@ -154,11 +154,11 @@ function MovenetComponent() {
   runPosenet();
 
   return (
-    <>
+    <body className="Movenet">
         <Webcam
           ref={webcamRef}
           style={{
-            position: "absolute",
+            position: "fixed",
             zindex:9,
             marginLeft: "auto",
             marginRight: "auto",
@@ -169,10 +169,10 @@ function MovenetComponent() {
           style={{
             marginLeft: "auto",
             marginRight: "auto",
-            position: "absolute",
+            position: "fixed",
           }}
         />
-    </>
+    </body>
   );
 }
 

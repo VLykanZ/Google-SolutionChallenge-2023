@@ -21,10 +21,11 @@ function DoExerciseComponent() {
                 </div>
 
                 <div style={{ position: "fixed", display: "flex", justifyContent: "left", alignItems: "left" }}>
-                    <div style={{ paddingRight: "10px" }}>
+                    <div className="exclassifier" style={{ paddingRight: "10px" }}>
                     <Exclassifier/>
                     </div>
-                    <div className="camera" style={{position: "fixed"}}>
+
+                    <div className="movenet" style={{position: "fixed"}}>
                         <MovenetComponent/>
                     </div>
                 </div>

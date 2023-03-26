@@ -2,7 +2,7 @@ body.exclassifier{
     width: 300px;
     float: left;
 }
-div.camera {
+div.movenet{
     right: 50%;
     float: left;
 }
@@ -10,4 +10,7 @@ body.movenet{
     position: relative;
     width: 200px;
     height: auto;
+}
+section.exercise-picture{
+    height: 250px;
 }

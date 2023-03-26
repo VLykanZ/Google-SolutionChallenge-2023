@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux';
 import {Classifier, MovenetComponent, model, prediction} from './MovenetComponent';
 import * as tf from "@tensorflow/tfjs";
 
+import '../style/exercise.css'
+
 import neck1 from '../assets/images/neck1.jpg';
 import neck2 from '../assets/images/neck2.jpg';
 import back1 from '../assets/images/back1.jpg';
@@ -17,12 +19,12 @@ const PoseList ={
   'body' : [4,5],
 }
 const PoseStep = {
-  0 : 'NECK 1', 
-  1 : 'NECK 2', 
-  2 : 'BACK 1', 
-  3 : 'BACK 2', 
-  4 : 'BODY 1', 
-  5 : 'BODY 2', 
+  0 : 'Back Neck Stretch', 
+  1 : 'Side Neck Stretch', 
+  2 : 'Subscapularis Stretch', 
+  3 : 'Shoulder Adductor Stretch', 
+  4 : 'Forearm Stretch', 
+  5 : 'Abdominal & Upper Body Strech', 
 }
 const PoseImg = {
   0 : neck1,
@@ -91,7 +93,7 @@ function Exclassifier(props) {
   }, []);
 
   return (
-    <div>
+    <body className="exclassifier">
       {/* <img src= {imagePath} width={640} height={480}/> */}
       {/* <p><img src={neck1} alt="" style={{ height: "200px" }} /> </p> */}
       {/* {exerciseList.map((exercise, index) => (
@@ -100,15 +102,17 @@ function Exclassifier(props) {
               {exercise.name} : {exercise.duration}          
             </p>         
           ))} */}
-      <div className="exercise-picture">
+      <section className="exercise-picture">
         <img src={pose_img} alt="" height={240}/>
-      </div>
-      {musclesList.map((muscle, index) => (
-        <p>
-          Pose name  {posename} {muscle.muscle} | Status {status}</p>
-          ))}
-      
-    </div>
+      </section>
+      <section className="exercise-status">
+        {musclesList.map((muscle, index) => (
+          <p>
+            Muscle Group: <br /> {muscle.muscle} <br />
+            Pose name: <br />  {posename}<br /> Status: {status}</p>
+            ))}
+      </section>
+    </body>
   );
 }
 export default Exclassifier;
