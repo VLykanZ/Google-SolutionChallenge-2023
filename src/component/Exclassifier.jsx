@@ -39,11 +39,13 @@ var status = 'Processing';
 var processing = true;
 var pose_step = 0;
 var posename;
+var pose_img;
 var step_pose_lenght; 
 
 
 function Steppose(pose_list) {
   posename = PoseStep[pose_list[pose_step]];
+  pose_img = PoseImg[pose_list[pose_step]];
   step_pose_lenght = pose_list.length; 
   const pose_value = Classifier();
   console.log(pose_value);
@@ -66,22 +68,7 @@ function Exclassifier(props) {
   const bodyPart = useSelector(state => state.bodyPart);
   const pose_list = PoseList[bodyPart];
   const [ confident, setPoint] = useState("Start");
-  const [imagePath, setImagePath] = useState(PoseImg[pose_step]);
-
-  const exercises = {
-    neck: [
-      { name: 'Back Neck Stretch', duration: '15-30 Seconds' ,img: neck1},
-      { name: 'Side Neck Stretch', duration: '15-30 Seconds' ,img: neck2},
-    ],
-    back: [
-      { name: 'Subscapularis Stretch', duration: '15-30 Seconds' ,img: back1},
-      { name: 'Shoulder Adductor Stretch', duration: '15-30 Seconds' ,img: back2},
-    ],
-    body: [
-      { name: 'Forearm Stretch', duration: '15-30 Seconds' ,img: body1},
-      { name: 'Abdominal & Upper Body Strech', duration: '15-30 Seconds' ,img: body2},
-    ],
-  };
+  // const [imagePath, setImagePath] = useState(PoseImg[pose_step]);
 
   const muscles = {
     neck: [{muscle: 'Neck & Shoulder'}],
@@ -89,13 +76,12 @@ function Exclassifier(props) {
     body: [{muscle: 'Body & Arm'}]
   }
 
-  const exerciseList = exercises[bodyPart];
   const musclesList = muscles[bodyPart];
 
   const changeFrame = () => {
     if (processing){
       setPoint(Steppose(pose_list));
-      setImagePath(PoseImg[pose_step]);
+      // setImagePath(PoseImg[pose_step]);
     }
   }
 
@@ -114,9 +100,11 @@ function Exclassifier(props) {
               {exercise.name} : {exercise.duration}          
             </p>         
           ))} */}
-
+      <div className="exercise-picture">
+        <img src={pose_img} alt="" height={240}/>
+      </div>
       {musclesList.map((muscle, index) => (
-        <p> {imagePath}
+        <p>
           Pose name  {posename} {muscle.muscle} | Status {status}</p>
           ))}
       

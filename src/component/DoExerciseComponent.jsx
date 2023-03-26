@@ -20,11 +20,11 @@ function DoExerciseComponent() {
                 <p>Doing an Exercise</p>
                 </div>
 
-                <div style={{ display: "flex", justifyContent: "left", alignItems: "left" }}>
+                <div style={{ position: "fixed", display: "flex", justifyContent: "left", alignItems: "left" }}>
                     <div style={{ paddingRight: "10px" }}>
                     <Exclassifier/>
                     </div>
-                    <div className="camera">
+                    <div className="camera" style={{position: "fixed"}}>
                         <MovenetComponent/>
                     </div>
                 </div>
