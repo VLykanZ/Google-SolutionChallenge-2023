@@ -93,7 +93,7 @@ function Exclassifier(props) {
   }, []);
 
   return (
-    <body className="exclassifier">
+    <div className="exclassifier">
       {/* <img src= {imagePath} width={640} height={480}/> */}
       {/* <p><img src={neck1} alt="" style={{ height: "200px" }} /> </p> */}
       {/* {exerciseList.map((exercise, index) => (
@@ -102,19 +102,19 @@ function Exclassifier(props) {
               {exercise.name} : {exercise.duration}          
             </p>         
           ))} */}
-      <section className="exercise-picture">
+      <div className="exercise-picture">
         <div style={{height:"400px"}}> 
         <img src={pose_img} alt="" width={400}/>
         </div>
-      </section>
-      <section className="exercise-status">
+      </div>
+      <div className="exercise-status">
         {musclesList.map((muscle, index) => (
           <p>
             Muscle Group: <br /> {muscle.muscle} <br />
             Pose name: <br />  {posename}<br /> Status: {status}</p>
             ))}
-      </section>
-    </body>
+      </div>
+    </div>
   );
 }
 export default Exclassifier;

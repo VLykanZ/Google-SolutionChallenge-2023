@@ -159,20 +159,24 @@ function MovenetComponent() {
     <div className="camera">
         <Webcam
           ref={webcamRef}
-          // style={{
-          //   position: "sticky",
-          //   zindex:9,
-          //   marginLeft: "auto",
-          //   marginRight: "auto",
-          // }}
+          style={{
+            position: "fixed",
+            // zindex:9,
+            // marginLeft: "auto",
+            // marginRight: "auto",
+            float: "right",
+            right: "5%",
+          }}
         />
         <canvas
           ref={canvasRef}
-          // style={{
-          //   marginLeft: "auto",
-          //   marginRight: "auto",
-          //   position: "sticky",
-          // }}
+          style={{
+            // marginLeft: "auto",
+            // marginRight: "auto",
+            position: "fixed",
+            float: "right",
+            right: "5%",
+          }}
         />
     </div>
   );

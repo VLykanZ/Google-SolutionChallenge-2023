@@ -57,13 +57,14 @@ div.knowledge{
 div.exclassifier{
     position: sticky;
     float: left;
-    
+    width: 300px;
     left: 25%;
 }
 div.movenet{
-    /* position: sticky; */
-    float: right;
-    right: 100%;
+    position: fixed;
+    /* float: right; */
+    /* right: 50%; */
+    /* z-index: inherit; */
 }
 div.do-exercise{
     margin-bottom: 500px;
