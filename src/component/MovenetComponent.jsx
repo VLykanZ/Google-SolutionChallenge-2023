@@ -4,6 +4,8 @@ import * as posenet from "@tensorflow-models/posenet";
 import Webcam from "react-webcam";
 import { Link } from 'react-router-dom';
 
+import '../style/page.css'
+
 var outputArray;
 export function prediction(inputArray) {
   const runmodel = async () => {
@@ -154,25 +156,25 @@ function MovenetComponent() {
   runPosenet();
 
   return (
-    <body className="Movenet">
+    <div className="camera">
         <Webcam
           ref={webcamRef}
-          style={{
-            position: "fixed",
-            zindex:9,
-            marginLeft: "auto",
-            marginRight: "auto",
-          }}
+          // style={{
+          //   position: "sticky",
+          //   zindex:9,
+          //   marginLeft: "auto",
+          //   marginRight: "auto",
+          // }}
         />
         <canvas
           ref={canvasRef}
-          style={{
-            marginLeft: "auto",
-            marginRight: "auto",
-            position: "fixed",
-          }}
+          // style={{
+          //   marginLeft: "auto",
+          //   marginRight: "auto",
+          //   position: "sticky",
+          // }}
         />
-    </body>
+    </div>
   );
 }
 

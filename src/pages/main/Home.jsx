@@ -8,7 +8,7 @@ function Home() {
       <body id="home-page">
         <h1>Home Page</h1>
           <section>
-            <p id="start">เริ่มการบริหารร่างกาย!</p>
+            <p id="start"></p>
           <Link to="/QuestionBodypart">
               {/* <button className="start">Start!</button> */}
               <button class="button-pushable" id="start">

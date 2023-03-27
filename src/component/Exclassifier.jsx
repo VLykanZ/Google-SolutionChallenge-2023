@@ -103,7 +103,9 @@ function Exclassifier(props) {
             </p>         
           ))} */}
       <section className="exercise-picture">
-        <img src={pose_img} alt="" height={240}/>
+        <div style={{height:"400px"}}> 
+        <img src={pose_img} alt="" width={400}/>
+        </div>
       </section>
       <section className="exercise-status">
         {musclesList.map((muscle, index) => (

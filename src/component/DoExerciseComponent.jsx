@@ -20,12 +20,12 @@ function DoExerciseComponent() {
                 <p>Doing an Exercise</p>
                 </div>
 
-                <div style={{ position: "fixed", display: "flex", justifyContent: "left", alignItems: "left" }}>
-                    <div className="exclassifier" style={{ paddingRight: "10px" }}>
+                <div className='do-exercise'>
+                    <div className="exclassifier">
                     <Exclassifier/>
                     </div>
 
-                    <div className="movenet" style={{position: "fixed"}}>
+                    <div className="movenet">
                         <MovenetComponent/>
                     </div>
                 </div>
