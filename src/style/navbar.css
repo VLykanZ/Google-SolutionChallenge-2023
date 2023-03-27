@@ -88,8 +88,9 @@ body.navbar{
 h1.navbar{
     border-bottom: none;
     text-align: center;
-    font-size: 50px;
+    /* font-size: 50px; */
     font-weight: bold;
+    height: 100px;
 }
 /* :active, .navbar:hover{
     background-color: #1abc9c;

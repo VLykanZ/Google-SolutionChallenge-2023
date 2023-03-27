@@ -2,11 +2,13 @@ import React from 'react';
 import '../style/App.css';
 // import { NavLink } from 'react-router-dom';
 
+import banner from '../assets/images/banner.png'
+
 function Navbar() {
     return (
       <body className='navbar'>
 
-          <h1 className='navbar'>APP Krub</h1>
+          <h1 className='navbar'><img src={banner} alt="" height="100px"/></h1>
           <div className='navbar' id='navbar'>
             <nav>
                 <a className='navbar' href="/">HOME</a>
