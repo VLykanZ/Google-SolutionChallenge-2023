@@ -69,6 +69,10 @@ div.movenet{
 div.do-exercise{
     margin-bottom: 500px;
 }
+/* div.vsc-controller{
+    position: fixed;
+    float: right;
+} */
 /* div.camera{
     position: fixed;
     margin-left: auto;
@@ -124,4 +128,10 @@ p.exercise{
 }
 ul{
     list-style-type: none;
+}
+p.summary{
+    font-size: 30px;
+}
+p.recommend{
+    font-size: 25px;
 }

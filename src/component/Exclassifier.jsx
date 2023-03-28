@@ -88,7 +88,7 @@ function Exclassifier(props) {
   }
 
   useEffect(() => {
-    const interval = setInterval(changeFrame, 1000);
+    const interval = setInterval(changeFrame, 7000);
     return () => clearInterval(interval);
   }, []);
 
@@ -103,7 +103,7 @@ function Exclassifier(props) {
             </p>         
           ))} */}
       <div className="exercise-picture">
-        <div style={{height:"400px"}}> 
+        <div style={{height:"200px"}}> 
         <img src={pose_img} alt="" width={400}/>
         </div>
       </div>

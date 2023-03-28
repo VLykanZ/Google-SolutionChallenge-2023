@@ -161,9 +161,9 @@ function MovenetComponent() {
           ref={webcamRef}
           style={{
             position: "fixed",
-            // zindex:9,
-            // marginLeft: "auto",
-            // marginRight: "auto",
+            zindex:9,
+            marginLeft: "auto",
+            marginRight: "auto",
             float: "right",
             right: "5%",
           }}
@@ -171,8 +171,8 @@ function MovenetComponent() {
         <canvas
           ref={canvasRef}
           style={{
-            // marginLeft: "auto",
-            // marginRight: "auto",
+            marginLeft: "auto",
+            marginRight: "auto",
             position: "fixed",
             float: "right",
             right: "5%",
