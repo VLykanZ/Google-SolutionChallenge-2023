@@ -16,7 +16,7 @@ import QuestionBodyPart from './component/QuestionBodyPart';
 import QuestionDiagnose from './pages/function/QuestionDiagnose';
 import ExerciseList from './pages/function/ExerciseList';
 import DoExercise from './pages/function/DoExercise';
-import Recommend from './pages/function/Recommend';
+import Summary from './pages/function/Summary';
 // import StepProgressBar from './component/ProgressBar';
 
 
@@ -44,7 +44,7 @@ function App() {
             <Route path='/QuestionDiagnose' element={<QuestionDiagnose/>} />
             <Route path='/ExerciseList' element={<ExerciseList/>} />
             <Route path='/DoExercise' element={<DoExercise/>} />
-            <Route path='/Recommend' element={<Recommend/>} />
+            <Route path='/Summary' element={<Summary/>} />
             <Route path="/QuestionBodyPart" element={<QuestionBodyPart />}/>
           </Routes>
       </div>

@@ -8,14 +8,14 @@ import neck1 from '../assets/images/neck1.jpg';
 import neck2 from '../assets/images/neck2.jpg';
 import back1 from '../assets/images/back1.jpg';
 import back2 from '../assets/images/back2.jpg';
-import body1 from '../assets/images/body1.jpg';
-import body2 from '../assets/images/body2.jpg';
+import wrist1 from '../assets/images/body1.jpg';
+import wrist2 from '../assets/images/body2.jpg';
 
 // Database
 const PoseList ={
   'neck' : [0, 1, 2],
   'back' : [0, 1, 2],
-  'body' : [0, 1, 2],
+  'wrist' : [0, 1, 2],
 }
 const PoseStep = {
   0 : 'Back Neck Stretch', 
@@ -30,8 +30,8 @@ const PoseImg = {
   1 : neck2,
   2 : back1,
   3 : back2,
-  4 : body1,
-  5 : body2,
+  4 : wrist1,
+  5 : wrist2,
 }
 
 
@@ -77,7 +77,7 @@ function Exclassifier(props) {
   const muscles = {
     neck: [{muscle: 'Neck & Shoulder'}],
     back: [{muscle: 'Back'}],
-    body: [{muscle: 'Body & Arm'}]
+    wrist: [{muscle: 'Body & Arm'}]
   }
 
   const musclesList = muscles[bodyPart];
@@ -87,7 +87,7 @@ function Exclassifier(props) {
       setPoint(Steppose(pose_list));
       // setImagePath(PoseImg[pose_step]);
     }else{
-      navigate('/Recommend');
+      navigate('/Summary');
     }
   }
 

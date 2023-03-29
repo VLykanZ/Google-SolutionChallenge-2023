@@ -103,9 +103,6 @@ label.question{
     display: inline-block;
     font-weight: bold;
 }
-label#student-id{
-    padding: 10px;
-}
 input{
     width: 1px;
 }
@@ -113,10 +110,6 @@ input[type=radio] {
     width: 5%;
     height: 20px;
     border: 0px;
-}
-input.student-id{
-    width: 200px;
-    font-size: 25px;
 }
 select{
     width: 100px;
@@ -139,6 +132,7 @@ p.recommend{
     font-size: 25px;
 }
 
+/* Bodypart */
 section.bodypart-description{
     position: absolute;
     float: left;
@@ -194,4 +188,25 @@ span.bodypart-image{
 }
 .bodypart-image img{
     height: 100%;
+}
+/* Recommend */
+section.feedback{
+    font-size: 20px;
+}
+label.feedback{
+    padding: 15px;
+}
+input#student-id{
+    width: 200px;
+    font-size: 15px;
+}
+input#feedback-text{
+    width: 400px;
+    height: 150px;
+    font-size: 15px;
+}
+
+ul#feedback-score li{
+    font-size: 15px;
+    display: inline;
 }

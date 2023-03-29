@@ -10,8 +10,8 @@ import neck1 from '../../assets/images/neck1.jpg';
 import neck2 from '../../assets/images/neck2.jpg';
 import back1 from '../../assets/images/back1.jpg';
 import back2 from '../../assets/images/back2.jpg';
-import body1 from '../../assets/images/body1.jpg';
-import body2 from '../../assets/images/body2.jpg';
+import wrist1 from '../../assets/images/body1.jpg';
+import wrist2 from '../../assets/images/body2.jpg';
 
 function ExerciseList() {
   const bodyPart = useSelector(state => state.bodyPart);
@@ -25,16 +25,16 @@ function ExerciseList() {
       { name: 'Subscapularis Stretch', duration: '15-30 Seconds' ,img: back1},
       { name: 'Shoulder Adductor Stretch', duration: '15-30 Seconds' ,img: back2},
     ],
-    body: [
-      { name: 'Forearm Stretch', duration: '15-30 Seconds' ,img: body1},
-      { name: 'Abdominal & Upper Body Strech', duration: '15-30 Seconds' ,img: body2},
+    wrist: [
+      { name: 'Forearm Stretch', duration: '15-30 Seconds' ,img: wrist1},
+      { name: 'Abdominal & Upper Body Strech', duration: '15-30 Seconds' ,img: wrist2},
     ],
   };
 
   const muscles = {
     neck: [{muscle: 'Neck & Shoulder'}],
     back: [{muscle: 'Back'}],
-    body: [{muscle: 'Body & Arm'}]
+    wrist: [{muscle: 'Wrist & Arm'}]
   }
 
   const exerciseList = exercises[bodyPart];
