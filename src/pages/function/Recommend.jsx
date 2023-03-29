@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import ProgressTab from './ProgressTab';
+import ProgressTab from '../../component/ProgressTab';
 
-import '../style/page.css'
-import '../style/button.css'
+import '../../style/page.css'
+import '../../style/button.css'
 
-function RecommendComponent() {
+function RecommenDation() {
     return (
             <body>
                 <ProgressTab/>
@@ -50,4 +50,4 @@ function RecommendComponent() {
             </body>
     )
     }
-export default RecommendComponent
+export default RecommenDation

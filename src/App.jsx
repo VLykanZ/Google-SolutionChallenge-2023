@@ -6,17 +6,17 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import Navbar from './component/Navbar';
-import Home from './pages/main/Home';
-import Knowledge from './pages/main/Knowledge';
-import Stack from './pages/main/Stack';
-import About from './pages/main/About';
-import ContactUs from './pages/main/ContactUs';
+import Home from './pages/navbar/Home';
+import Knowledge from './pages/navbar/Knowledge';
+import Stack from './pages/navbar/Stack';
+import About from './pages/navbar/About';
+import ContactUs from './pages/navbar/ContactUs';
 
-import QuestionBodyPart from './pages/question/QuestionBodyPart';
-import QuestionDiagnose from './pages/question/QuestionDiagnose';
-import ExerciseComponent from './component/ExerciseComponent';
-import DoExerciseComponent from './component/DoExerciseComponent';
-import RecommendComponent from './component/RecommendComponent';
+import QuestionBodyPart from './component/QuestionBodyPart';
+import QuestionDiagnose from './pages/function/QuestionDiagnose';
+import ExerciseList from './pages/function/ExerciseList';
+import DoExercise from './pages/function/DoExercise';
+import Recommend from './pages/function/Recommend';
 // import StepProgressBar from './component/ProgressBar';
 
 
@@ -42,9 +42,9 @@ function App() {
             <Route path='/Contact-Us' element={<ContactUs/>} />
             <Route path='/QuestionBodypart' element={<QuestionBodyPart/>} />
             <Route path='/QuestionDiagnose' element={<QuestionDiagnose/>} />
-            <Route path='/Exercise' element={<ExerciseComponent/>} />
-            <Route path='/DoExercise' element={<DoExerciseComponent/>} />
-            <Route path='/Recommend' element={<RecommendComponent/>} />
+            <Route path='/ExerciseList' element={<ExerciseList/>} />
+            <Route path='/DoExercise' element={<DoExercise/>} />
+            <Route path='/Recommend' element={<Recommend/>} />
             <Route path="/QuestionBodyPart" element={<QuestionBodyPart />}/>
           </Routes>
       </div>

@@ -1,6 +1,6 @@
 import React from "react";
 // import { Link } from 'react-router-dom';
-import QuestionBodypart from "../question/QuestionBodyPart";
+import QuestionBodypart from "../../component/QuestionBodyPart";
 import '../../style/main.css'
 import '../../style/button.css'
 

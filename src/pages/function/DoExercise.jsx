@@ -1,16 +1,16 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 
-import Exclassifier from './Exclassifier';
-import MovenetComponent from './MovenetComponent';
-import ProgressTab from './ProgressTab';
+import Exclassifier from '../../component/Exclassifier';
+import MovenetComponent from '../../component/MovenetComponent';
+import ProgressTab from '../../component/ProgressTab';
 
-import '../style/page.css'
-import '../style/button.css'
+import '../../style/page.css'
+import '../../style/button.css'
 
-import kong from '../assets/images/kong.gif';
+import kong from '../../assets/images/kong.gif';
 
-function DoExerciseComponent() {
+function DoExercise() {
     return (
             <body>
                 <ProgressTab/>
@@ -33,4 +33,4 @@ function DoExerciseComponent() {
             </body>
     )
     }
-export default DoExerciseComponent
+export default DoExercise

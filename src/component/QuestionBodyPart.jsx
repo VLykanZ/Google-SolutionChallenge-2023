@@ -2,14 +2,14 @@ import React from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { setBodyPart } from '../../store';
+import { setBodyPart } from '../store';
 
-import neckache from '../../assets/images/neckache1.jpeg';
-import backache from '../../assets/images/backache1.jpeg';
-import wristache from '../../assets/images/wristache1.jpeg';
+import neckache from '../assets/images/neckache1.jpeg';
+import backache from '../assets/images/backache1.jpeg';
+import wristache from '../assets/images/wristache1.jpeg';
 
-import '../../style/page.css'
-import '../../style/button.css'
+import '../style/page.css'
+import '../style/button.css'
 
 function QuestionBodypart() {
 
@@ -23,7 +23,7 @@ function QuestionBodypart() {
   };
 
   return (
-    <body>
+      <div>
       <section className="bodypart-description">
         <h2>Lorem, ipsum.</h2>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam, quo?</p>
@@ -62,7 +62,7 @@ function QuestionBodypart() {
 
         </div>
       </section>
-    </body>
+      </div>
   );
 }
 

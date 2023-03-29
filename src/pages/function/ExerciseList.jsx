@@ -1,19 +1,19 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import ProgressTab from './ProgressTab';
+import ProgressTab from '../../component/ProgressTab';
 
-import '../style/page.css'
-import '../style/button.css'
+import '../../style/page.css'
+import '../../style/button.css'
 
-import neck1 from '../assets/images/neck1.jpg';
-import neck2 from '../assets/images/neck2.jpg';
-import back1 from '../assets/images/back1.jpg';
-import back2 from '../assets/images/back2.jpg';
-import body1 from '../assets/images/body1.jpg';
-import body2 from '../assets/images/body2.jpg';
+import neck1 from '../../assets/images/neck1.jpg';
+import neck2 from '../../assets/images/neck2.jpg';
+import back1 from '../../assets/images/back1.jpg';
+import back2 from '../../assets/images/back2.jpg';
+import body1 from '../../assets/images/body1.jpg';
+import body2 from '../../assets/images/body2.jpg';
 
-function ExerciseComponent() {
+function ExerciseList() {
   const bodyPart = useSelector(state => state.bodyPart);
 
   const exercises = {
@@ -88,4 +88,4 @@ function ExerciseComponent() {
   );
 }
 
-export default ExerciseComponent;
+export default ExerciseList;
