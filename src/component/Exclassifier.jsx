@@ -13,9 +13,9 @@ import body2 from '../assets/images/body2.jpg';
 
 // Database
 const PoseList ={
-  'neck' : [0],
-  'back' : [1],
-  'body' : [2],
+  'neck' : [0, 1, 2],
+  'back' : [0, 1, 2],
+  'body' : [0, 1, 2],
 }
 const PoseStep = {
   0 : 'Back Neck Stretch', 
@@ -43,6 +43,7 @@ var posename;
 var pose_img; 
 var step_pose_lenght; 
 
+var result =[]
 
 function Steppose(pose_list) {
   posename = PoseStep[pose_list[pose_step]];
@@ -56,12 +57,14 @@ function Steppose(pose_list) {
     status = 'Finished ! ';
     posename = 'Finished !'
   }else{ 
-    if (pose_value[pose_step] > 0.5){
+    if (pose_value[0][pose_step] > 0.9){
       pose_step = pose_step + 1;
-      status = 'OK ! Next'; 
+      result.push([pose_value[0][pose_step], pose_value[1], pose_value[2]]);
+      status = 'Hold on !'; 
     }
   }
-  return pose_value[pose_step];
+  console.log(result);
+  return pose_value[0][pose_step];
 }
 
 function Exclassifier(props) {
@@ -89,7 +92,7 @@ function Exclassifier(props) {
   }
 
   useEffect(() => {
-    const interval = setInterval(changeFrame, 2000);
+    const interval = setInterval(changeFrame, 1000);
     return () => clearInterval(interval);
   }, []);
 
