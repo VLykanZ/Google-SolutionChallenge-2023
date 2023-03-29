@@ -43,6 +43,9 @@ body{
     padding: 1px;
     padding-bottom: 100px;
 }
+body.DoExercise{
+    height: 100px;
+}
 div.question{
     margin: 30px;
     
