@@ -42,6 +42,8 @@ function Summary() {
         console.log("Feedback Text: ", feedbackText);
     }
 
+    const isFeedbackScoreValid = feedbackScore !== 0;
+
     return (
             <body>
                 <ProgressTab/>
@@ -79,7 +81,7 @@ function Summary() {
 
                 <section className="feedback" id="feedback-score">
                     <ul className="feedback" id="feedback-score">
-                        <label className="feedback" id="feedback-score">Please Rate your Satisfaction</label>
+                        <label className="feedback" id="feedback-score">Please Rate your Satisfaction*</label>
                             <li><input type="radio" onClick={() => { setFeedbackScore("1") }} value="0" /> 1</li>
                             <li><input type="radio" onClick={() => { setFeedbackScore("2") }} value="1" /> 2</li>
                             <li><input type="radio" onClick={() => { setFeedbackScore("3") }} value="2" /> 3</li>
@@ -101,7 +103,7 @@ function Summary() {
 
                 <div>
                 <Link to="/">
-                    <button class="button-pushable" id="next" onClick={handleSubmit}>
+                    <button class="button-pushable" id="next" disabled={!isFeedbackScoreValid} onClick={handleSubmit} >
                         <span class="button-shadow"></span>
                         <span class="button-edge"></span>
                         <span class="button-front text">
