@@ -8,7 +8,7 @@ function Navbar() {
     return (
       <body className='navbar'>
 
-          <h1 className='navbar'><img src={banner} alt="" height="100px"/></h1>
+          <h1 className='navbar'><img src={banner} alt="" height="40px"/></h1>
           <div className='navbar' id='navbar'>
             <nav>
                 <a className='navbar' href="/">HOME</a>
