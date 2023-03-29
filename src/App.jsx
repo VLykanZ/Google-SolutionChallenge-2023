@@ -10,6 +10,8 @@ import Home from './pages/main/Home';
 import Knowledge from './pages/main/Knowledge';
 import Stack from './pages/main/Stack';
 import About from './pages/main/About';
+import ContactUs from './pages/main/ContactUs';
+
 import QuestionBodyPart from './pages/question/QuestionBodyPart';
 import QuestionDiagnose from './pages/question/QuestionDiagnose';
 import ExerciseComponent from './component/ExerciseComponent';
@@ -37,6 +39,7 @@ function App() {
             <Route path='/Knowledge' element={<Knowledge/>}></Route>
             <Route path='/Stack' element={<Stack/>}></Route>
             <Route path='/About' element={<About/>} />
+            <Route path='/Contact-Us' element={<ContactUs/>} />
             <Route path='/QuestionBodypart' element={<QuestionBodyPart/>} />
             <Route path='/QuestionDiagnose' element={<QuestionDiagnose/>} />
             <Route path='/Exercise' element={<ExerciseComponent/>} />

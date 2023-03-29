@@ -15,6 +15,7 @@ function Navbar() {
                 <a className='navbar' href="/Knowledge">KNOWLEDGE</a>
                 <a className='navbar' href="/Stack">TECH STACK</a>
                 <a className='navbar' href="/About">ABOUT</a>
+                <a className='navbar' href="/Contact-Us">CONTACT US</a>
               {/* <li className='home-menu'>
                 <NavLink className='nav-bar-link' to = "/"
                   >HOME</NavLink>

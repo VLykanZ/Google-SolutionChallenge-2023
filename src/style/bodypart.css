@@ -1,0 +1,42 @@
+
+section.bodypart-description{
+    position: absolute;
+    float: left;
+    left: 15%;
+    margin-top: 50px;
+}
+section.bodypart-question{
+    position: absolute;
+    float: right;
+    right: 15%;
+    margin-top: 50px;
+}
+label.bodypart{
+    display: block;
+    border: 1px solid black;
+    background-color: #34495e;
+    width: 400px;
+    height: 150px;
+    margin: 10px;
+    border-radius: 8px;
+    border: 3px solid #1abc9c;
+}
+label.bodypart:hover{
+    opacity: 0.7;
+    cursor: pointer;
+}
+span.bodypart-text{
+    font-size: 22px;
+    color: white;
+    display: inline-block;
+    text-align: center;
+    padding: 55px;
+}
+span.bodypart-image{
+    position: static;
+    height: 150px;
+    float: right;
+}
+.bodypart-image img{
+    height: 100%;
+}

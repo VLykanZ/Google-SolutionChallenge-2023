@@ -3,67 +3,67 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setBodyPart } from '../../store';
-import ProgressTab from '../../component/ProgressTab';
+
+import neckache from '../../assets/images/neckache1.jpeg';
+import backache from '../../assets/images/backache1.jpeg';
+import wristache from '../../assets/images/wristache1.jpeg';
+
 import '../../style/page.css'
 import '../../style/button.css'
 
 function QuestionBodypart() {
 
     const [selectedBodyPart, setSelectedBodyPart] = useState(null);
+  const dispatch = useDispatch();
 
-    const dispatch = useDispatch();
+  const handleBodyPartClick = (e) => {
+    const selectedValue = e.currentTarget.getAttribute('value');
+    setSelectedBodyPart(selectedValue);
+    dispatch(setBodyPart(selectedValue));
+  };
 
-    const handleBodyPartClick = (e) => {
-        setSelectedBodyPart(e.target.value);
-        dispatch(setBodyPart(e.target.value));
-      };
+  return (
+    <body>
+      <section className="bodypart-description">
+        <h2>Lorem, ipsum.</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam, quo?</p>
+      </section>
 
-    const isButtonDisabled = selectedBodyPart === null;
+      <section className="bodypart-question">
+        <h2 className='bodypart-which'>Which part of your body are you experiencing pain?</h2>
+        <div className="bodypart-choices">
 
-    return (
-        <body>
-            <ProgressTab/>
-            <section className='function'>
-                <h1 className="header">Select Bodypart</h1>
-                <section className='question'>
-                    <div className='question'>
-                        <label className="question" for="bodypart">Which part of your pain are you experiencing? </label> <br />
-                    </div>
-                        <input type="radio" onClick={handleBodyPartClick} value="neck" name="bodypart"/> Neck & Shoulder
-                        <input type="radio" onClick={handleBodyPartClick} value="back" name="bodypart"/> Back
-                        <input type="radio" onClick={handleBodyPartClick} value="body" name="bodypart"/> Body & Arm
-                </section>
+            <Link to="/QuestionDiagnose">
+                <label className="bodypart" onClick={handleBodyPartClick} value="neck" name="bodypart">        
+                <span className='bodypart-text'>Neck</span>
+                    <span className="bodypart-image" >
+                        <img className="bodypart-image" src={neckache} alt="" height={400} />
+                    </span>
+                </label>
+            </Link>
 
-                <div className='link-page-button'>
+            <Link to="/QuestionDiagnose">
+                <label className="bodypart" onClick={handleBodyPartClick} value="back" name="bodypart">    
+                    <span className='bodypart-text'>Back</span>
+                    <span className="bodypart-image" >
+                        <img className="bodypart-image" src={backache} alt="" height={400} />
+                    </span> 
+                </label>
+            </Link>
 
-                        <Link to="/">
-                        {/* <button className='back'>Back</button> */}
-                        <button class="button-pushable" id="back">
-                            <span class="button-shadow"></span>
-                            <span class="button-edge"></span>
-                            <span class="button-front text">
-                            Back
-                            </span>
-                        </button>
-                        </Link>
+            <Link to="/QuestionDiagnose">
+                <label className="bodypart" onClick={handleBodyPartClick} value="wrist" name="bodypart">
+                    <span className='bodypart-text'>Wrist</span>
+                    <span className="bodypart-image" >
+                        <img className="bodypart-image" src={wristache} alt="" height={400} />
+                    </span>   
+                </label>
+            </Link>
 
-
-
-                        <Link to="/QuestionDiagnose">
-                        {/* <button className='next' disabled={isButtonDisabled}>Next</button> */}
-                        <button class="button-pushable" id="next" disabled={isButtonDisabled}>
-                            <span class="button-shadow"></span>
-                            <span class="button-edge"></span>
-                            <span class="button-front text">
-                            Next
-                            </span>
-                        </button>
-                        </Link>
-
-                 </div>
-            </section>
-        </body>
-    );
+        </div>
+      </section>
+    </body>
+  );
 }
 
 export default QuestionBodypart;

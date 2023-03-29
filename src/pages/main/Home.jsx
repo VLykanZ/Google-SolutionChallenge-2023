@@ -1,16 +1,20 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import QuestionBodypart from "../question/QuestionBodyPart";
 import '../../style/main.css'
 import '../../style/button.css'
 
 function Home() {
     return (
       <body id="home-page">
-        <h1>Home Page</h1>
           <section>
-            <p id="start"></p>
+
+          <QuestionBodypart/>
+
+            {/* <p id="start"></p>
+            
           <Link to="/QuestionBodypart">
-              {/* <button className="start">Start!</button> */}
+
               <button class="button-pushable" id="start">
               <span class="button-shadow"></span>
               <span class="button-edge"></span>
@@ -18,7 +22,7 @@ function Home() {
                 Start
               </span>
             </button>
-          </Link>
+          </Link> */}
         </section>
 
       </body>
