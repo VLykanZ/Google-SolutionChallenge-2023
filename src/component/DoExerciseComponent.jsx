@@ -19,7 +19,6 @@ function DoExerciseComponent() {
                 <div>
                 <p>Doing an Exercise</p>
                 </div>
-
                 <div className='do-exercise'>
                     <div className="exclassifier">
                     <Exclassifier/>
@@ -29,18 +28,6 @@ function DoExerciseComponent() {
                         <MovenetComponent/>
                     </div>
                 </div>
-
-                    <div>
-                    <Link to="/Recommend">
-                    <button class="button-pushable" id="next">
-                        <span class="button-shadow"></span>
-                        <span class="button-edge"></span>
-                        <span class="button-front text">
-                        Next
-                        </span>
-                    </button>
-                    </Link>
-                    </div>
                 </section>
 
             </body>

@@ -1,5 +1,6 @@
 import React, { useRef , useState, useEffect} from "react";
 import { useSelector } from 'react-redux';
+import { useNavigate } from "react-router-dom";
 import {Classifier, MovenetComponent, model, prediction} from './MovenetComponent';
 import * as tf from "@tensorflow/tfjs";
 
@@ -14,9 +15,9 @@ import body2 from '../assets/images/body2.jpg';
 
 // Database
 const PoseList ={
-  'neck' : [0,1],
-  'back' : [2,3],
-  'body' : [4,5],
+  'neck' : [0],
+  'back' : [1],
+  'body' : [2],
 }
 const PoseStep = {
   0 : 'Back Neck Stretch', 
@@ -41,7 +42,7 @@ var status = 'Processing';
 var processing = true;
 var pose_step = 0;
 var posename;
-var pose_img;
+var pose_img; 
 var step_pose_lenght; 
 
 
@@ -52,25 +53,25 @@ function Steppose(pose_list) {
   const pose_value = Classifier();
   console.log(pose_value);
   status = 'Processing';
-  const test = Math.random()*0.5
   if (step_pose_lenght  == pose_step){
     processing = false;
     status = 'Finished ! ';
     posename = 'Finished !'
   }else{ 
-    if (test < 0.2){
+    if (pose_value[pose_step] > 0.5){
       pose_step = pose_step + 1;
       status = 'OK ! Next'; 
     }
   }
-  return test;
+  return pose_value[pose_step];
 }
 
 function Exclassifier(props) {
   const bodyPart = useSelector(state => state.bodyPart);
   const pose_list = PoseList[bodyPart];
+  pose_img = PoseImg[pose_list[0]];
   const [ confident, setPoint] = useState("Start");
-  // const [imagePath, setImagePath] = useState(PoseImg[pose_step]);
+  const navigate = useNavigate();
 
   const muscles = {
     neck: [{muscle: 'Neck & Shoulder'}],
@@ -84,11 +85,13 @@ function Exclassifier(props) {
     if (processing){
       setPoint(Steppose(pose_list));
       // setImagePath(PoseImg[pose_step]);
+    }else{
+      navigate('/Recommend');
     }
   }
 
   useEffect(() => {
-    const interval = setInterval(changeFrame, 7000);
+    const interval = setInterval(changeFrame, 2000);
     return () => clearInterval(interval);
   }, []);
 

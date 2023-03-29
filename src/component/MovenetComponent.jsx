@@ -20,30 +20,98 @@ export function prediction(inputArray) {
   return outputArray;
 }
 
+const POINTS = {
+  NOSE : 0,
+  LEFT_EYE : 1,
+  RIGHT_EYE : 2,
+  LEFT_EAR : 3,
+  RIGHT_EAR : 4,
+  LEFT_SHOULDER : 5,
+  RIGHT_SHOULDER : 6,
+  LEFT_ELBOW : 7,
+  RIGHT_ELBOW : 8,
+  LEFT_WRIST : 9,
+  RIGHT_WRIST : 10,
+  LEFT_HIP : 11,
+  RIGHT_HIP : 12,
+  LEFT_KNEE : 13,
+  RIGHT_KNEE : 14,
+  LEFT_ANKLE : 15,
+  RIGHT_ANKLE : 16,
+}
+
+//Embedding Layer
+function get_center_point(landmarks, left_bodypart, right_bodypart) {
+  let left = tf.gather(landmarks, left_bodypart, 1)
+  let right = tf.gather(landmarks, right_bodypart, 1)
+  const center = tf.add(tf.mul(left, 0.5), tf.mul(right, 0.5))
+  return center
+  
+}
+
+function get_pose_size(landmarks, torso_size_multiplier=2.5) {
+  let hips_center = get_center_point(landmarks, POINTS.LEFT_HIP, POINTS.RIGHT_HIP)
+  let shoulders_center = get_center_point(landmarks,POINTS.LEFT_SHOULDER, POINTS.RIGHT_SHOULDER)
+  let torso_size = tf.norm(tf.sub(shoulders_center, hips_center))
+  let pose_center_new = get_center_point(landmarks, POINTS.LEFT_HIP, POINTS.RIGHT_HIP)
+  pose_center_new = tf.expandDims(pose_center_new, 1)
+
+  pose_center_new = tf.broadcastTo(pose_center_new,
+      [1, 17, 2]
+    )
+    // return: shape(17,2)
+  let d = tf.gather(tf.sub(landmarks, pose_center_new), 0, 0)
+  let max_dist = tf.max(tf.norm(d,'euclidean', 0))
+
+  // normalize scale
+  let pose_size = tf.maximum(tf.mul(torso_size, torso_size_multiplier), max_dist)
+  return pose_size
+}
+
+function normalize_pose_landmarks(landmarks) {
+  let pose_center = get_center_point(landmarks, POINTS.LEFT_HIP, POINTS.RIGHT_HIP)
+  pose_center = tf.expandDims(pose_center, 1)
+  pose_center = tf.broadcastTo(pose_center, 
+      [1, 17, 2]
+    )
+  landmarks = tf.sub(landmarks, pose_center)
+
+  let pose_size = get_pose_size(landmarks)
+  landmarks = tf.div(landmarks, pose_size)
+  return landmarks
+}
+
+function landmarks_to_embedding(landmarks) {
+  // normalize landmarks 2D
+  landmarks = normalize_pose_landmarks(tf.expandDims(landmarks, 0))
+  let embedding = tf.reshape(landmarks, [1,34])
+  return embedding
+}
+
+
 export  function Classifier() {
   var point_pose = pose['keypoints'];
   var input_model = [
-    point_pose['0']['position']['x'], point_pose['0']['position']['y'], point_pose['0']['score'],
-    point_pose['1']['position']['x'], point_pose['1']['position']['y'], point_pose['1']['score'],
-    point_pose['2']['position']['x'], point_pose['2']['position']['y'], point_pose['2']['score'],
-    point_pose['3']['position']['x'], point_pose['3']['position']['y'], point_pose['3']['score'],
-    point_pose['4']['position']['x'], point_pose['4']['position']['y'], point_pose['4']['score'],
-    point_pose['5']['position']['x'], point_pose['5']['position']['y'], point_pose['5']['score'],
-    point_pose['6']['position']['x'], point_pose['6']['position']['y'], point_pose['6']['score'],
-    point_pose['7']['position']['x'], point_pose['7']['position']['y'], point_pose['7']['score'],
-    point_pose['8']['position']['x'], point_pose['8']['position']['y'], point_pose['8']['score'],
-    point_pose['9']['position']['x'], point_pose['9']['position']['y'], point_pose['9']['score'],
-    point_pose['10']['position']['x'], point_pose['10']['position']['y'], point_pose['10']['score'],
-    point_pose['11']['position']['x'], point_pose['11']['position']['y'], point_pose['11']['score'],
-    point_pose['12']['position']['x'], point_pose['12']['position']['y'], point_pose['12']['score'],
-    point_pose['13']['position']['x'], point_pose['13']['position']['y'], point_pose['13']['score'],
-    point_pose['14']['position']['x'], point_pose['14']['position']['y'], point_pose['14']['score'],
-    point_pose['15']['position']['x'], point_pose['15']['position']['y'], point_pose['15']['score'],
-    point_pose['16']['position']['x'], point_pose['16']['position']['y'], point_pose['16']['score'],
+    [point_pose['0']['position']['x'], point_pose['0']['position']['y']],
+    [point_pose['1']['position']['x'], point_pose['1']['position']['y']],
+    [point_pose['2']['position']['x'], point_pose['2']['position']['y']], 
+    [point_pose['3']['position']['x'], point_pose['3']['position']['y']],
+    [point_pose['4']['position']['x'], point_pose['4']['position']['y']], 
+    [point_pose['5']['position']['x'], point_pose['5']['position']['y']], 
+    [point_pose['6']['position']['x'], point_pose['6']['position']['y']], 
+    [point_pose['7']['position']['x'], point_pose['7']['position']['y']], 
+    [point_pose['8']['position']['x'], point_pose['8']['position']['y']], 
+    [point_pose['9']['position']['x'], point_pose['9']['position']['y']], 
+    [point_pose['10']['position']['x'], point_pose['10']['position']['y']], 
+    [point_pose['11']['position']['x'], point_pose['11']['position']['y']],
+    [point_pose['12']['position']['x'], point_pose['12']['position']['y']], 
+    [point_pose['13']['position']['x'], point_pose['13']['position']['y']], 
+    [point_pose['14']['position']['x'], point_pose['14']['position']['y']], 
+    [point_pose['15']['position']['x'], point_pose['15']['position']['y']], 
+    [point_pose['16']['position']['x'], point_pose['16']['position']['y']]
   ];
-  // const inputArray = tf.tensor2d([input_model]);
-  const inputArray = tf.tensor2d([[Math.random(),Math.random()*0.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]], [1, 34]);
-  const predictresult = prediction(inputArray);
+  const processedInput = landmarks_to_embedding(input_model)
+  const predictresult = prediction(processedInput);
   return predictresult;
 }
 
