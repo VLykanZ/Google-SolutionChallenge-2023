@@ -2,7 +2,6 @@ import SidebarKnowledge from '../../component/SidebarKnowledge'
 
 import '../../style/main.css'
 import '../../style/button.css'
-import '../../style/exercise.css'
 
 const Knowledge = () => {
     return (

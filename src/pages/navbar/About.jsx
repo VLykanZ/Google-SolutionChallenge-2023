@@ -1,40 +1,59 @@
-import { Link } from 'react-router-dom';
-import Exclassifier from '../../component/Exclassifier';
-import MovenetComponent from '../../component/MovenetComponent';
-import ProgressTab from '../../component/ProgressTab';
-
-import '../../style/main.css'
-import '../../style/page.css'
-import '../../style/button.css'
+import '../../style/about.css'
+import zebra from '../../assets/images/zebra.jpeg'
 
 const About = () => {
     return (
             <body>
-                <ProgressTab/>
-                <section className="function">
-                <h1>Do Exercise</h1>
-                <div>
-                <p>Doing an Exercise</p>
-                </div>
+                <div className='site-container'>
 
-                <div className='do-exercise'>
-                    <div className="exclassifier">Exclassifier</div>
-                    <div className="movenet">Movenet</div>
-                </div>
 
-                <div>
-                    <Link to="/Recommend">
-                    <button class="button-pushable" id="next">
-                        <span class="button-shadow"></span>
-                        <span class="button-edge"></span>
-                        <span class="button-front text">
-                        Next
-                        </span>
-                    </button>
-                    </Link>
-                </div>
+                    <div className='article-container'>
+                        <article className='article-card'>
+                            <figure className='article-image'>
+                                <img src={zebra} alt="" height={200}/>
+                            </figure>
+                            <div className="article-content">
+                                <h3 className='card-title'>Thanachot Wongmetin</h3>
+                                <p className="card-exerpt">Lorem ipsum dolor sit amet.</p>
+                            </div>
 
-                </section>
+                        </article>
+
+                        <article className='article-card'>
+                            <figure className='article-image'>
+                                <img src={zebra} alt="" height={200}/>
+                            </figure>
+                            <div className="article-content">
+                                <h3 className='card-title'>Suphawit Chomsomsa</h3>
+                                <p className="card-exerpt">Lorem ipsum dolor sit amet.</p>
+                            </div>
+
+                        </article>
+                        
+                        <article className='article-card'>
+                            <figure className='article-image'>
+                                <img src={zebra} alt="" height={200}/>
+                            </figure>
+                            <div className="article-content">
+                                <h3 className='card-title'>Erafan Madaehoh</h3>
+                                <p className="card-exerpt">Lorem ipsum dolor sit amet.</p>
+                            </div>
+
+                        </article>
+
+                        <article className='article-card'>
+                            <figure className='article-image'>
+                                <img src={zebra} alt="" height={200}/>
+                            </figure>
+                            <div className="article-content">
+                                <h3 className='card-title'>Afundy Hayeetah</h3>
+                                <p className="card-exerpt">Lorem ipsum dolor sit amet.</p>
+                            </div>
+
+                        </article>
+                    </div>
+                    
+                </div>
             </body>
     )
     }

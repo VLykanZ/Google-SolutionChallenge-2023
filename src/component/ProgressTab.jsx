@@ -7,7 +7,7 @@ function ProgressTab() {
         <ul className='progresstab'>
             <li><a className='progresstab' href="/QuestionBodypart">Select Bodypart</a></li>
             <li><a className='progresstab' href="/QuestionDiagnose">Diagnose</a></li>
-            <li><a className='progresstab' href="/Exercise">Exercise List</a></li>
+            <li><a className='progresstab' href="/ExerciseList">Exercise List</a></li>
             <li><a className='progresstab' href="/DoExercise">Exercise!!</a></li>
             <li><a className='progresstab' href="/Recommend">Summary</a></li>
         </ul>

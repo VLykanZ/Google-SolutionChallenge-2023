@@ -6,6 +6,17 @@ import '../../style/page.css'
 import '../../style/button.css'
 
 function RecommenDation() {
+
+    // const risk = useSelector(state => state.risk);
+
+    // const riskList = {
+    //     low_risk: [{risk: 'Low'}],
+    //     medium_risk: [{risk: 'Medium'}],
+    //     high_risk: [{risk: 'High'}]
+    // }
+
+    // const resultRisk = riskList[risk];
+
     return (
             <body>
                 <ProgressTab/>

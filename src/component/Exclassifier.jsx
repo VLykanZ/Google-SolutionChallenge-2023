@@ -4,8 +4,6 @@ import { useNavigate } from "react-router-dom";
 import {Classifier, MovenetComponent, model, prediction} from './MovenetComponent';
 import * as tf from "@tensorflow/tfjs";
 
-import '../style/exercise.css'
-
 import neck1 from '../assets/images/neck1.jpg';
 import neck2 from '../assets/images/neck2.jpg';
 import back1 from '../assets/images/back1.jpg';
