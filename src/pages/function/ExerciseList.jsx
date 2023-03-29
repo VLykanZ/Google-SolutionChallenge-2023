@@ -41,10 +41,9 @@ function ExerciseList() {
   const musclesList = muscles[bodyPart];
 
   return (
-    <body>
+    <body className="exercise">
       <ProgressTab/>
       <section className="function">
-      <h1>Exercise:</h1>
         <section className='exercise'>
           {musclesList.map((muscle, index) => (
           <h3 key = {index}> These are Exercises for {muscle.muscle}

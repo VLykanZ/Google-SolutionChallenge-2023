@@ -12,7 +12,7 @@ import kong from '../../assets/images/kong.gif';
 
 function DoExercise() {
     return (
-            <body className="DoExercise">
+            <body className="exercise">
                 <ProgressTab/>
                 <section className="function">
                 <h1>Do Exercise</h1>
