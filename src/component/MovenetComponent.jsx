@@ -117,11 +117,11 @@ export  function Classifier() {
 
 var pose;
 var confident;
-const color = "red";
-const lineWidth = 10;
+const color = "limegreen";
+const lineWidth = 3;
 function drawPoint(ctx, y, x, r, color) {
   ctx.beginPath();
-  ctx.arc(x, y, r, 0, 2 * Math.PI);
+  ctx.arc(x , y, r, 0, 2 * Math.PI);
   ctx.fillStyle = color;
   ctx.fill();
 }
@@ -182,6 +182,7 @@ const drawCanvas = (pose, video, videoWidth, videoHeight, canvas) => {
   canvas.current.width = videoWidth;
   canvas.current.height = videoHeight;
 
+
   drawKeypoints(pose["keypoints"], confident, ctx);
   drawSkeleton(pose["keypoints"], confident, ctx);
 };
@@ -225,7 +226,8 @@ function MovenetComponent() {
 
   return (
     <div className="camera">
-        <Webcam
+        <Webcam 
+        mirrored={true}
           ref={webcamRef}
           style={{
             position: "fixed",
@@ -236,7 +238,7 @@ function MovenetComponent() {
             right: "5%",
           }}
         />
-        <canvas
+        <canvas mirrored={true}
           ref={canvasRef}
           style={{
             marginLeft: "auto",
@@ -244,6 +246,7 @@ function MovenetComponent() {
             position: "fixed",
             float: "right",
             right: "5%",
+            transform: "scaleX(-1)",
           }}
         />
     </div>
