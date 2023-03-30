@@ -42,36 +42,86 @@ var pose_step = 0;
 var posename;
 var pose_img; 
 var step_pose_lenght; 
-
-var result =[]
+var count_check = false;
+var count = 0;
+var result_log = [];
+var idx =0 ;
+var color = 'red';
+const confident = 0.5;
 
 function Steppose(pose_list) {
   posename = PoseStep[pose_list[pose_step]];
   pose_img = PoseImg[pose_list[pose_step]];
   step_pose_lenght = pose_list.length; 
-  const pose_value = Classifier();
-  console.log(pose_value);
-  status = 'Processing';
+  const pose_value = Classifier(color, pose_step);
+  //console.log(pose_value);
   if (step_pose_lenght  == pose_step){
     processing = false;
     status = 'Finished ! ';
     posename = 'Finished !'
   }else{ 
-    if (pose_value[0][pose_step] > 0.9){
+    if(!count_check){
+      if (pose_value[0][pose_step] > confident){
+          status = 'Hold on !'; 
+          result_log.push([pose_step, []]);
+          count_check = true;
+          color = 'green';
+        }
+    }
+    if (count_check){
+      count = count +1;
+      result_log[idx][1].push(pose_value);
+    }else{
+      status = 'Processing';
+    }
+    if(count == 10){
+      idx = idx + 1;
+      count_check = false;
+      count = 0;
+      status = 'OK NEXT !';
       pose_step = pose_step + 1;
-      result.push([pose_value[0][pose_step], pose_value[1], pose_value[2]]);
-      status = 'Hold on !'; 
+      color = 'red';
     }
   }
-  console.log(result);
-  return pose_value[0][pose_step];
+  console.log(result_log);
+  return 0;
 }
+var final_score =[];
+var final_confident = [];
+function scoring(log){
+  for(let i =0; i< log.length; i++){
+    let score_sum = 0;
+    let con_sum =0;
+    let con_avg=0;
+    let score_avg=0;
+    if(log[i][0] in [0,1]){
+      for(let j=0; j< 10; j++){
+        score_sum = score_sum + log[i][1][j][1] + log[i][1][j][2];
+        con_sum = con_sum + log[i][1][j][0][0];
+      }
+      score_avg = score_sum/20;
+      final_score.push(score_avg);
+      con_avg = con_sum/10;
+      console.log(con_avg);
+      final_confident.push(con_avg);
+    }else{
+      for(let j=0; j< 10; j++){
+        con_sum = con_sum + log[i][1][j][0][0];
+      }
+      final_score.push(-1);
+      con_avg = con_sum/10;
+      final_confident.push(con_avg);
+    }
+  }
+  return 1;
+}
+
 
 function Exclassifier(props) {
   const bodyPart = useSelector(state => state.bodyPart);
   const pose_list = PoseList[bodyPart];
   pose_img = PoseImg[pose_list[0]];
-  const [ confident, setPoint] = useState("Start");
+  const [ point, setPoint] = useState("Start");
   const navigate = useNavigate();
 
   const muscles = {
@@ -87,6 +137,9 @@ function Exclassifier(props) {
       setPoint(Steppose(pose_list));
       // setImagePath(PoseImg[pose_step]);
     }else{
+      scoring(result_log);
+      console.log(final_score);
+      console.log(final_confident);
       navigate('/Summary');
     }
   }

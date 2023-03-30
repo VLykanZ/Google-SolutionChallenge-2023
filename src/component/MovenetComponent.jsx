@@ -88,8 +88,47 @@ function landmarks_to_embedding(landmarks) {
   return embedding
 }
 
+function calculateAngle(a, b, c) {
+  a = Array.from(a); // First
+  b = Array.from(b); // Mid
+  c = Array.from(c); // End
 
-export  function Classifier() {
+  const radians = Math.atan2(c[1]-b[1], c[0]-b[0]) - Math.atan2(a[1]-b[1], a[0]-b[0]);
+  let angle = Math.abs(radians*180.0/Math.PI);
+  //Converting PI --> Degree
+  if (angle > 180.0) {
+    angle = 360-angle;
+  }
+  return angle;
+}
+
+function score_neck(angle){
+    if(angle > 90){
+      angle = 180 - angle;
+    }
+    if (angle < 70){
+      return 50;
+    }else if(angle > 70 && angle < 75){
+      return 40;
+    }else{
+      return 30;
+    }
+}
+function score_arm(angle){
+  if (angle < 165){
+    return 50;
+  }else if(angle > 171 && angle < 165){
+    return 40;
+  }else{
+    return 30;
+  }
+}
+
+
+var color = "red";
+var pose_idx;
+export  function Classifier(color_, pose_idx) {
+  color = color_;
   var point_pose = pose['keypoints'];
   var input_model = [
     [point_pose['0']['position']['x'], point_pose['0']['position']['y']],
@@ -112,12 +151,40 @@ export  function Classifier() {
   ];
   const processedInput = landmarks_to_embedding(input_model)
   const predictresult = prediction(processedInput);
-  return predictresult;
+  
+
+
+  if(pose_idx == 0){
+    const middle_sholder_x = (point_pose['5']['position']['x'] + point_pose['6']['position']['x'])/2
+    const middle_sholder_y = (point_pose['5']['position']['y'] + point_pose['6']['position']['y'])/2
+    const left_shoulder = [point_pose['5']['position']['x'], point_pose['5']['position']['y']];
+    const right_shoulder = [point_pose['6']['position']['x'], point_pose['6']['position']['y']];
+    const nose = [point_pose['0']['position']['x'], point_pose['0']['position']['y']];
+    const angle_left = calculateAngle(left_shoulder, [middle_sholder_x, middle_sholder_y], nose);
+    const angle_right = calculateAngle(right_shoulder, [middle_sholder_x, middle_sholder_y], nose);
+
+    return [predictresult, score_neck(angle_left), score_neck(angle_right)];
+
+  }else if(pose_idx == 1){
+    const elbow_left = [point_pose['7']['position']['x'], point_pose['7']['position']['y']];
+    const shoulder_left = [point_pose['5']['position']['x'], point_pose['5']['position']['y']];
+    const hip_left = [point_pose['15']['position']['x'], point_pose['15']['position']['y']];
+
+    const elbow_right = [point_pose['8']['position']['x'], point_pose['8']['position']['y']];
+    const shoulder_right = [point_pose['6']['position']['x'], point_pose['6']['position']['y']];
+    const hip_right = [point_pose['12']['position']['x'], point_pose['12']['position']['y']];
+
+    const angle_left = calculateAngle(elbow_left, shoulder_left, hip_left);
+    const angle_right = calculateAngle(elbow_right, shoulder_right, hip_right);
+
+    return [predictresult, score_arm(angle_left), score_arm(angle_right)];
+  }else{
+    return [predictresult];
+  }
 }
 
 var pose;
 var confident;
-const color = "red";
 const lineWidth = 10;
 function drawPoint(ctx, y, x, r, color) {
   ctx.beginPath();
@@ -216,7 +283,7 @@ function MovenetComponent() {
 
       // Make Detections
       pose = await net.estimateSinglePose(video);
-      console.log(pose)
+      //console.log(pose)
       drawCanvas(pose, video, videoWidth, videoHeight, canvasRef);
     }
     
