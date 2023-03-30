@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import ProgressTab from '../../component/ProgressTab';
 
@@ -10,6 +11,8 @@ function Summary() {
     const [studentId, setStudentId] = useState('');
     const [feedbackScore, setFeedbackScore] = useState(0);
     const [feedbackText, setFeedbackText] = useState('');
+
+    const diagnoseScore = useSelector(state => state.diagnoseScore);
 
     // const risk = useSelector(state => state.risk);
 
@@ -48,6 +51,7 @@ function Summary() {
             <body>
                 <ProgressTab/>
                 <section className="function">
+                    <p> diagnose score:{diagnoseScore}</p>
                 <h1>Recommendation</h1>
                     <section id="recommendation">
                         <div className="summary">

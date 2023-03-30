@@ -32,7 +32,6 @@ import handabove_right from '../../assets/images/exerciselist/handabove_right.pn
 
 function ExerciseList() {
   const bodyPart = useSelector(state => state.bodyPart);
-  const diagnoseScore = useSelector(state => state.diagnoseScore);
 
   const exercises = {
     neck: [
@@ -72,7 +71,6 @@ function ExerciseList() {
     <body className="exercise">
       <ProgressTab/>
       <section className="function">
-        {diagnoseScore}
         <section className='exercise'>
           {musclesList.map((muscle, index) => (
           <h3 key = {index}> These are Exercises for {muscle.muscle}

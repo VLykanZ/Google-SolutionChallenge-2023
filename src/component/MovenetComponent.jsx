@@ -17,6 +17,7 @@ export function prediction(inputArray) {
     outputArray = Array.from(outputData.dataSync());
   };
   runmodel();
+  console.log(runmodel());
   return outputArray;
 }
 
@@ -151,7 +152,7 @@ export  function Classifier(color_, pose_idx) {
   ];
   const processedInput = landmarks_to_embedding(input_model)
   const predictresult = prediction(processedInput);
-  
+  console.log(predictresult);
 
 
   if(pose_idx == 0){

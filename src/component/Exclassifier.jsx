@@ -1,6 +1,8 @@
 import React, { useRef , useState, useEffect} from "react";
 import { useSelector } from 'react-redux';
+import { setStretchScore } from "../store";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import {Classifier, MovenetComponent, model, prediction} from './MovenetComponent';
 import * as tf from "@tensorflow/tfjs";
 
@@ -30,53 +32,54 @@ import handabove_right from '../assets/images/exerciselist/handabove_right.png';
 
 // Database
 const PoseList ={
-  'neck' : [0, 1, 2, 3, 4],
-  'back' : [5, 6, 7, 8, 9],
-  'arm' : [10, 11, 12, 13, 14, 15],
+  'neck' : [2, 7, 8, 9, 10],
+  'back' : [13, 0, 1, 14, 15],
+  'arm' : [11, 12, 6, 3, 4, 5],
 }
 const PoseStep = {
   // neck
-  0 : 'Back Neck Stretch', 
-  1 : 'Left Side Neck Stretch', 
-  2 : 'Right Side Neck Stretch', 
-  3 : 'Left Neck Rotation', 
-  4 : 'Right Neck Rotation', 
+  2 : 'Back Neck Stretch', 
+  7 : 'Left Side Neck Stretch', 
+  8 : 'Right Side Neck Stretch', 
+  9 : 'Left Neck Rotation', 
+  10 : 'Right Neck Rotation', 
   // back
-  5 : 'Arm Spread', 
-  6 : 'Left Shoulder Adductor Stretch', 
-  7 : 'Right Shoulder Adductor Stretch', 
-  8 : 'Left Body Twist', 
-  9 : 'Right Body Twist', 
+  13 : 'Arm Spread', 
+  0 : 'Left Shoulder Adductor Stretch', 
+  1 : 'Right Shoulder Adductor Stretch', 
+  14 : 'Left Body Twist', 
+  15 : 'Right Body Twist', 
   // arm
-  10 : 'Left Forearm Stretch', 
-  11 : 'Right Forearm Stretch', 
-  12 : 'Front Arm Stretch', 
-  13 : 'Over Head Arm Stretch', 
-  14 : 'Left Side Over Head Arm Stretch', 
-  15 : 'Right Side Over Head Arm Stretch', 
+  11 : 'Left Forearm Stretch', 
+  12 : 'Right Forearm Stretch', 
+  6 : 'Front Arm Stretch', 
+  3 : 'Over Head Arm Stretch', 
+  4 : 'Left Side Over Head Arm Stretch', 
+  5 : 'Right Side Over Head Arm Stretch', 
 }
 const PoseImg = {
   // neck
-  0 : downfacepress,
-  1 : neckpull_left,
-  2 : neckpull_right,
-  3 : neckrotation_left,
-  4 : neckrotation_right,
+  2 : downfacepress,
+  7 : neckpull_left,
+  8 : neckpull_right,
+  9 : neckrotation_left,
+  10 : neckrotation_right,
   // back
-  5 : spreadarms,
-  6 : armcross_left,
-  7 : armcross_right,
-  8 : waisttwist_left,
-  9 : waisttwist_right,
+  13 : spreadarms,
+  0 : armcross_left,
+  1 : armcross_right,
+  14 : waisttwist_left,
+  15 : waisttwist_right,
   // arm
-  10 : pullfinger_left,
-  11 : pullfinger_right,
-  12 : handinfront,
-  13 : handabove,
-  14 : handabove_left,
-  15 : handabove_right,
+  11 : pullfinger_left,
+  12 : pullfinger_right,
+  6 : handinfront,
+  3 : handabove,
+  4 : handabove_left,
+  5 : handabove_right,
 }
 
+// const dispatch = useDispatch();
 
 //Initialization
 var status = 'Processing...';
@@ -90,14 +93,14 @@ var count = 0;
 var result_log = [];
 var idx =0 ;
 var color = 'red';
-const confident = 0.5;
+const confident = 0.2;
 
 function Steppose(pose_list) {
   posename = PoseStep[pose_list[pose_step]];
   pose_img = PoseImg[pose_list[pose_step]];
   step_pose_lenght = pose_list.length; 
   const pose_value = Classifier(color, pose_step);
-  //console.log(pose_value);
+  console.log(posename);
   if (step_pose_lenght  == pose_step){
     processing = false;
     status = 'Finished ! ';
@@ -159,6 +162,10 @@ function scoring(log){
   return 1;
 }
 
+// const sendStretchScore = () => {
+//   dispatch(setStretchScore(final_score));
+//   console.log(dispatch(final_score))
+// };
 
 function Exclassifier(props) {
   const bodyPart = useSelector(state => state.bodyPart);
@@ -175,16 +182,17 @@ function Exclassifier(props) {
       scoring(result_log);
       console.log(final_score);
       console.log(final_confident);
+      // sendStretchScore;
       navigate('/Summary');
     }
   }
 
-  const pose_number = 1;
+  // const pose_number = 1;
 
   useEffect(() => {
     const interval = setInterval(changeFrame, 1000);
     return () => clearInterval(interval);
-    pose_number ++;
+    // pose_number ++;
   }, []);
 
   return (
@@ -203,7 +211,7 @@ function Exclassifier(props) {
         </span>
       </div>
       <div className="exercise-status">
-          <p className="card-excerpt">{pose_number} of {pose_list.length}</p>
+          {/* <p className="card-excerpt">{pose_number} of {pose_list.length}</p> */}
           <p className='card-title'>Pose name: {posename} </p>
           <p className="card-excerpt"> Status: {status}</p>
       </div>
