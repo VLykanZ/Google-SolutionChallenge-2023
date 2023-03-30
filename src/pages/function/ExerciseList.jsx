@@ -6,28 +6,55 @@ import ProgressTab from '../../component/ProgressTab';
 import '../../style/page.css'
 import '../../style/button.css'
 
-import neck1 from '../../assets/images/neck1.jpg';
-import neck2 from '../../assets/images/neck2.jpg';
-import back1 from '../../assets/images/back1.jpg';
-import back2 from '../../assets/images/back2.jpg';
-import arm1 from '../../assets/images/body1.jpg';
-import arm2 from '../../assets/images/body2.jpg';
+
+
+// neck
+import downfacepress from '../../assets/images/exerciselist/downfacepress.png';
+import neckpull_left from '../../assets/images/exerciselist/neckpull_left.png';
+import neckpull_right from '../../assets/images/exerciselist/neckpull_right.png';
+import neckrotation_left from '../../assets/images/exerciselist/neckrotation_left.png';
+import neckrotation_right from '../../assets/images/exerciselist/neckrotation_right.png';
+
+// back
+import spreadarms from '../../assets/images/exerciselist/spreadarms.png';
+import armcross_left from '../../assets/images/exerciselist/armcross_left.png';
+import armcross_right from '../../assets/images/exerciselist/armcross_right.png';
+import waisttwist_left from '../../assets/images/exerciselist/waisttwist_left.png';
+import waisttwist_right from '../../assets/images/exerciselist/waisttwist_right.png';
+
+// arm
+import pullfinger_left from '../../assets/images/exerciselist/pullfinger_left.png';
+import pullfinger_right from '../../assets/images/exerciselist/pullfinger_right.png';
+import handinfront from '../../assets/images/exerciselist/handinfront.png';
+import handabove from '../../assets/images/exerciselist/handabove.png';
+import handabove_left from '../../assets/images/exerciselist/handabove_left.png';
+import handabove_right from '../../assets/images/exerciselist/handabove_right.png';
 
 function ExerciseList() {
   const bodyPart = useSelector(state => state.bodyPart);
 
   const exercises = {
     neck: [
-      { name: 'Back Neck Stretch', duration: '15-30 Seconds' ,img: neck1},
-      { name: 'Side Neck Stretch', duration: '15-30 Seconds' ,img: neck2},
+      { name: 'Back Neck Stretch', duration: '15-30 Seconds' ,img: downfacepress},
+      { name: 'Left Side Neck Stretch', duration: '15-30 Seconds' ,img: neckpull_left},
+      { name: 'Right Side Neck Stretch', duration: '15-30 Seconds' ,img: neckpull_right},
+      { name: 'Left Neck Rotation', duration: '15-30 Seconds' ,img: neckrotation_left},
+      { name: 'Right Neck Rotation', duration: '15-30 Seconds' ,img: neckrotation_right},
     ],
     back: [
-      { name: 'Subscapularis Stretch', duration: '15-30 Seconds' ,img: back1},
-      { name: 'Shoulder Adductor Stretch', duration: '15-30 Seconds' ,img: back2},
+      { name: 'Arm Spread', duration: '15-30 Seconds' ,img: spreadarms},
+      { name: 'Left Shoulder Adductor Stretch', duration: '15-30 Seconds' ,img: armcross_left},
+      { name: 'Right Shoulder Adductor Stretch', duration: '15-30 Seconds' ,img: armcross_right},
+      { name: 'Left Body Twist', duration: '15-30 Seconds' ,img: waisttwist_left},
+      { name: 'Right Body Twist', duration: '15-30 Seconds' ,img: waisttwist_right},
     ],
     arm: [
-      { name: 'Forearm Stretch', duration: '15-30 Seconds' ,img: arm1},
-      { name: 'Abdominal & Upper Body Strech', duration: '15-30 Seconds' ,img: arm2},
+      { name: 'Left Forearm Stretch', duration: '15-30 Seconds' ,img: pullfinger_left},
+      { name: 'Right Forearm Stretch', duration: '15-30 Seconds' ,img: pullfinger_right},
+      { name: 'Front Arm Stretch', duration: '15-30 Seconds' ,img: handinfront},
+      { name: 'Over Head Arm Stretch', duration: '15-30 Seconds' ,img: handabove},
+      { name: 'Left Side Over Head Arm Stretch', duration: '15-30 Seconds' ,img: handabove_left},
+      { name: 'Right Side Over Head Arm Stretch', duration: '15-30 Seconds' ,img: handabove_right},
     ],
   };
 
@@ -44,20 +71,25 @@ function ExerciseList() {
     <body className="exercise">
       <ProgressTab/>
       <section className="function">
+        
         <section className='exercise'>
           {musclesList.map((muscle, index) => (
           <h3 key = {index}> These are Exercises for {muscle.muscle}
           </h3>
           ))}
-          {/* <p><img src={neck1} alt="" style={{ height: "200px" }} /> </p> */}
-          {exerciseList.map((exercise, index) => (
-            <p className="exercise" key={index}>
-              <img src={exercise.img}  alt="" style={{ height: "200px" }}/> <br />
-              {exercise.name} : {exercise.duration}
-              
-            </p>
-            
+
+          <div className='article-container'>
+          
+            {exerciseList.map((exercise, index) => (
+              <article className='article-card'>
+                <figure className="exercise-image" key={index}>
+                  <img src={exercise.img}  alt="" style={{ height: "200px" }}/> 
+                </figure>
+                <p className="exercise-name">{exercise.name}</p>
+                <p className="exercise-duration">{exercise.duration}</p>
+                </article>
           ))}
+          </div>
         </section>
 
       <div>

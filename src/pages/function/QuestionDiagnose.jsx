@@ -73,7 +73,7 @@ function QuestionDiagnose() {
     <body>
       <ProgressTab/>
       <section className="function">
-      <h1 className="header">Diagnose</h1>
+      <h1 className="header">Diagnose Form</h1>
         <section class="question" id="diagnose">
           <form action="">
             <div className="question" id="diagnose-1">
