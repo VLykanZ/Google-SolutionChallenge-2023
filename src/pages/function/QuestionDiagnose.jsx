@@ -6,6 +6,7 @@ import ProgressTab from '../../component/ProgressTab';
 
 import '../../style/page.css'
 import '../../style/button.css'
+import { setDiagnoseScore } from "../../store";
 
 function QuestionDiagnose() {
   const [answers, setAnswers] = useState({});
@@ -64,7 +65,7 @@ function QuestionDiagnose() {
     } else {
       diagnose = 'E';
     }
-    dispatch(setDiagnose(diagnose));
+    dispatch(setDiagnoseScore(diagnose));
     console.log(dispatch(diagnose))
     // navigate to the next page
   };
