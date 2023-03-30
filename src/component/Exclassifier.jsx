@@ -79,7 +79,6 @@ const PoseImg = {
   5 : handabove_right,
 }
 
-// const dispatch = useDispatch();
 
 //Initialization
 var status = 'Processing...';
@@ -162,12 +161,16 @@ function scoring(log){
   return 1;
 }
 
-// const sendStretchScore = () => {
-//   dispatch(setStretchScore(final_score));
-//   console.log(dispatch(final_score))
-// };
 
 function Exclassifier(props) {
+
+  const dispatch = useDispatch();
+
+  const sendStretchScore = () => {
+    dispatch(setStretchScore(final_score));
+    console.log(dispatch(final_score))
+  };
+  
   const bodyPart = useSelector(state => state.bodyPart);
   const pose_list = PoseList[bodyPart];
   pose_img = PoseImg[pose_list[0]];
@@ -182,7 +185,7 @@ function Exclassifier(props) {
       scoring(result_log);
       console.log(final_score);
       console.log(final_confident);
-      // sendStretchScore;
+      sendStretchScore();
       navigate('/Summary');
     }
   }
