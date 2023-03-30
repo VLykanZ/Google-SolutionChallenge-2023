@@ -150,6 +150,22 @@ p.recommend{
     border-radius: 0 0 8px 8px;
     background-color: #d3f3ec;
 }
+.exercise-status .card-title{
+    text-align: left;
+    margin: 1rem 0;
+    color: #22447b;
+    text-transform: uppercase;
+    font-weight: bolder;
+    margin: 10px;
+}
+.exercise-status .card-excerpt{
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+    color: #6b82a7;
+    margin: 10px;
+    margin-bottom: 10px;
+}
 
 
 
@@ -183,7 +199,7 @@ label.bodypart{
     height: 175px;
     margin: 10px;
     border-radius: 8px;
-    border: 3px solid #1abc9c;
+    /* border: 3px solid #1abc9c; */
 }
 label.bodypart:hover{
     opacity: 0.7;
@@ -209,6 +225,7 @@ span.bodypart-image{
 }
 .bodypart-image img{
     height: 100%;
+    border-radius: 0 8px 8px 0;
 }
 
 

@@ -79,7 +79,7 @@ const PoseImg = {
 
 
 //Initialization
-var status = 'Processing';
+var status = 'Processing...';
 var processing = true;
 var pose_step = 0;
 var posename;
@@ -167,14 +167,6 @@ function Exclassifier(props) {
   const [ point, setPoint] = useState("Start");
   const navigate = useNavigate();
 
-  const muscles = {
-    neck: [{muscle: 'Neck & Shoulder'}],
-    back: [{muscle: 'Back'}],
-    arm: [{muscle: 'Body & Arm'}]
-  }
-
-  const musclesList = muscles[bodyPart];
-
   const changeFrame = () => {
     if (processing){
       setPoint(Steppose(pose_list));
@@ -187,9 +179,12 @@ function Exclassifier(props) {
     }
   }
 
+  const pose_number = 1;
+
   useEffect(() => {
     const interval = setInterval(changeFrame, 1000);
     return () => clearInterval(interval);
+    pose_number ++;
   }, []);
 
   return (
@@ -208,11 +203,9 @@ function Exclassifier(props) {
         </span>
       </div>
       <div className="exercise-status">
-        {musclesList.map((muscle, index) => (
-          <p>
-            Muscle Group: <br /> {muscle.muscle} <br />
-            Pose name: <br />  {posename}<br /> Status: {status}</p>
-            ))}
+          <p className="card-excerpt">{pose_number} of {pose_list.length}</p>
+          <p className='card-title'>Pose name: {posename} </p>
+          <p className="card-excerpt"> Status: {status}</p>
       </div>
     </div>
   );
