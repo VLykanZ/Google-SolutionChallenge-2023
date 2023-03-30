@@ -49,7 +49,7 @@ function QuestionBodypart() {
             </Link>
 
             <Link to="/QuestionDiagnose">
-                <label className="bodypart" onClick={handleBodyPartClick} value="Arm" name="bodypart">
+                <label className="bodypart" onClick={handleBodyPartClick} value="arm" name="bodypart">
                     <span className='bodypart-text'>Arm</span>
                     <span className="bodypart-image" >
                         <img className="bodypart-image" src={wristache} alt="" height={400} />

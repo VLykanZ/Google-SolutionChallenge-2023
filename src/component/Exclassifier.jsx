@@ -31,29 +31,29 @@ import handabove_right from '../assets/images/exerciselist/handabove_right.png';
 // Database
 const PoseList ={
   'neck' : [0, 1, 2, 3, 4],
-  'back' : [0, 1, 2, 3, 4],
-  'arm' : [0, 1, 2, 3, 4, 5],
+  'back' : [5, 6, 7, 8, 9],
+  'arm' : [10, 11, 12, 13, 14, 15],
 }
 const PoseStep = {
   // neck
   0 : 'Back Neck Stretch', 
-  1 : 'Side Neck Stretch', 
-  1 : 'Side Neck Stretch', 
-  1 : 'Side Neck Stretch', 
-  1 : 'Side Neck Stretch', 
+  1 : 'Left Side Neck Stretch', 
+  2 : 'Right Side Neck Stretch', 
+  3 : 'Left Neck Rotation', 
+  4 : 'Right Neck Rotation', 
   // back
-  2 : 'Subscapularis Stretch', 
-  3 : 'Shoulder Adductor Stretch', 
-  3 : 'Shoulder Adductor Stretch', 
-  3 : 'Shoulder Adductor Stretch', 
-  3 : 'Shoulder Adductor Stretch', 
+  5 : 'Arm Spread', 
+  6 : 'Left Shoulder Adductor Stretch', 
+  7 : 'Right Shoulder Adductor Stretch', 
+  8 : 'Left Body Twist', 
+  9 : 'Right Body Twist', 
   // arm
-  4 : 'Forearm Stretch', 
-  5 : 'Abdominal & Upper Body Strech', 
-  5 : 'Abdominal & Upper Body Strech', 
-  5 : 'Abdominal & Upper Body Strech', 
-  5 : 'Abdominal & Upper Body Strech', 
-  5 : 'Abdominal & Upper Body Strech', 
+  10 : 'Left Forearm Stretch', 
+  11 : 'Right Forearm Stretch', 
+  12 : 'Front Arm Stretch', 
+  13 : 'Over Head Arm Stretch', 
+  14 : 'Left Side Over Head Arm Stretch', 
+  15 : 'Right Side Over Head Arm Stretch', 
 }
 const PoseImg = {
   // neck
@@ -170,7 +170,7 @@ function Exclassifier(props) {
   const muscles = {
     neck: [{muscle: 'Neck & Shoulder'}],
     back: [{muscle: 'Back'}],
-    wrist: [{muscle: 'Body & Arm'}]
+    arm: [{muscle: 'Body & Arm'}]
   }
 
   const musclesList = muscles[bodyPart];
@@ -203,7 +203,7 @@ function Exclassifier(props) {
             </p>         
           ))} */}
       <div className="exercise-picture">
-        <span className="exercise-image" style={{height:"100px"}}> 
+        <span className="exercise-image" style={{height:"100px"}}>
         <img className="exercise-image" src={pose_img} alt="" width={300}/>
         </span>
       </div>

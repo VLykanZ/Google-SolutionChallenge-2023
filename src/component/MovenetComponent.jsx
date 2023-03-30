@@ -125,10 +125,10 @@ function score_arm(angle){
 }
 
 
-var color = "red";
+var color = "limegreen";
 var pose_idx;
 export  function Classifier(color_, pose_idx) {
-  color = color_;
+  // color = color_;
   var point_pose = pose['keypoints'];
   var input_model = [
     [point_pose['0']['position']['x'], point_pose['0']['position']['y']],
@@ -185,7 +185,7 @@ export  function Classifier(color_, pose_idx) {
 
 var pose;
 var confident;
-const lineWidth = 10;
+const lineWidth = 3;
 function drawPoint(ctx, y, x, r, color) {
   ctx.beginPath();
   ctx.arc(x, y, r, 0, 2 * Math.PI);
@@ -293,6 +293,7 @@ function MovenetComponent() {
   return (
     <div className="camera">
         <Webcam
+          mirrored={true}
           ref={webcamRef}
           style={{
             position: "fixed",
@@ -312,6 +313,7 @@ function MovenetComponent() {
             position: "fixed",
             float: "right",
             right: "5%",
+            transform: "scaleX(-1)",
           }}
         />
     </div>

@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from 'react-router-dom';
 
 import Exclassifier from '../../component/Exclassifier';
 import MovenetComponent from '../../component/MovenetComponent';
@@ -7,8 +6,6 @@ import ProgressTab from '../../component/ProgressTab';
 
 import '../../style/page.css'
 import '../../style/button.css'
-
-import kong from '../../assets/images/kong.gif';
 
 function DoExercise() {
     return (
