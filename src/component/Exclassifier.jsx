@@ -12,71 +12,57 @@ import '../style/page.css'
 import downfacepress from '../assets/images/exerciselist/downfacepress.png';
 import neckpull_left from '../assets/images/exerciselist/neckpull_left.png';
 import neckpull_right from '../assets/images/exerciselist/neckpull_right.png';
-import neckrotation_left from '../assets/images/exerciselist/downfacepress.png';
-import neckrotation_right from '../assets/images/exerciselist/neckrotation_right.png';
 
 // back
 import spreadarms from '../assets/images/exerciselist/spreadarms.png';
 import armcross_left from '../assets/images/exerciselist/armcross_left.png';
 import armcross_right from '../assets/images/exerciselist/armcross_right.png';
-import waisttwist_left from '../assets/images/exerciselist/waisttwist_left.png';
-import waisttwist_right from '../assets/images/exerciselist/waisttwist_right.png';
 
 // arm
 import pullfinger_left from '../assets/images/exerciselist/pullfinger_left.png';
 import pullfinger_right from '../assets/images/exerciselist/pullfinger_right.png';
-import handinfront from '../assets/images/exerciselist/handinfront.png';
-import handabove from '../assets/images/exerciselist/handabove.png';
 import handabove_left from '../assets/images/exerciselist/handabove_left.png';
 import handabove_right from '../assets/images/exerciselist/handabove_right.png';
 
 // Database
 const PoseList ={
-  'neck' : [2, 7, 8, 9, 10],
-  'back' : [13, 0, 1, 14, 15],
-  'arm' : [11, 12, 6, 3, 4, 5],
+  'neck' : [2, 5, 6],
+  'back' : [9, 0, 1],
+  'arm' : [7, 8, 3, 4],
 }
 const PoseStep = {
   // neck
   2 : 'Back Neck Stretch', 
-  7 : 'Left Side Neck Stretch', 
-  8 : 'Right Side Neck Stretch', 
-  9 : 'Left Neck Rotation', 
-  10 : 'Right Neck Rotation', 
+  5 : 'Left Side Neck Stretch', 
+  6 : 'Right Side Neck Stretch', 
+
   // back
-  13 : 'Arm Spread', 
+  9 : 'Arm Spread', 
   0 : 'Left Shoulder Adductor Stretch', 
   1 : 'Right Shoulder Adductor Stretch', 
-  14 : 'Left Body Twist', 
-  15 : 'Right Body Twist', 
+
   // arm
-  11 : 'Left Forearm Stretch', 
-  12 : 'Right Forearm Stretch', 
-  6 : 'Front Arm Stretch', 
-  3 : 'Over Head Arm Stretch', 
-  4 : 'Left Side Over Head Arm Stretch', 
-  5 : 'Right Side Over Head Arm Stretch', 
+  7 : 'Left Forearm Stretch', 
+  8 : 'Right Forearm Stretch', 
+  3 : 'Left Side Over Head Arm Stretch', 
+  4 : 'Right Side Over Head Arm Stretch', 
 }
 const PoseImg = {
   // neck
   2 : downfacepress,
-  7 : neckpull_left,
-  8 : neckpull_right,
-  9 : neckrotation_left,
-  10 : neckrotation_right,
+  5 : neckpull_left,
+  6 : neckpull_right,
+
   // back
-  13 : spreadarms,
+  9 : spreadarms,
   0 : armcross_left,
   1 : armcross_right,
-  14 : waisttwist_left,
-  15 : waisttwist_right,
+
   // arm
-  11 : pullfinger_left,
-  12 : pullfinger_right,
-  6 : handinfront,
-  3 : handabove,
-  4 : handabove_left,
-  5 : handabove_right,
+  7 : pullfinger_left,
+  8 : pullfinger_right,
+  3 : handabove_left,
+  4 : handabove_right
 }
 
 

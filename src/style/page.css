@@ -108,6 +108,10 @@ p.recommend{
 
 
 /* ExerciseList */
+.article-container{
+    margin: 40px;
+    margin-right: 20px;
+}
 .article-card{
     align-items: center;
     background: white;
