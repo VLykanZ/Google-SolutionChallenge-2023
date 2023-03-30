@@ -4,34 +4,77 @@ import { useNavigate } from "react-router-dom";
 import {Classifier, MovenetComponent, model, prediction} from './MovenetComponent';
 import * as tf from "@tensorflow/tfjs";
 
-import neck1 from '../assets/images/neck1.jpg';
-import neck2 from '../assets/images/neck2.jpg';
-import back1 from '../assets/images/back1.jpg';
-import back2 from '../assets/images/back2.jpg';
-import wrist1 from '../assets/images/body1.jpg';
-import wrist2 from '../assets/images/body2.jpg';
+import '../style/page.css'
+
+// neck
+import downfacepress from '../assets/images/exerciselist/downfacepress.png';
+import neckpull_left from '../assets/images/exerciselist/neckpull_left.png';
+import neckpull_right from '../assets/images/exerciselist/neckpull_right.png';
+import neckrotation_left from '../assets/images/exerciselist/downfacepress.png';
+import neckrotation_right from '../assets/images/exerciselist/neckrotation_right.png';
+
+// back
+import spreadarms from '../assets/images/exerciselist/spreadarms.png';
+import armcross_left from '../assets/images/exerciselist/armcross_left.png';
+import armcross_right from '../assets/images/exerciselist/armcross_right.png';
+import waisttwist_left from '../assets/images/exerciselist/waisttwist_left.png';
+import waisttwist_right from '../assets/images/exerciselist/waisttwist_right.png';
+
+// arm
+import pullfinger_left from '../assets/images/exerciselist/pullfinger_left.png';
+import pullfinger_right from '../assets/images/exerciselist/pullfinger_right.png';
+import handinfront from '../assets/images/exerciselist/handinfront.png';
+import handabove from '../assets/images/exerciselist/handabove.png';
+import handabove_left from '../assets/images/exerciselist/handabove_left.png';
+import handabove_right from '../assets/images/exerciselist/handabove_right.png';
 
 // Database
 const PoseList ={
-  'neck' : [0, 1, 2],
-  'back' : [0, 1, 2],
-  'wrist' : [0, 1, 2],
+  'neck' : [0, 1, 2, 3, 4],
+  'back' : [0, 1, 2, 3, 4],
+  'arm' : [0, 1, 2, 3, 4, 5],
 }
 const PoseStep = {
+  // neck
   0 : 'Back Neck Stretch', 
   1 : 'Side Neck Stretch', 
+  1 : 'Side Neck Stretch', 
+  1 : 'Side Neck Stretch', 
+  1 : 'Side Neck Stretch', 
+  // back
   2 : 'Subscapularis Stretch', 
   3 : 'Shoulder Adductor Stretch', 
+  3 : 'Shoulder Adductor Stretch', 
+  3 : 'Shoulder Adductor Stretch', 
+  3 : 'Shoulder Adductor Stretch', 
+  // arm
   4 : 'Forearm Stretch', 
+  5 : 'Abdominal & Upper Body Strech', 
+  5 : 'Abdominal & Upper Body Strech', 
+  5 : 'Abdominal & Upper Body Strech', 
+  5 : 'Abdominal & Upper Body Strech', 
   5 : 'Abdominal & Upper Body Strech', 
 }
 const PoseImg = {
-  0 : neck1,
-  1 : neck2,
-  2 : back1,
-  3 : back2,
-  4 : wrist1,
-  5 : wrist2,
+  // neck
+  0 : downfacepress,
+  1 : neckpull_left,
+  2 : neckpull_right,
+  3 : neckrotation_left,
+  4 : neckrotation_right,
+  // back
+  5 : spreadarms,
+  6 : armcross_left,
+  7 : armcross_right,
+  8 : waisttwist_left,
+  9 : waisttwist_right,
+  // arm
+  10 : pullfinger_left,
+  11 : pullfinger_right,
+  12 : handinfront,
+  13 : handabove,
+  14 : handabove_left,
+  15 : handabove_right,
 }
 
 
@@ -108,7 +151,7 @@ function Exclassifier(props) {
           ))} */}
       <div className="exercise-picture">
         <div style={{height:"200px"}}> 
-        <img src={pose_img} alt="" width={400}/>
+        <img src={pose_img} alt="" width={300}/>
         </div>
       </div>
       <div className="exercise-status">
