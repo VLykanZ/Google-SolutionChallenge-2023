@@ -125,10 +125,10 @@ function score_arm(angle){
 }
 
 
-var color = "limegreen";
+var color = "red";
 var pose_idx;
 export  function Classifier(color_, pose_idx) {
-  // color = color_;
+  color = color_;
   var point_pose = pose['keypoints'];
   var input_model = [
     [point_pose['0']['position']['x'], point_pose['0']['position']['y']],

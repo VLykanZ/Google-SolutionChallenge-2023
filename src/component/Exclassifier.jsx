@@ -108,7 +108,7 @@ function Steppose(pose_list) {
           status = 'Hold on !'; 
           result_log.push([pose_step, []]);
           count_check = true;
-          color = 'green';
+          color = 'blue';
         }
     }
     if (count_check){
