@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import ProgressTab from '../../component/ProgressTab';
 
@@ -82,11 +82,11 @@ function Summary() {
                 <section className="feedback" id="feedback-score">
                     <ul className="feedback" id="feedback-score">
                         <label className="feedback" id="feedback-score">Please Rate your Satisfaction*</label>
-                            <li><input type="radio" onClick={() => { setFeedbackScore("1") }} value="0" /> 1</li>
-                            <li><input type="radio" onClick={() => { setFeedbackScore("2") }} value="1" /> 2</li>
-                            <li><input type="radio" onClick={() => { setFeedbackScore("3") }} value="2" /> 3</li>
-                            <li><input type="radio" onClick={() => { setFeedbackScore("4") }} value="3" /> 4</li>
-                            <li><input type="radio" onClick={() => { setFeedbackScore("5") }} value="4" /> 5</li>
+                        <li><input type="radio" onChange={handleFeedbackScoreChange} value="0" /> 1</li>
+                        <li><input type="radio" onChange={handleFeedbackScoreChange} value="1" /> 2</li>
+                        <li><input type="radio" onChange={handleFeedbackScoreChange} value="2" /> 3</li>
+                        <li><input type="radio" onChange={handleFeedbackScoreChange} value="3" /> 4</li>
+                        <li><input type="radio" onChange={handleFeedbackScoreChange} value="4" /> 5</li>
                     </ul>
                 </section>
 
@@ -103,10 +103,10 @@ function Summary() {
 
                 <div>
                 <Link to="/">
-                    <button class="button-pushable" id="next" disabled={!isFeedbackScoreValid} onClick={handleSubmit} >
+                    <button class="button-pushable" i="next" disabled={!isFeedbackScoreValid} onClick={handleSubmit} >
                         <span class="button-shadow"></span>
                         <span class="button-edge"></span>
-                        <span class="button-front text">
+                        <span class="button-front textd">
                             Finish!
                         </span>
                     </button>

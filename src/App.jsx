@@ -10,7 +10,7 @@ import Home from './pages/navbar/Home';
 import Knowledge from './pages/navbar/Knowledge';
 import Stack from './pages/navbar/Stack';
 import About from './pages/navbar/About';
-import ContactUs from './pages/navbar/ContactUs';
+// import ContactUs from './pages/navbar/ContactUs';
 
 import QuestionBodyPart from './component/QuestionBodyPart';
 import QuestionDiagnose from './pages/function/QuestionDiagnose';
@@ -39,7 +39,7 @@ function App() {
             <Route path='/Knowledge' element={<Knowledge/>}></Route>
             <Route path='/Stack' element={<Stack/>}></Route>
             <Route path='/About' element={<About/>} />
-            <Route path='/Contact-Us' element={<ContactUs/>} />
+            {/* <Route path='/Contact-Us' element={<ContactUs/>} /> */}
             <Route path='/QuestionBodypart' element={<QuestionBodyPart/>} />
             <Route path='/QuestionDiagnose' element={<QuestionDiagnose/>} />
             <Route path='/ExerciseList' element={<ExerciseList/>} />

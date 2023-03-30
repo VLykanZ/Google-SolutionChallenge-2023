@@ -1,5 +1,4 @@
 import React from 'react';
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setBodyPart } from '../store';
@@ -13,14 +12,12 @@ import '../style/button.css'
 
 function QuestionBodypart() {
 
-    const [selectedBodyPart, setSelectedBodyPart] = useState(null);
-  const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
-  const handleBodyPartClick = (e) => {
-    const selectedValue = e.currentTarget.getAttribute('value');
-    setSelectedBodyPart(selectedValue);
-    dispatch(setBodyPart(selectedValue));
-  };
+    const handleBodyPartClick = (e) => {
+        const selectedValue = e.currentTarget.getAttribute('value');
+        dispatch(setBodyPart(selectedValue));
+    };
 
   return (
       <div>
