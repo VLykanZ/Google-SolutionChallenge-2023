@@ -56,8 +56,24 @@ body{
 }
 .article-content .card-excerpt{
     font-size: 1rem;
+    font-weight: bold;
     line-height: 1.5rem;
     color: #6b82a7;
+    margin: 0;
+    margin-bottom: 10px;
+}
+.article-content .card-major{
+    font-size: 0.8rem;
+    /* font-weight: 600; */
+    line-height: 1.5rem;
+    color: #000000;
+    margin: 0;
+    /* margin-bottom: 10px; */
+}
+.article-content .card-job{
+    font-size: 0.8rem;
+    line-height: 1.5rem;
+    color: #000000;
     margin: 0;
 }
 
