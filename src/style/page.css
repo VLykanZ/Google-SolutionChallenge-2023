@@ -132,6 +132,26 @@ p.recommend{
     font-size: 25px;
 }
 
+
+/* Exclassifier */
+.exercise-picture{
+    /* position: absolute; */
+    display: block;
+    border: 2px solid black;
+    border-radius: 8px 8px 0 0;
+}
+.exercise-image .img{
+    height: 100%;
+}
+.exercise-status{
+    /* position: absolute; */
+    display: block;
+    border: 2px solid black;
+    border-radius: 0 0 8px 8px;
+}
+
+
+
 /* Bodypart */
 section.bodypart-description{
     position: absolute;
@@ -189,7 +209,9 @@ span.bodypart-image{
 .bodypart-image img{
     height: 100%;
 }
-/* Recommend */
+
+
+/* Summary */
 section.feedback{
     font-size: 20px;
 }

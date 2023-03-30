@@ -301,6 +301,7 @@ function MovenetComponent() {
             marginRight: "auto",
             float: "right",
             right: "5%",
+            borderRadius: "8px",
           }}
         />
         <canvas

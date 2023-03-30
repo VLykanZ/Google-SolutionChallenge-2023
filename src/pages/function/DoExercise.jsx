@@ -15,10 +15,8 @@ function DoExercise() {
             <body className="exercise">
                 <ProgressTab/>
                 <section className="function">
-                <h1>Do Exercise</h1>
-                <div>
-                <p>Doing an Exercise</p>
-                </div>
+                <h1>Stretching...</h1>
+
                 <div className='do-exercise'>
                     <div className="exclassifier">
                     <Exclassifier/>
