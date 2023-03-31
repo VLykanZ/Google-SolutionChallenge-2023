@@ -133,8 +133,8 @@ function confident_score(confident){
   }
 }
 
-var final_score;
-var final_confident;
+var final_score = 0;;
+var final_confident =0;
 var check_score=true;
 function scoring(log){
   let score =[];
@@ -162,7 +162,7 @@ function scoring(log){
       con_avg = con_sum/10;
       con_score.push(con_avg);
     }
-    avg_final = avg_final + con_score[i];
+    avg_final = avg_final + score[i];
   }
   final_confident = confident_score(con_score);
   final_score = avg_final/log.length;
@@ -183,7 +183,6 @@ function Exclassifier(props) {
   
   const bodyPart = useSelector(state => state.bodyPart);
   const pose_list = PoseList[bodyPart];
-  //pose_img = PoseImg[pose_list[0]];
   const [ status_, setStatus] = useState("Start");
   const [ img, setImg] = useState(PoseImg[pose_list[0]]);
   const navigate = useNavigate();
@@ -194,6 +193,7 @@ function Exclassifier(props) {
       setImg(pose_img);
     }else{
       if (check_score){
+        scoring(result_log);
         console.log(final_score);
         console.log(final_confident);
         sendStretchScore();
