@@ -184,12 +184,14 @@ function Exclassifier(props) {
   const pose_list = PoseList[bodyPart];
   const [ status_, setStatus] = useState("Start");
   const [ img, setImg] = useState(PoseImg[pose_list[0]]);
+  const [ posenumber, setPosenumber] = useState(0);
   const navigate = useNavigate();
 
   const changeFrame = () => {
     if (processing){
       setStatus(Steppose(pose_list));
       setImg(pose_img);
+      setPosenumber(posenumber + 1);
     }else{
       if (check_score){
         scoring(result_log);
@@ -217,7 +219,7 @@ function Exclassifier(props) {
         </span>
       </div>
       <div className="exercise-status">
-          {/* <p className="card-excerpt">{pose_number} of {pose_list.length}</p> */}
+        <p className="card-excerpt">{posenumber} of {pose_list.length}</p>
           <p className='card-title'>Pose name: {posename} </p>
           <p className="card-excerpt"> Status: {status_}</p>
       </div>
@@ -225,3 +227,4 @@ function Exclassifier(props) {
   );
 }
 export default Exclassifier;
+
