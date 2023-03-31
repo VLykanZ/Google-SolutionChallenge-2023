@@ -25,7 +25,7 @@ import handabove_right from '../assets/images/exerciselist/handabove_right.png';
 
 // Database
 const PoseList ={
-  'neck' : [2, 5, 6],
+  'neck' : [2, 2, 2],
   'back' : [9, 0, 1],
   'arm' : [7, 8, 3, 4],
 }
@@ -79,6 +79,7 @@ var count = 0;
 var result_log = [];
 var idx =0 ;
 var color = 'red';
+var pose_number_ = 1;
 const confident = 0.2;
 
 function Steppose(pose_list) {
@@ -109,6 +110,7 @@ function Steppose(pose_list) {
       count = 0;
       status = 'OK NEXT !';
       pose_step = pose_step + 1;
+      pose_number_ = pose_number_ + 1
       color = 'red';
     }
   }
@@ -170,7 +172,6 @@ function scoring(log){
   return 1;
 }
 
-
 function Exclassifier(props) {
 
   const dispatch = useDispatch();
@@ -179,19 +180,19 @@ function Exclassifier(props) {
     dispatch(setStretchScore(final_score));
     console.log(dispatch(final_score))
   };
-  
   const bodyPart = useSelector(state => state.bodyPart);
   const pose_list = PoseList[bodyPart];
   const [ status_, setStatus] = useState("Start");
   const [ img, setImg] = useState(PoseImg[pose_list[0]]);
-  const [ posenumber, setPosenumber] = useState(0);
+  const [ posenumber, setPosenumber] = useState(pose_number_);
   const navigate = useNavigate();
 
   const changeFrame = () => {
     if (processing){
       setStatus(Steppose(pose_list));
       setImg(pose_img);
-      setPosenumber(posenumber + 1);
+      
+      setPosenumber(pose_number_);
     }else{
       if (check_score){
         scoring(result_log);
