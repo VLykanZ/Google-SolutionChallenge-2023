@@ -1,10 +1,9 @@
-import React, { useRef , useState, useEffect} from "react";
+import React, { useState, useEffect} from "react";
 import { useSelector } from 'react-redux';
 import { setStretchScore } from "../store";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import {Classifier, MovenetComponent, model, prediction} from './MovenetComponent';
-import * as tf from "@tensorflow/tfjs";
+import {Classifier} from './MovenetComponent';
 
 import '../style/page.css'
 
@@ -87,7 +86,7 @@ function Steppose(pose_list) {
   pose_img = PoseImg[pose_list[pose_step]];
   step_pose_lenght = pose_list.length; 
   const pose_value = Classifier(color, pose_step);
-  if (step_pose_lenght  == pose_step){
+  if (step_pose_lenght  === pose_step){
     processing = false;
     status = 'Finished ! ';
     posename = 'Finished !'
@@ -104,7 +103,7 @@ function Steppose(pose_list) {
     }else{
       status = 'Processing';
     }
-    if(count == 10){
+    if(count === 10){
       idx = idx + 1;
       count_check = false;
       count = 0;
