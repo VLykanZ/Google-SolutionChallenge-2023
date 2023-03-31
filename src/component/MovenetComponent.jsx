@@ -126,7 +126,7 @@ function score_arm(angle){
 }
 
 
-var color = "red";
+var color;
 var pose_idx;
 export  function Classifier(color_, pose_idx) {
   color = color_;

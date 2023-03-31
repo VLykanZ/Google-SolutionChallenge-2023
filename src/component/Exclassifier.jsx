@@ -92,6 +92,7 @@ function Steppose(pose_list) {
     posename = 'Finished !'
   }else{ 
     if(!count_check){
+      console.log(!count_check);
       if (pose_value[0][pose_step] > confident){
           status = 'Hold on !'; 
           result_log.push([pose_step, []]);
@@ -114,11 +115,13 @@ function Steppose(pose_list) {
       color = 'red';
     }
   }
+  console.log(status);
   console.log(result_log);
-  return 0;
+  return status;
 }
 var final_score =[];
 var final_confident = [];
+var check_score=true;
 function scoring(log){
   for(let i =0; i< log.length; i++){
     let score_sum = 0;
@@ -144,6 +147,7 @@ function scoring(log){
       final_confident.push(con_avg);
     }
   }
+  check_score = false;
   return 1;
 }
 
@@ -159,19 +163,25 @@ function Exclassifier(props) {
   
   const bodyPart = useSelector(state => state.bodyPart);
   const pose_list = PoseList[bodyPart];
-  pose_img = PoseImg[pose_list[0]];
-  const [ point, setPoint] = useState("Start");
+  //pose_img = PoseImg[pose_list[0]];
+  const [ status_, setStatus] = useState("Start");
+  const [ img, setImg] = useState(PoseImg[pose_list[0]]);
   const navigate = useNavigate();
 
   const changeFrame = () => {
     if (processing){
-      setPoint(Steppose(pose_list));
+      setStatus(Steppose(pose_list));
       // setImagePath(PoseImg[pose_step]);
+      //setStatus(status);
+      setImg(pose_img);
+      console.log(status);
     }else{
-      scoring(result_log);
-      console.log(final_score);
-      console.log(final_confident);
-      sendStretchScore();
+      if (check_score){
+        scoring(result_log);
+        console.log(final_score);
+        console.log(final_confident);
+        sendStretchScore();
+      }
       navigate('/Summary');
     }
   }
@@ -186,23 +196,15 @@ function Exclassifier(props) {
 
   return (
     <div className="exclassifier">
-      {/* <img src= {imagePath} width={640} height={480}/> */}
-      {/* <p><img src={neck1} alt="" style={{ height: "200px" }} /> </p> */}
-      {/* {exerciseList.map((exercise, index) => (
-            <p className="exercise" key={index}>
-              <img src={exercise.img}  alt="" style={{ height: "200px" }}/> <br />
-              {exercise.name} : {exercise.duration}          
-            </p>         
-          ))} */}
       <div className="exercise-picture">
         <span className="exercise-image" style={{height:"100px"}}>
-        <img className="exercise-image" src={pose_img} alt="" width={300}/>
+        <img className="exercise-image" src={img} alt="" width={300}/>
         </span>
       </div>
       <div className="exercise-status">
           {/* <p className="card-excerpt">{pose_number} of {pose_list.length}</p> */}
           <p className='card-title'>Pose name: {posename} </p>
-          <p className="card-excerpt"> Status: {status}</p>
+          <p className="card-excerpt"> Status: {status_}</p>
       </div>
     </div>
   );
