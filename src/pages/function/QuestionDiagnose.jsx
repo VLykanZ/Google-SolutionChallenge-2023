@@ -180,13 +180,6 @@ function QuestionDiagnose() {
                     </span>
                 </button>
               </Link>
-              <button class="button-pushable" id="ok" disabled={!allAnswered()} onClick={handleNextClick}>
-                    <span class="button-shadow"></span>
-                    <span class="button-edge"></span>
-                    <span class="button-front text">
-                    ok
-                    </span>
-                </button>
             </div>
             </section>
     </body>
