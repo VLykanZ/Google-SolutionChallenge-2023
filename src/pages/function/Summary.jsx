@@ -13,16 +13,19 @@ function Summary() {
     const [feedbackText, setFeedbackText] = useState('');
 
     const diagnoseScore = useSelector(state => state.diagnoseScore);
+    const stretchScore = useSelector(state => state.stretchScore);
 
-    // const risk = useSelector(state => state.risk);
+    const full_score = diagnoseScore + stretchScore
 
-    // const riskList = {
-    //     low_risk: [{risk: 'Low'}],
-    //     medium_risk: [{risk: 'Medium'}],
-    //     high_risk: [{risk: 'High'}]
-    // }
+    let risk;
 
-    // const resultRisk = riskList[risk];
+    if (full_score < 40) {
+        risk = "Low";
+    } else if (full_score < 70) {
+        risk = "Medium";
+    } else {
+        risk = "High";
+    }
 
     const handleStudentIdChange = (event) => {
         setStudentId(event.target.value);
@@ -51,11 +54,11 @@ function Summary() {
             <body>
                 <ProgressTab/>
                 <section className="function">
-                    <p> diagnose score:{diagnoseScore}</p>
+                    
                 <h1>Recommendation</h1>
                     <section id="recommendation">
                         <div className="summary">
-                            <p className="summary">From your exercise: You have low level risk of Office Syndrome</p>
+                            <p className="summary">From your exercise: You have {risk} level risk of Office Syndrome</p>
                         </div>
                         <div>
                             <p className="recommend">This our Recommendation.</p>
