@@ -17,7 +17,6 @@ export function prediction(inputArray) {
     outputArray = Array.from(outputData.dataSync());
   };
   runmodel();
-  console.log(runmodel());
   return outputArray;
 }
 
@@ -131,29 +130,13 @@ var pose_idx;
 export  function Classifier(color_, pose_idx) {
   color = color_;
   var point_pose = pose['keypoints'];
-  var input_model = [
-    [point_pose['0']['position']['x'], point_pose['0']['position']['y']],
-    [point_pose['1']['position']['x'], point_pose['1']['position']['y']],
-    [point_pose['2']['position']['x'], point_pose['2']['position']['y']], 
-    [point_pose['3']['position']['x'], point_pose['3']['position']['y']],
-    [point_pose['4']['position']['x'], point_pose['4']['position']['y']], 
-    [point_pose['5']['position']['x'], point_pose['5']['position']['y']], 
-    [point_pose['6']['position']['x'], point_pose['6']['position']['y']], 
-    [point_pose['7']['position']['x'], point_pose['7']['position']['y']], 
-    [point_pose['8']['position']['x'], point_pose['8']['position']['y']], 
-    [point_pose['9']['position']['x'], point_pose['9']['position']['y']], 
-    [point_pose['10']['position']['x'], point_pose['10']['position']['y']], 
-    [point_pose['11']['position']['x'], point_pose['11']['position']['y']],
-    [point_pose['12']['position']['x'], point_pose['12']['position']['y']], 
-    [point_pose['13']['position']['x'], point_pose['13']['position']['y']], 
-    [point_pose['14']['position']['x'], point_pose['14']['position']['y']], 
-    [point_pose['15']['position']['x'], point_pose['15']['position']['y']], 
-    [point_pose['16']['position']['x'], point_pose['16']['position']['y']]
-  ];
+  var input_model = [];
+  for(let j=0; j< 17; j++){
+    let i = j.toString();
+    input_model.push([point_pose[i]['position']['x'], point_pose[i]['position']['y']]);
+  }
   const processedInput = landmarks_to_embedding(input_model)
   const predictresult = prediction(processedInput);
-  console.log(predictresult);
-
 
   if(pose_idx == 0){
     const middle_sholder_x = (point_pose['5']['position']['x'] + point_pose['6']['position']['x'])/2
