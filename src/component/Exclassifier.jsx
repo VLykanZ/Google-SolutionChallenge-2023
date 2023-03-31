@@ -202,12 +202,12 @@ function Exclassifier(props) {
     }
   }
 
-  const pose_number = 1;
+  // const pose_number = 1;
 
   useEffect(() => {
     const interval = setInterval(changeFrame, 1000);
     return () => clearInterval(interval);
-    pose_number ++;
+    // pose_number ++;
   }, []);
 
   return (
@@ -218,7 +218,7 @@ function Exclassifier(props) {
         </span>
       </div>
       <div className="exercise-status">
-          <p className="card-excerpt">{pose_number} of {pose_list.length}</p>
+          {/* <p className="card-excerpt">{pose_number} of {pose_list.length}</p> */}
           <p className='card-title'>Pose name: {posename} </p>
           <p className="card-excerpt"> Status: {status_}</p>
       </div>
@@ -226,4 +226,3 @@ function Exclassifier(props) {
   );
 }
 export default Exclassifier;
-
