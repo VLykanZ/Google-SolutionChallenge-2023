@@ -22,6 +22,7 @@ function Summary() {
 
     const url = 'https://us-central1-solutionchallenge2023-be03e.cloudfunctions.net/webApi/api/v1/users';
     
+    // payload is data to post to backend
     const payload = { 
     diagnoseScore: diagnoseScore ,
     stretchScore: stretchScore,
@@ -52,7 +53,7 @@ function Summary() {
     const handleFeedbackTextChange = (event) => {
         setFeedbackText(event.target.value);
     }
-
+    // post data to backend
     const summit = () => {
         axios.post(url, payload)
             .then((res) => {
@@ -62,6 +63,7 @@ function Summary() {
                 console.log(err);
             })
     }
+
     const handleSubmit = (event) => {
 
         event.preventDefault();
