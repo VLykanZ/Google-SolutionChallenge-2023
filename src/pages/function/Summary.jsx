@@ -5,6 +5,7 @@ import ProgressTab from '../../component/ProgressTab';
 
 import '../../style/page.css'
 import '../../style/button.css'
+import axios from "axios";
 
 function Summary() {
 
@@ -18,6 +19,19 @@ function Summary() {
     const full_score = diagnoseScore + stretchScore
 
     let risk;
+
+    const url = 'https://us-central1-solutionchallenge2023-be03e.cloudfunctions.net/webApi/api/v1/users';
+    
+    const payload = { 
+    diagnoseScore: diagnoseScore ,
+    stretchScore: stretchScore,
+    full_score: full_score   ,
+    risk:risk,
+    studentId:studentId,
+    feedbackScore:feedbackScore,
+    feedbackText:feedbackText
+
+    };
 
     if (full_score < 40) {
         risk = "Low";
@@ -39,13 +53,24 @@ function Summary() {
         setFeedbackText(event.target.value);
     }
 
+    const summit = () => {
+        axios.post(url, payload)
+            .then((res) => {
+                console.log(res);
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }
     const handleSubmit = (event) => {
-        event.preventDefault();
 
+        event.preventDefault();
         // Save to the backend  Redux
         console.log("Student ID: ", studentId);
         console.log("Feedback Score: ", feedbackScore);
         console.log("Feedback Text: ", feedbackText);
+        summit();
+
     }
 
     const isFeedbackScoreValid = feedbackScore !== 0;

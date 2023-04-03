@@ -4,14 +4,15 @@ import Thanahot from '../../assets/images/team/Thanachot.jpg'
 import Suphawit from '../../assets/images/team/Suphawit.jpg'
 import Erafan from '../../assets/images/team/Erafan.jpg'
 import Afundy from '../../assets/images/team/Afundy.jpg'
-
+import axios from 'axios';
 
 const About = () => {
+
     return (
             <body>
                 <div className='site-container'>
 
-
+                    
                     <div className='article-container'>
                         <article className='article-card'>
                             <figure className='article-image'>
