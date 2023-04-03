@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&display=swap');
+
 *{
     font-family: 'Noto Sans Thai', sans-serif;
 }
+
 section.function{
+    display: inline-block;
     position: relative;
     font-size: 30px;
     margin-bottom: 30px;
@@ -10,61 +13,70 @@ section.function{
     margin-right: 30%;
     border-left: 1px solid rgb(203, 202, 202);
 }
+
 section.question{
     font-size: 20px;
 }
+
 section.question#diagnose{
     font-size: 17.5px;
     text-align: left;
 }
+
 section{
     margin-bottom: 30px;
 }
+
 section.exercise{
     justify-content: center;
 }
-div.body#diagnose,div.body#recommendation{
+
+div.body#diagnose, div.body#recommendation{
     font-size: 25px;
 }
+
 button{
-      margin: 10px;
-      position: fixed;
+    margin: 10px;
+    position: fixed;
 }
+
 body{
     text-align: center;
     background-color: #f0f4fb;
-    height: 100%;
     padding: 1px;
     padding-bottom: 100px;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing:  grayscale;
+    -moz-osx-font-smoothing: grayscale;
 }
+
 body.exercise{
     height: 100px;
 }
+
 div.question{
     margin: 30px;
-    
 }
+
 div#student-id{
     margin-bottom: 30px;
     font-size: 25px;
 }
+
 div.knowledge{
     border-left: 1px solid gray;
 }
+
 div.exclassifier{
     position: sticky;
     float: left;
     width: 300px;
     left: 25%;
 }
+
 div.movenet{
     position: fixed;
-    /* float: right; */
-    /* right: 50%; */
-    /* z-index: inherit; */
 }
+
 button{
     font-weight: bolder;
     border-radius: 15%;
@@ -72,19 +84,23 @@ button{
     width: 200px;
     height: 50px;
 }
+
 label.question{
     margin-bottom: 10px;
     display: inline-block;
     font-weight: bold;
 }
+
 input{
     width: 1px;
 }
-input[type=radio] {
+
+input[type=radio]{
     width: 5%;
     height: 20px;
     border: 0px;
 }
+
 select{
     width: 100px;
     height: 30px;
@@ -92,19 +108,24 @@ select{
     position: relative;
     left: 5%;
 }
+
 p.exercise{
     text-decoration: inline;
     text-align: center;
 }
+
 ul{
     list-style-type: none;
 }
+
 p.summary{
     font-size: 30px;
 }
+
 p.recommend{
     font-size: 25px;
 }
+
 
 
 /* ExerciseList */
@@ -115,12 +136,14 @@ p.recommend{
     border-radius: 20px;
     transition: 0.3s;
 }
+
 .exercise-image img{
     padding: 0;
     max-width: 100%;
     height: auto;
     border-radius: 20px 20px 0 0;
 }
+
 .article-card .exercise-name{
     text-align: left;
     margin: 0;
@@ -129,11 +152,11 @@ p.recommend{
     margin-left: 10px;
     font-weight: bolder;
 }
+
 .article-card .exercise-duration{
     margin: 10px;
     font-size: 1rem;
     font-weight: bold;
-    /* line-height: 1.5rem; */
     color: #6b82a7;
 }
 
@@ -255,4 +278,28 @@ input#feedback-text{
 ul#feedback-score li{
     font-size: 15px;
     display: inline;
+}
+
+@media screen and (min-width: 768px) {
+    .site-container{
+        max-width: 608px;
+    }
+    .article-card {
+        display: grid;
+        grid-template-rows: 220px 1fr;
+    }
+    .progresstab{
+        display:block;
+    }
+
+}
+@media screen and (min-width: 1280px)
+{
+    .site-container{
+        max-width: 1156px;
+    }
+    .progresstab{
+        display:block;
+    }
+    
 }
