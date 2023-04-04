@@ -1,67 +1,67 @@
 import React from "react";
-// import { Link } from 'react-router-dom';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import QuestionBodypart from "../../component/QuestionBodyPart";
-import '../../style/main.css'
-import '../../style/button.css'
-import 'bootstrap/dist/css/bootstrap.css'
+import "../../style/main.css";
+import "../../style/button.css";
 
+import home1 from '../../assets/images/home/home1.jpg'
+import home2 from '../../assets/images/home/home2.jpg'
+import home3 from '../../assets/images/home/home3.jpg'
 
 function Home() {
-    return (
-      <body id="home-page">
-          <section id="slider">
-          <div class="carousel slide" data-bs-ride="carousel" id="mySlider">
-            <ol class="carousel-indicators">
-                <button data-bs-target="#mySlider" data-bs-slide-to="0" class="active"></button>
-                <button data-bs-target="#mySlider" data-bs-slide-to="1"></button>
-                <button data-bs-target="#mySlider" data-bs-slide-to="2"></button>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item carousel-image-1 active">
-                    <div class="container">
-                        <div class="carousel-caption d-none d-sm-block">
-                            <h1 class="display-3">AAA</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, unde?</p>
-                        </div>
-                    </div>
-                </div>
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
 
-                <div class="carousel-item carousel-image-2">
-                    <div class="container">
-                        <div class="carousel-caption d-none d-sm-block">
-                            <h1 class="display-3">BBB</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, unde?</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="carousel-item carousel-image-3">
-                    <div class="container">
-                        <div class="carousel-caption d-none d-sm-block">
-                            <h1 class="display-3">CCC</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, unde?</p>
-                        </div>
-                    </div>
-                </div>
-
-                <button class="carousel-control-prev" data-bs-target="#mySlider" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </button>
-
-                <button class="carousel-control-next" data-bs-target="#mySlider" data-bs-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </button>
+  return (
+    <body id="home-page">
+      <section className="carousel">
+        <Slider {...settings}>
+          <div className="carousel-item">
+            <div className="carousel-item__image">
+              <a href="https://example.com">
+                <img src={home1} alt="carousel item" />
+                <div className="carousel-item__overlay">
+                  <h4>What is Office Syndrome?</h4>
+                  {/* <p>Image Description</p> */}
+              </div>
+              </a>
+              
             </div>
-        </div>
-          </section>
+          </div>
+          <div className="carousel-item">
+            <div className="carousel-item__image">
+              <a href="https://example.com">
+                <img src={home2} alt="carousel item" />
+                <div className="carousel-item__overlay">
+                  <h4>Office Synfrom Symptoms</h4>
+                  {/* <p>Image Description</p> */}
+              </div>
+              </a>
+            </div>
+          </div>
+          <div className="carousel-item">
+            <div className="carousel-item__image">
+              <a href="https://example.com">
+                <img src={home3} alt="carousel item" />
+                  <h4>How to Prevent Office Syndrome</h4>
+                  {/* <p>Image Description</p> */}
+              </a>
+              <div className="carousel-item__overlay">
+              </div>
+            </div>
+          </div>
+        </Slider>
+      </section>
+      <QuestionBodypart />
+    </body>
+  );
+}
 
-          <QuestionBodypart/>
-
-
-        
-
-      </body>
-    );
-  }
-
-export default Home
+export default Home;

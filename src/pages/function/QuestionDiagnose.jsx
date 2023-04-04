@@ -161,7 +161,7 @@ function QuestionDiagnose() {
           </form>
         </section>
         <div>
-              <Link to="/QuestionBodypart">
+              <Link to="/">
               <button class="button-pushable" id="back">
                     <span class="button-shadow"></span>
                     <span class="button-edge"></span>

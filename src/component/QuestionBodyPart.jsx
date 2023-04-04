@@ -20,7 +20,7 @@ function QuestionBodypart() {
     };
 
   return (
-      <div>
+      <div className="bodypart-question">
       <section className="bodypart-question">
         <h2 className='bodypart-which'>Which part of your body are you experiencing pain?</h2>
         <div className="bodypart-choices">

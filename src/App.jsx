@@ -1,5 +1,4 @@
 import './style/App.css';
-import './style/navbar.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
@@ -18,7 +17,6 @@ import ExerciseList from './pages/function/ExerciseList';
 import DoExercise from './pages/function/DoExercise';
 import Summary from './pages/function/Summary';
 // import StepProgressBar from './component/ProgressBar';
-
 
 import store from './store/store';
 

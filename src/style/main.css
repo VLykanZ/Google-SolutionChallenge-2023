@@ -52,19 +52,33 @@ li.knowledge{
     margin-bottom: 10px;
 }
 
-.carousel-item{
-    height: 500px;
+/* Home */
+section.carousel{
+    position: relative;
+    float: left;
+    left: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: 200px;
+    width: 400px;
 }
-
-.carousel-image-1{
-    background-image: url('https://cdn.pixabay.com/photo/2017/10/10/21/49/blogger-2838945_1280.jpg');
-    background-size: cover;
+div.carousel-item{
+    margin-top: 20%;
+    height: 300px;
 }
-.carousel-image-2{
-    background-image: url('https://cdn.pixabay.com/photo/2017/10/10/21/49/blogger-2838945_1280.jpg');
-    background-size: cover;
+img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    margin: auto;
+    display: block;
 }
-.carousel-image-3{
-    background-image: url('https://cdn.pixabay.com/photo/2017/10/10/21/49/blogger-2838945_1280.jpg');
-    background-size: cover;
+a{
+    text-decoration: none;
+    font-weight: bolder;
+}
+h4{
+    font-weight: bolder;
+    text-align: center;
+    font-size: 1.5rem;
 }
