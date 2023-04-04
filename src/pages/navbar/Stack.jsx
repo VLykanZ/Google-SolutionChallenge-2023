@@ -6,7 +6,7 @@ const Stack = () => {
     return (
             <body>
                 <div>
-                    <img src={stack} alt="" />
+                    <img src={stack} alt="" style={{width:"90%"}}/>
                 </div>
             </body>
     )
