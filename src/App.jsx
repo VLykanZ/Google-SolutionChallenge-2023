@@ -20,7 +20,7 @@ import Summary from './pages/function/Summary';
 // import StepProgressBar from './component/ProgressBar';
 
 
-import store from './store';
+import store from './store/store';
 
 function App() {
 

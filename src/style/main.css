@@ -51,3 +51,20 @@ article.knowledge{
 li.knowledge{
     margin-bottom: 10px;
 }
+
+.carousel-item{
+    height: 500px;
+}
+
+.carousel-image-1{
+    background-image: url('https://cdn.pixabay.com/photo/2017/10/10/21/49/blogger-2838945_1280.jpg');
+    background-size: cover;
+}
+.carousel-image-2{
+    background-image: url('https://cdn.pixabay.com/photo/2017/10/10/21/49/blogger-2838945_1280.jpg');
+    background-size: cover;
+}
+.carousel-image-3{
+    background-image: url('https://cdn.pixabay.com/photo/2017/10/10/21/49/blogger-2838945_1280.jpg');
+    background-size: cover;
+}
