@@ -13,6 +13,7 @@ function Summary() {
     const [feedbackScore, setFeedbackScore] = useState(0);
     const [feedbackText, setFeedbackText] = useState('');
 
+    const bodyPart = useSelector(state => state.bodyPart);
     const diagnoseScore = useSelector(state => state.diagnoseScore);
     const stretchScore = useSelector(state => state.stretchScore);
 
@@ -24,6 +25,7 @@ function Summary() {
     
     // payload is data to post to backend
     const payload = { 
+    bodyPart: bodyPart,
     diagnoseScore: diagnoseScore ,
     stretchScore: stretchScore,
     full_score: full_score   ,
@@ -85,7 +87,7 @@ function Summary() {
                 <h1>Recommendation</h1>
                     <section id="recommendation">
                         <div className="summary">
-                            <p className="summary">From your exercise: You have {risk} level risk of Office Syndrome</p>
+                            {/* <p className="summary">From your exercise: You have {risk} level risk of Office Syndrome</p> */}
                         </div>
                         <div>
                             <p className="recommend">This our Recommendation.</p>

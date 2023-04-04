@@ -170,9 +170,9 @@ function QuestionDiagnose() {
                     </span>
                 </button>
               </Link>
-              <Link to="/ExerciseList" disabled={!allAnswered()}>
+              <Link to="/ExerciseList">
                 {/* <button disabled={!allAnswered()} onClick={handleNextClick}>Next</button> */}
-                <button class="button-pushable" id="next" disabled={!allAnswered()} onClick={handleNextClick}>
+                <button disabled={!allAnswered()} class="button-pushable" id="next" onClick={handleNextClick}>
                     <span class="button-shadow"></span>
                     <span class="button-edge"></span>
                     <span class="button-front text">
