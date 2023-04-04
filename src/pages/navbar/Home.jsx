@@ -25,7 +25,7 @@ function Home() {
         <Slider {...settings}>
           <div className="carousel-item">
             <div className="carousel-item__image">
-              <a href="https://example.com">
+              <a href="https://www.samitivejhospitals.com/article/detail/understanding-office-syndrome">
                 <img src={home1} alt="carousel item" />
                 <div className="carousel-item__overlay">
                   <h4>What is Office Syndrome?</h4>
@@ -37,7 +37,7 @@ function Home() {
           </div>
           <div className="carousel-item">
             <div className="carousel-item__image">
-              <a href="https://example.com">
+              <a href="https://www.chiangmai-hospital.com/en/knowledges/six-symptoms-associated-with-office-syndrome">
                 <img src={home2} alt="carousel item" />
                 <div className="carousel-item__overlay">
                   <h4>Office Synfrom Symptoms</h4>
@@ -48,7 +48,7 @@ function Home() {
           </div>
           <div className="carousel-item">
             <div className="carousel-item__image">
-              <a href="https://example.com">
+              <a href="https://www.lazboythailand.com/inspiration/48/good-ways-of-resting-to-prevent-office-syndrome">
                 <img src={home3} alt="carousel item" />
                   <h4>How to Prevent Office Syndrome</h4>
                   {/* <p>Image Description</p> */}
