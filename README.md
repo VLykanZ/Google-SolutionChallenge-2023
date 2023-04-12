@@ -1,15 +1,51 @@
-# วัยรุ้นรังสิต 😎
+<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
+<a name="readme-top"></a>
+<!--
+*** Thanks for checking out the Best-README-Template. If you have a suggestion
+*** that would make this better, please fork the repo and create a pull request
+*** or simply open an issue with the tag "enhancement".
+*** Don't forget to give the project a star!
+*** Thanks again! Now go create something AMAZING! :D
+-->
 
-### เป็น Dev Github เปื้อนฝุ่น กอดไม่อุ่นเท่าคนหนุ่มเทสดี
 
-### ไม่ใช่เจ้าชาย ไม่คล้ายราชา เป็นแค่คนดูดม้าที่นางฟ้าไม่เคยมอง
 
-### อยากมีก็ต้องสร้าง ไม่ใช่คอยอ้างอยู่เรื่อยไป
+<!-- PROJECT SHIELDS -->
+<!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-### ต่อให้เป็นนาซ่า ก็เอาเธอกลับมาไม่ได้ เพราะเธอนอกใจ ไม่ได้ไปนอกโลก
 
-### อย่าคิดว่าตัวเองสูงส่ง ถ้าตัวเองเดินอยู่บนดิน
 
-### ถ้าไม่ใช่ผู้พิพากษา ก็อย่ามาหาตัดสินคนอื่น
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/othneildrew/Best-README-Template">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a>
 
-### ลูกปืนไม่มีตา พูดจาระวังด้วย 👊🏻
+  <h3 align="center">Best-README-Template</h3>
+
+  <p align="center">
+    An awesome README template to jumpstart your projects!
+    <br />
+    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    ·
+    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+  </p>
+</div>
