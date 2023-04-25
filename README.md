@@ -142,9 +142,7 @@ Use the `BLANK_README.md` to get started.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -154,9 +152,8 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/your_username/repo_name](https://github.com/VLykanZ/Google-SolutionChallenge-2023)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -187,7 +184,7 @@ Use this space to list resources you find helpful and would like to give credit 
 [license-shield]: https://img.shields.io/github/license/VlykanZ/Google-SolutionChallenge-2023.svg?style=for-the-badge
 [license-url]: https://github.com/VLykanZ/Google-SolutionChallenge-2023/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: [https://linkedin.com/in/othneildrew](https://www.linkedin.com/in/suphawit-chomsomsa-a461961b4/)
+[linkedin-url]: https://www.linkedin.com/in/suphawit-chomsomsa-a461961b4/
 
 [home-screenshot]: src/assets/images/readme/home.png
 [diagnose-screenshot]: src/assets/images/readme/diagnose.png
