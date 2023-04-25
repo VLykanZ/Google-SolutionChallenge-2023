@@ -84,6 +84,8 @@ Due to prolonged sitting and lack of physical activity. This can lead to joint p
 
 Office syndrome is a collection of symptoms including joint pain, stiffness, and reduced mobility, which can affect an individual's productivity, quality of life, and overall health and well-being. In addition, without proper treatment and prevention, office syndrome can lead to chronic health conditions such as musculoskeletal disorders and cardiovascular disease.
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ![Home Screen Shot][home-screenshot]
 ![Diagnose Screen Shot][diagnose-screenshot]
 ![Exercise List Screen Shot][exerciselist-screenshot]
@@ -109,7 +111,7 @@ Our team has chosen United Nations' Sustainable Development Goal 3: Good Health 
 
 We were inspired to choose this goal and target because of the increasing prevalence of office syndrome, which is a non-communicable disease that can lead to premature mortality if not addressed. We believe that our solution can contribute to reducing the burden of NCDs and promoting better health and well-being among individuals who work from home. Additionally, with the COVID-19 pandemic highlighting the importance of remote work, our solution can have a significant impact on improving the health and well-being of remote workers worldwide.
 
-
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- Built -->
 ### Built With
@@ -172,6 +174,8 @@ We had used Tensorflow Movenet to detect user's body and scoring user's stretchi
 
 Users like that it has a clear separation of symptoms to be treated, easy to use. There is a system to assess the level of symptoms before starting the physical therapy posture and there is an AI system that checks whether the posture is correct or not, and there is a Knowledge box for more detailed reading. The website is designed to be easy to use. and has a comfortable color, Otherwise, They want to have animated examples of exercises or video clips so they can be performed accurately and clearly. and may add a section to change the language To make it easier for those who do not understand English
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 <!-- Next Step -->
 ## Next Step
 We can use the data we collect to improve our app and make it more effective at alleviating the symptoms of office syndrome. For example, if we find that users are reporting pain in a certain area, we can adjust our stretching recommendations to target that specific area more effectively.
@@ -193,6 +197,8 @@ React.js Frontend: React.js is optimized for performance, ensuring that the user
 Machine Learning: TensorFlow.js runs directly in the user's browser, distributing the computational load across client devices. This reduces the strain on our servers and prevents bottlenecks as the number of users increases.
 
 To accommodate a larger audience, minor adjustments could include optimizing API endpoints for better caching.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 <!-- CONTACT -->
