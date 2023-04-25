@@ -41,6 +41,12 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
+        <li><a href="#problem">Problem Statement</a></li>
+      </ul>
+      <ul>
+        <li><a href="#sdg-goal">SDG Goal</a></li>
+      </ul>
+      <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
@@ -52,16 +58,23 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
+    <li><a href="#feedback">User Feedback</a></li>
+    <li><a href="#nextstep">Next Step</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
 
-## Problem Statement
+
+
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+### Problem Statement
+
+![p1][p1]
 
 The COVID-19 pandemic has caused a significant increase in remote work or work from home(WFH), leading to a rise in working hours of people who spend long hours sitting in front of a computer without proper ergonomics and breaks. Also Schools and Universities have online courses. 
 
@@ -71,21 +84,24 @@ Due to prolonged sitting and lack of physical activity. This can lead to joint p
 
 Office syndrome is a collection of symptoms including joint pain, stiffness, and reduced mobility, which can affect an individual's productivity, quality of life, and overall health and well-being. In addition, without proper treatment and prevention, office syndrome can lead to chronic health conditions such as musculoskeletal disorders and cardiovascular disease.
 
-
-<!-- ABOUT THE PROJECT -->
-## About The Project
-
 ![Home Screen Shot][home-screenshot]
 ![Diagnose Screen Shot][diagnose-screenshot]
 ![Exercise List Screen Shot][exerciselist-screenshot]
 
 
-Our Application has a function that user can select the bodypart for example Neck & Shoulder, Back, Wrist & Arm. We have user's behavior diagnose to estimate user's risk to be an Office Syndrome. Then we will show the stretching exercise list to user.
+Our project's impact is significant in addressing the problem of office syndrome caused by prolonged sitting and poor posture while working from home. The cause of office syndrome is prolonged sitting, and it can lead to various health problems, including back pain, neck pain, headaches, and even carpal tunnel syndrome. Our solution, an AI-powered stretching app, addresses this problem by detecting joint pain and stiffness and providing personalized stretching routines to alleviate the symptoms of office syndrome.
+
+The impact of our solution was evidenced by a reduction in the frequency and intensity of pain and discomfort experienced by our users. We collected quantifiable data on the pain level, diagnose form, stretch score, and feedback score of our users through our app. Our data analysis revealed that the majority of our users experienced a significant reduction in pain and discomfort after using our app for several weeks. Moreover, our app helped our users to improve their posture, reduce pain and discomfort, and promote better health and well-being while working from home.
+
+To understand our solution's impact, we used various tools, including surveys, feedback forms, and data analytics tools. We collected user feedback through surveys and feedback forms to understand their experience with our app and their pain and discomfort levels. We also used data analytics tools to analyze the data collected from our users, including pain levels, stretch scores, and feedback scores. This analysis helped us to identify the areas of our app that needed improvement and track our users' progress over time.
+
+Overall, our solution has had a significant impact in addressing the problem of office syndrome caused by prolonged sitting and poor posture while working from home. Through our app, we have helped many people to alleviate their pain and discomfort, improve their posture, and promote better health and well-being while working from home.
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- SDG -->
-## SGD Goal
+### SGD Goal
 
 ![sdg-3.4][sdg-3.4]
 
@@ -96,9 +112,11 @@ We were inspired to choose this goal and target because of the increasing preval
 
 
 <!-- Built -->
-## Built With
+### Built With
 
-We used React and Tensorflow.js as Frontend and we used Firestore and Express.js as backend. after that we had deployed our web-application by using Google Cloud App Engine.
+Our solution architecture consists of a backend built on Express.js, deployed to Cloud Functions and Firebase, which serves as a versatile API for creating, reading, updating, and deleting data. The frontend leverages React.js and TensorFlow.js to train models and analyze user posture through camera input.
+
+These components offer valuable benefits: Express.js simplifies backend API development, Cloud Functions and Firebase enable easy deployment and scaling, React.js promotes responsive UI with reusable code, and TensorFlow.js allows efficient in-browser posture analysis for a smoother user experience.
 
 * [![React][React.js]][React-url]
 * [![TensorFlow][TensorFlow]][TensorFlow-url]
@@ -142,9 +160,39 @@ We used React and Tensorflow.js as Frontend and we used Firestore and Express.js
 
 We had used Tensorflow Movenet to detect user's body and scoring user's stretching and we will calculated with diagnose score to estimated risk of user to be an Office Syndrome. Then we will show the recommendation.
 
+![p2][p2]
+![p3][p3]
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- Feedback -->
+## User Feedback
 
+![p4][p4]
+
+Users like that it has a clear separation of symptoms to be treated, easy to use. There is a system to assess the level of symptoms before starting the physical therapy posture and there is an AI system that checks whether the posture is correct or not, and there is a Knowledge box for more detailed reading. The website is designed to be easy to use. and has a comfortable color, Otherwise, They want to have animated examples of exercises or video clips so they can be performed accurately and clearly. and may add a section to change the language To make it easier for those who do not understand English
+
+<!-- Next Step -->
+## Next Step
+We can use the data we collect to improve our app and make it more effective at alleviating the symptoms of office syndrome. For example, if we find that users are reporting pain in a certain area, we can adjust our stretching recommendations to target that specific area more effectively.
+
+We can use the data we collect to provide personalized feedback to users on their progress and how they can improve their stretching routine. This would help motivate users to continue using our app and make it more effective at alleviating their symptoms.
+
+We would like to expand our solution to reach a larger audience by developing a mobile application that can be easily accessed and used by anyone with a smartphone. We believe that a mobile app would make it more convenient for users to access our solution, as they could use it on-the-go or while taking breaks from work.
+
+Additionally, we would like to collaborate with healthcare providers and wellness programs to promote our solution and make it available to a larger audience. By partnering with healthcare providers, we could provide our app to patients who suffer from office syndrome as part of their treatment plan. Similarly, by partnering with wellness programs, we could make our app available to employees of companies who want to promote the health and well-being of their workforce.
+
+We would like to continue collecting user data and conducting research to refine our solution and make it more effective at alleviating the symptoms of office syndrome. By using machine learning and artificial intelligence, we could analyze user data to develop more personalized stretching routines and provide feedback that is tailored to each user's unique needs.
+
+In summary, our next steps include developing a mobile app, collaborating with healthcare providers and wellness programs, incorporating additional features, and continuing to collect user data and conduct research. By taking these steps, we believe that we can expand our solution and help a larger audience of remote workers alleviate the symptoms of office syndrome and promote better health and well-being.
+
+Serverless Backend: Using Cloud Functions and Firebase, our solution can automatically scale resources based on demand. This serverless architecture ensures that the application can handle a growing number of users.
+
+React.js Frontend: React.js is optimized for performance, ensuring that the user interface remains responsive even as the user base grows. The component-based structure also simplifies code maintenance and updates.
+
+Machine Learning: TensorFlow.js runs directly in the user's browser, distributing the computational load across client devices. This reduces the strain on our servers and prevents bottlenecks as the number of users increases.
+
+To accommodate a larger audience, minor adjustments could include optimizing API endpoints for better caching.
 
 
 <!-- CONTACT -->
@@ -186,6 +234,11 @@ Project Link: [https://github.com/VLykanZ/Google-SolutionChallenge-2023](https:/
 [linkedin-url]: https://www.linkedin.com/in/suphawit-chomsomsa-a461961b4/
 
 [sdg-3.4]: https://ittffoundation.org/files/cms/logos/unsdgs/un-sdgs/sdg-3_target-3.4_%20same%20size.png
+
+[p1]: src/assets/images/readme/p1.jpg
+[p2]: src/assets/images/readme/p2.jpg
+[p3]: src/assets/images/readme/p3.jpg
+[p4]: src/assets/images/readme/p4.jpg
 
 [home-screenshot]: src/assets/images/readme/home.png
 [diagnose-screenshot]: src/assets/images/readme/diagnose.png
