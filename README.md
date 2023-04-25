@@ -66,11 +66,13 @@
 </details>
 
 
-
-
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+
+Youtube : https://youtu.be/7fSiQlGAa5o
+
+<a href="https://youtu.be/7fSiQlGAa5o" target="_blank"><img src="http://img.youtube.com/vi/7fSiQlGAa5o/0.jpg" 
+alt="FlexMind - GDSC Solution Challenge 2023"/></a>
 
 ### Problem Statement
 
