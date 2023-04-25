@@ -24,7 +24,7 @@
     <a href="https://github.com/VLykanZ/Google-SolutionChallenge-2023"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/VLykanZ/Google-SolutionChallenge-2023">View Demo</a>
+    <a href="https://youtu.be/7fSiQlGAa5o">View Demo Video</a>
     ·
     <a href="https://github.com/VLykanZ/Google-SolutionChallenge-2023/issues">Report Bug</a>
     ·
