@@ -61,6 +61,16 @@
 </details>
 
 
+## Problem Statement
+
+The COVID-19 pandemic has caused a significant increase in remote work or work from home(WFH), leading to a rise in working hours of people who spend long hours sitting in front of a computer without proper ergonomics and breaks. Also Schools and Universities have online courses. 
+
+From Adobe’s research people who remote working are spend time in their work more than 45 hours per week. NordVPN Teams released a survey in the light of the COVID-19 pandemic.There are more working hours than before, an average of 2.5 hours.
+
+Due to prolonged sitting and lack of physical activity. This can lead to joint pain, stiffness, and reduced mobility, which can have negative effects on overall health and well-being. And There is a risk of “Office Syndrome”.
+
+Office syndrome is a collection of symptoms including joint pain, stiffness, and reduced mobility, which can affect an individual's productivity, quality of life, and overall health and well-being. In addition, without proper treatment and prevention, office syndrome can lead to chronic health conditions such as musculoskeletal disorders and cardiovascular disease.
+
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
