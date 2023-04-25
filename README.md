@@ -1,23 +1,5 @@
-<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a name="readme-top"></a>
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
 
-
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -87,28 +69,32 @@
 ![Diagnose Screen Shot][diagnose-screenshot]
 ![Exercise List Screen Shot][exerciselist-screenshot]
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
-
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
-
-Use the `BLANK_README.md` to get started.
+Our Application has a function that user can select the bodypart for example Neck & Shoulder, Back, Wrist & Arm. We have user's behavior diagnose to estimate user's risk to be an Office Syndrome. Then we will show the stretching exercise list to user.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- SDG -->
+## SGD Goal
+
+![sdg-3.4][sdg-3.4]
+
+Our team has chosen United Nations' Sustainable Development Goal 3: Good Health and Well-being for our solution. Specifically, we aim to address target 3.4, which is to reduce premature mortality from non-communicable diseases (NCDs) through prevention and treatment and promote mental health and well-being.
+
+We were inspired to choose this goal and target because of the increasing prevalence of office syndrome, which is a non-communicable disease that can lead to premature mortality if not addressed. We believe that our solution can contribute to reducing the burden of NCDs and promoting better health and well-being among individuals who work from home. Additionally, with the COVID-19 pandemic highlighting the importance of remote work, our solution can have a significant impact on improving the health and well-being of remote workers worldwide.
 
 
-### Built With
 
+<!-- Built -->
+## Built With
+
+We used React and Tensorflow.js as Frontend and we used Firestore and Express.js as backend. after that we had deployed our web-application by using Google Cloud App Engine.
 
 * [![React][React.js]][React-url]
 * [![TensorFlow][TensorFlow]][TensorFlow-url]
 * [![Firebase][Firebase]][Firebase-url]
 * [![Express.js][Express.js]][Express.js-url]
+* [![Google Cloud][Google Cloud]][Google Cloud-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -142,7 +128,9 @@ Use the `BLANK_README.md` to get started.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
+![Do Exercise Screen Shot][doexercise-screenshot]
 
+We had used Tensorflow Movenet to detect user's body and scoring user's stretching and we will calculated with diagnose score to estimated risk of user to be an Office Syndrome. Then we will show the recommendation.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -152,8 +140,11 @@ Use the `BLANK_README.md` to get started.
 <!-- CONTACT -->
 ## Contact
 
+Suphawit Chomsomsa  : Suphawish707@gmail.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/VLykanZ/Google-SolutionChallenge-2023)
+GDSC TU : https://gdsc.community.dev/thammasat-university/
+
+Project Link: [https://github.com/VLykanZ/Google-SolutionChallenge-2023](https://github.com/VLykanZ/Google-SolutionChallenge-2023)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -161,8 +152,6 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/VL
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
-
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
 
 * [Preventing Office Syndrome While Working From Home](https://www.bangkokhospital.com/en/content/work-from-home-and-office-syndrome)
 * [Myofascial pain syndrome (Office Syndrome](https://www.praram9.com/en/officesyndrome/)
@@ -186,9 +175,12 @@ Use this space to list resources you find helpful and would like to give credit 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/suphawit-chomsomsa-a461961b4/
 
+[sdg-3.4]: https://ittffoundation.org/files/cms/logos/unsdgs/un-sdgs/sdg-3_target-3.4_%20same%20size.png
+
 [home-screenshot]: src/assets/images/readme/home.png
 [diagnose-screenshot]: src/assets/images/readme/diagnose.png
 [exerciselist-screenshot]: src/assets/images/readme/exerciselist.png
+[doexercise-screenshot]: src/assets/images/readme/doexercise.png
 
 
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
@@ -199,3 +191,5 @@ Use this space to list resources you find helpful and would like to give credit 
 [Firebase-url]: https://firebase.google.com/
 [Express.js]: https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB
 [Express.js-url]: https://expressjs.com/
+[Google Cloud]: https://img.shields.io/badge/GoogleCloud-%234285F4.svg?style=for-the-badge&logo=google-cloud&logoColor=white
+[Google Cloud-url]: https://cloud.google.com
